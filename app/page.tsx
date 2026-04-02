@@ -62,10 +62,30 @@ export default function Dashboard() {
           <DashboardClient entries={sortedEntries} stats={stats} />
         </section>
 
-        {/* Footer trust line */}
+        {/* Honest disclaimer */}
+        <section
+          className="mb-8 animate-fade-in-up"
+          style={{ animationDelay: "300ms" }}
+        >
+          <div className="rounded-lg border border-white/[0.04] bg-white/[0.02] px-5 py-4">
+            <h3 className="text-xs font-mono font-semibold text-white/40 uppercase tracking-widest mb-2">
+              What this is &amp; what it isn&apos;t
+            </h3>
+            <p className="text-sm text-white/40 leading-relaxed">
+              Skill Sentry is a <span className="text-white/60">first-pass security scanner</span> — not a replacement for a full security audit.
+              It catches common dangerous patterns like malicious install scripts, credential theft, and process execution
+              using regex-based static analysis. It <span className="text-white/60">cannot</span> detect obfuscated code,
+              sophisticated supply chain attacks, or threats hidden in compiled binaries. Think of it as a smoke detector,
+              not a fire brigade — it tells you something&apos;s worth investigating, fast. For critical production systems,
+              combine this with tools like Snyk, SonarQube, and manual code review.
+            </p>
+          </div>
+        </section>
+
+        {/* Footer */}
         <footer
           className="border-t border-white/[0.04] pt-6 pb-4 animate-fade-in-up"
-          style={{ animationDelay: "300ms" }}
+          style={{ animationDelay: "350ms" }}
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/50">
             <p className="font-mono">

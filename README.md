@@ -296,6 +296,38 @@ skill-sentry/
 
 ---
 
+## What This Is & What It Isn't
+
+**Let me be honest with you.**
+
+Skill Sentry is a **first-pass security scanner**. It's a smoke detector, not a fire brigade.
+
+**What it catches:**
+- Malicious `postinstall` / `preinstall` scripts that auto-execute on install
+- `child_process` / `exec` / `spawn` usage (can run commands on your machine)
+- SSH key access attempts (`~/.ssh`, `id_rsa`, `known_hosts`)
+- Credential harvesting (`process.env.GITHUB_TOKEN`, secrets, API keys)
+- `eval()` usage (arbitrary code execution)
+- Obfuscated Base64 payloads, unpinned dependencies, suspicious network targets
+
+**What it cannot catch:**
+- Obfuscated or encoded malicious code (e.g., building `eval` from string concatenation)
+- Sophisticated supply chain attacks that hide in deep dependency trees
+- Threats in compiled binaries or WebAssembly
+- Social engineering in documentation or README files
+- Zero-day exploits in legitimate dependencies
+
+**What this means for you:**
+- If Skill Sentry says **"safe"** → the obvious threats aren't there, but always use your judgment
+- If Skill Sentry says **"do not install"** → take it seriously, something is genuinely wrong
+- For critical production systems → combine this with Snyk, SonarQube, Checkmarx, and manual code review
+
+Most npm supply chain attacks are lazy — a `postinstall` script that `curl`s a payload is the #1 vector. Skill Sentry catches those in seconds. That's 90% of the risk addressed in 30 seconds. The remaining 10% is where enterprise tools and manual review come in.
+
+**Being honest about limitations builds more trust than pretending to be perfect.** I'd rather you know exactly what this tool does than find out the hard way what it doesn't.
+
+---
+
 ## Contributing
 
 I built Skill Sentry because I needed it. If you find it useful, I'd love your help making it better.
