@@ -1,0 +1,47 @@
+name: Reusable Auditor
+
+# This workflow is the core scanning engine.
+# It is called by other workflows — DO NOT trigger directly.
+#
+# Callers:
+#   - on-demand-scan.yml (Submit button → repository_dispatch)
+#   - scheduled-scrape.yml (Daily cron → new MCP repos)
+
+on:
+  workflow_call:
+    inputs:
+      repo_url:
+        description: 'GitHub repository URL to audit'
+        required: true
+        type: string
+    outputs:
+      audit_result:
+        description: 'JSON audit result (RegistryEntry)'
+        value: ${{ jobs.audit.outputs.result }}
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.scan.outputs.result }}
+
+    steps:
+      - name: Checkout Skill Sentry
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run security audit
+        id: scan
+        run: |
+          RESULT=$(npx tsx scripts/cli.ts "${{ inputs.repo_url }}")
+          echo "result<<EOF" >> $GITHUB_OUTPUT
+          echo "$RESULT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT

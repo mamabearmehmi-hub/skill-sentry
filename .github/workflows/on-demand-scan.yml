@@ -1,0 +1,48 @@
+name: On-Demand Scan
+
+# Triggered by the Submit button on the dashboard.
+# The Next.js API route calls:
+#   octokit.rest.repos.createDispatchEvent({
+#     event_type: "scan-repo",
+#     client_payload: { repo_url: "https://github.com/owner/repo" }
+#   })
+
+on:
+  repository_dispatch:
+    types: [scan-repo]
+
+jobs:
+  scan:
+    uses: ./.github/workflows/reusable-auditor.yml
+    with:
+      repo_url: ${{ github.event.client_payload.repo_url }}
+
+  update:
+    needs: scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update registry with audit result
+        run: |
+          cat <<'RESULT_EOF' > /tmp/result.json
+          ${{ needs.scan.outputs.audit_result }}
+          RESULT_EOF
+          npx tsx scripts/update-registry.ts /tmp/result.json
+
+      - name: Commit updated registry
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "audit: ${{ github.event.client_payload.repo_url }}"
+          file_pattern: public/data/registry.json
