@@ -1,15 +1,17 @@
 <p align="center">
   <img src="https://img.shields.io/badge/SKILL-SENTRY-00e5a0?style=for-the-badge&labelColor=0a0a0f" alt="Skill Sentry" />
+  <img src="https://img.shields.io/npm/v/skill-sentry?style=for-the-badge&color=00e5a0&labelColor=0a0a0f" alt="npm version" />
   <br />
-  <em>Safely vet Claude skills before you install them.</em>
+  <em>Scan Claude skills for security threats before you install them.</em>
 </p>
 
 <p align="center">
-  <a href="#-why-i-built-this">Why</a> &middot;
-  <a href="#-what-it-does">What</a> &middot;
-  <a href="#-getting-started">Get Started</a> &middot;
-  <a href="#-how-it-works">How It Works</a> &middot;
-  <a href="#-contributing">Contribute</a>
+  <a href="#why-i-built-this">Why</a> &middot;
+  <a href="#what-it-does">What</a> &middot;
+  <a href="#getting-started">Get Started</a> &middot;
+  <a href="#how-it-works">How It Works</a> &middot;
+  <a href="#what-this-is--what-it-isnt">Limitations</a> &middot;
+  <a href="#contributing">Contribute</a>
 </p>
 
 ---
@@ -26,7 +28,7 @@ I'm not a security expert. I'm a builder, just like you. But I know enough to be
 
 So I built myself a sentry.
 
-**Skill Sentry scans the code so you don't have to.** It reads every file, checks for dangerous patterns, and gives you a simple risk score — all without ever executing a single line of the scanned code.
+**Skill Sentry scans the code so you don't have to.** It reads every file, checks for dangerous patterns, and gives you a risk score — all without ever executing a single line of the scanned code.
 
 You're welcome to use it. I hope it helps keep us safe, and lets us keep enjoying building beautiful things with Claude.
 
@@ -36,7 +38,7 @@ You're welcome to use it. I hope it helps keep us safe, and lets us keep enjoyin
 
 ## What It Does
 
-**Skill Sentry is a zero-cost, open-source security dashboard for the Claude MCP ecosystem.**
+**Skill Sentry is a zero-cost, open-source security scanner for the Claude MCP ecosystem.**
 
 It doesn't matter if it's called a "Skill" or an "MCP Server" — if it has a `package.json`, Skill Sentry will scan it.
 
@@ -52,29 +54,112 @@ It doesn't matter if it's called a "Skill" or an "MCP Server" — if it has a `p
 
 ### Risk Score
 
-Every skill gets a score from **0** (verified safe) to **100** (maximum threat).
+Every skill gets a score from **0** (no known risks) to **100** (maximum threat).
 
 ```
 Risk Score = min(100, sum of all finding scores)
 ```
 
-- **0** = Verified Safe (no dangerous patterns found)
+- **0** = No known risk patterns detected
 - **1-19** = Low risk
 - **20-49** = Medium risk (review findings)
 - **50-79** = High risk (proceed with caution)
 - **80-100** = Critical (do not install)
 
+### Verified Publishers & Typosquat Detection
+
+Known legitimate organizations (Anthropic, Stripe, GitHub, Supabase, etc.) are recognized as **verified publishers**. Their findings are shown but explained as expected behavior — Stripe's toolkit *should* read `STRIPE_API_KEY`.
+
+If a repo owner looks suspiciously similar to a verified publisher (e.g., `stripee` vs `stripe`), the scanner flags it as a **potential typosquat** — someone impersonating a trusted brand.
+
 ---
 
 ## Features
 
-- **Browse** — Searchable dashboard of all audited MCP skills
-- **Submit** — Paste any GitHub URL to trigger a security scan
-- **Report** — Detailed per-repo audit with findings linked to source code lines
+- **npm CLI** — `npx skill-sentry <url>` scans from any terminal, no install needed
+- **Web Dashboard** — Searchable table of all audited skills with interactive filters
+- **Instant Scan** — Paste a URL, get results in 5-15 seconds (scans run server-side)
 - **Plain English** — Every finding explained in human language, not security jargon
-- **Verdict** — Clear "Should I install this?" recommendation on every report
-- **Auto-Discover** — Daily scraper finds new MCP repos automatically
+- **Verdict** — Clear recommendation: "No known risks" / "Review carefully" / "Do not install"
+- **CI Flags** — `--strict` and `--threshold` for automated pipeline gating
+- **Auto-Discover** — Daily scraper finds new MCP repos via GitHub API
 - **Zero Cost** — Runs entirely on Vercel free tier + GitHub Actions
+
+---
+
+## Getting Started
+
+### Scan from Your Terminal (no install needed)
+
+```bash
+npx skill-sentry https://github.com/owner/repo
+```
+
+You'll see a colored report with a plain English verdict:
+
+```
+  ┌─────────────────────────────────────┐
+  │       SKILL SENTRY  v0.2            │
+  │  Security scanner for Claude skills  │
+  └─────────────────────────────────────┘
+
+  Scanning: https://github.com/owner/repo
+  Cloning and analyzing...
+
+  ════════════════════════════════════════
+   NO KNOWN RISK PATTERNS DETECTED
+  ════════════════════════════════════════
+
+  Risk Score:  0/100
+  Files:       42 scanned
+  Findings:    0 issues
+
+  ✓ No known risk patterns detected
+  All 42 files passed 11 security checks.
+```
+
+**Flags:**
+- `--json` — Output raw JSON (for piping to other tools or CI)
+- `--strict` — Exit 1 if any HIGH or CRITICAL finding
+- `--threshold <N>` — Exit 1 if risk score >= N (0-100)
+- `--help` — Show usage
+
+**Exit codes** (useful for CI/CD):
+- `0` = no findings
+- `1` = findings detected (or threshold exceeded)
+- `2` = error (invalid URL, network issue)
+
+**Use in CI:**
+```bash
+# Block PRs that add dangerous MCP dependencies
+npx skill-sentry https://github.com/owner/new-skill --strict || exit 1
+
+# Custom threshold — fail if risk score 50 or above
+npx skill-sentry https://github.com/owner/new-skill --threshold 50
+```
+
+### Use the Dashboard
+
+Visit the live dashboard and paste any GitHub URL into the submit form. Results appear inline in 5-15 seconds — no page navigation, no waiting for background jobs.
+
+### Run Locally
+
+```bash
+git clone https://github.com/mamabearmehmi-hub/skill-sentry.git
+cd skill-sentry
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
+
+### Run the Tests
+
+```bash
+npm test
+```
+
+20 integration tests verify every security rule against real fixture files.
 
 ---
 
@@ -85,20 +170,20 @@ Risk Score = min(100, sum of all finding scores)
 Someone just shared a cool Claude skill in Slack. Before you run `npx` or `npm install`:
 
 1. Copy the GitHub URL
-2. Paste it into the **Submit a Skill for Audit** box on the dashboard
-3. Wait 1-2 minutes for the scan to complete
-4. Check the result
+2. Paste it into the **Submit a Skill for Audit** box
+3. Results appear in 5-15 seconds — right there on the page
+4. Read the verdict
 
 ### Step 2: Read the Verdict
 
-Every report page gives you a clear answer at the top:
-
 | What You See | What It Means | What To Do |
 |:---:|---|---|
-| **"Looks safe to install"** | We scanned every file and found nothing dangerous | Go ahead and install |
-| **"Some concerns found"** | Minor suspicious patterns detected | Read the findings, use your judgment |
-| **"High risk — review carefully"** | Multiple dangerous patterns, like reading your tokens AND running commands | Only install if you trust the author AND understand why it needs those permissions |
-| **"Do not install"** | Critical threats found — auto-executing scripts, credential theft, or SSH key access | Walk away. Do not install this. Tell others. |
+| **"No known risk patterns detected"** | None of our 11 detection rules matched | Lower risk — but always review code from unfamiliar authors |
+| **"Verified publisher"** | Known org (Stripe, Anthropic, etc.) — findings are expected | Review findings, but these are typically normal for the tool type |
+| **"Some concerns found"** | Suspicious patterns detected | Read the findings, use your judgment |
+| **"High risk — review carefully"** | Multiple dangerous patterns | Only install if you trust the author AND understand why it needs those permissions |
+| **"Do not install"** | Critical threats — auto-executing scripts, credential theft, or SSH key access | Walk away. Do not install this. Tell others. |
+| **"Looks like a fake account"** | Repo owner is suspiciously similar to a verified publisher (typosquat) | Very likely an impersonation attack. Do not install. |
 
 ### Step 3: Understand the Findings
 
@@ -106,37 +191,13 @@ Each finding is explained in plain English — no security degree needed:
 
 > **Caution.** This package can open a terminal on your computer and run any command it wants — with YOUR permissions. It could delete files, install malware, or steal your data without you seeing anything happen.
 
-If you want the technical details, click **"Technical details"** to expand. But the plain English version tells you everything you need to make a decision.
-
-### Step 4: Share the Report
-
-Every report page has a unique URL. If you find something dangerous:
-- Share the link with your team
-- Post it in the community channel where the skill was recommended
-- Help others avoid the same risk
-
-### The Dashboard at a Glance
-
-```
-┌─ Stats ──────────────────────────────────────────┐
-│  24 Scanned  │  17 Safe  │  Avg Risk: 35  │  6 Critical │
-├─ Submit ─────────────────────────────────────────┤
-│  [Paste any GitHub URL here...] [Scan Skill]     │
-├─ Results ────────────────────────────────────────┤
-│  Name          Risk    Findings                   │
-│  toolhive      ✅ 0    ████████████ Clean         │
-│  plugin-kit-ai 🔴 100  ▓▓▓▒▒░░░░░░ 7 issues      │
-│  mcp-server-js ✅ 0    ████████████ Clean         │
-│  octoweb       🔴 100  ▓▓▓▓▓▓▓▓▓▒░ 57 issues     │
-└──────────────────────────────────────────────────┘
-  Click any row → full report with plain English explanations
-```
+Click **"Technical details"** to expand the full breakdown with file paths and line numbers.
 
 ---
 
 ## Auto-Discovery: The Registry Grows Itself
 
-You don't have to manually submit every skill. Skill Sentry has a **daily automated scraper** that:
+Skill Sentry has a **daily automated scraper** that:
 
 1. **Runs every day at 06:00 UTC** via GitHub Actions
 2. **Searches GitHub** for repos tagged `mcp-server`, `mcp-tool`, `claude-skill`, and `model-context-protocol`
@@ -145,14 +206,9 @@ You don't have to manually submit every skill. Skill Sentry has a **daily automa
 5. **Commits results** to the registry automatically
 6. **Vercel auto-redeploys** — new skills appear on the dashboard within minutes
 
-This means the registry grows every single day without anyone lifting a finger. The community also feeds it through the Submit button — creating a **virtuous cycle** where the more people use it, the more comprehensive it becomes.
+The registry grows every single day without anyone lifting a finger. The community also feeds it through the Submit button — creating a growth cycle where the more people use it, the more comprehensive it becomes.
 
-**Current registry:** 40+ skills scanned and growing daily.
-
-Want to trigger it manually? If you're a contributor:
-```bash
-gh workflow run "Daily Scrape" --repo mamabearmehmi-hub/skill-sentry
-```
+**Current registry:** 128+ skills scanned and growing daily.
 
 ---
 
@@ -166,9 +222,9 @@ Good. Keep using them. Skill Sentry fills a different gap.
 | **Snyk / Checkmarx** | After `npm install` | Known CVEs in your dependency tree | The malicious `postinstall` already ran by this point |
 | **Azure Defender** | At runtime | Threats in deployed infrastructure | Doesn't cover developer machines or local `npx` |
 | **Ivanti App Control** | At the endpoint | Whitelists/blocks executables and scripts on managed devices | Doesn't understand npm packages — blocks by binary, not by intent. A `node.exe` running a malicious skill looks the same as a safe one |
-| **Skill Sentry** | **Before you install** | **Malicious intent in packages you're ABOUT to trust** | **This is the gap** |
+| **Skill Sentry** | **Before you install** | **Dangerous patterns in packages you're ABOUT to trust** | **This is the gap** |
 
-Each of these tools is excellent at what it does. But look at the timeline of a developer installing a Claude skill:
+Here's the timeline of someone installing a Claude skill:
 
 ```
 1. Someone shares a skill URL in Slack
@@ -180,138 +236,60 @@ Each of these tools is excellent at what it does. But look at the timeline of a 
 7. App deploys to production                   ← NOW Azure Defender can see it
 ```
 
-Steps 3-4 are the kill zone. The malicious code runs **before any enterprise tool gets a chance to look at it.** Ivanti sees `node.exe` executing — which is whitelisted because every developer needs Node. Snyk sees the package — but only after it already ran its `postinstall`. SonarQube sees the code — but only after it's committed.
+Steps 3-4 are the kill zone. The malicious code runs **before any enterprise tool gets a chance to look at it.**
 
 **Skill Sentry is the only check at step 2.** Before the download. Before the execution. Before any damage.
-
-It's not a replacement for your security stack. It's the missing first step none of them were designed to cover — because the MCP ecosystem is new, and community-built tools installed directly from GitHub didn't exist when those tools were built.
-
----
-
-## Getting Started
-
-### Use the Dashboard
-
-Visit the live site and paste any GitHub URL into the submit form. You'll get a security report in minutes.
-
-### Run Locally
-
-```bash
-# Clone the repo
-git clone https://github.com/mamabearmehmi-hub/skill-sentry.git
-cd skill-sentry
-
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
-
-### Scan from Your Terminal (no install needed)
-
-```bash
-npx skill-sentry https://github.com/owner/repo
-```
-
-You'll see a colored report with a plain English verdict:
-
-```
-  ┌─────────────────────────────────────┐
-  │       SKILL SENTRY  v0.1            │
-  │  Security scanner for Claude skills  │
-  └─────────────────────────────────────┘
-
-  Scanning: https://github.com/owner/repo
-  Cloning and analyzing...
-
-  ════════════════════════════════════════
-   LOOKS SAFE TO INSTALL
-  ════════════════════════════════════════
-
-  Risk Score:  0/100
-  Files:       42 scanned
-  Findings:    0 issues
-
-  ✓ No security threats detected
-  All 42 files passed 11 security checks.
-```
-
-**Flags:**
-- `--json` — Output raw JSON (for piping to other tools or CI)
-- `--help` — Show usage
-
-**Exit codes** (useful for CI/CD):
-- `0` = safe (no findings)
-- `1` = findings detected
-- `2` = error (invalid URL, network issue)
-
-**Use in CI:**
-```bash
-# Block PRs that add dangerous MCP dependencies
-npx skill-sentry https://github.com/owner/new-skill || exit 1
-```
-
-### Run the Tests
-
-```bash
-npm test
-```
-
-20 integration tests verify every security rule against real fixture files.
 
 ---
 
 ## How It Works
 
 ```
-                    ┌─────────────────┐
-                    │   You paste a   │
-                    │   GitHub URL    │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  /api/submit    │
-                    │  (Next.js API)  │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  GitHub Action  │
-                    │  (repo dispatch)│
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  auditor.ts     │
-                    │  (static scan)  │
-                    │  NO CODE EXEC   │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │ registry.json   │
-                    │ (git-as-a-db)   │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  Dashboard      │
-                    │  shows results  │
-                    └─────────────────┘
+Terminal or Dashboard
+        │
+        ▼
+  ┌──────────────┐
+  │ auditRepo()  │  Stateless function: URL in → JSON out
+  └──────┬───────┘
+         │
+  ┌──────▼───────┐
+  │  Clone repo  │  git clone --depth 1 (local)
+  │  or tarball  │  GitHub API download (Vercel/npx)
+  └──────┬───────┘
+         │
+  ┌──────▼───────┐
+  │ Scan files   │  11 regex rules × matching file targets
+  │ (static)     │  Records: file, line, match, severity
+  └──────┬───────┘
+         │
+  ┌──────▼───────┐
+  │  Risk score  │  min(100, sum of finding scores)
+  │  + verdict   │  Checks verified publishers + typosquats
+  └──────┬───────┘
+         │
+  ┌──────▼───────┐
+  │   Cleanup    │  Temp directory deleted (always, even on error)
+  └──────────────┘
 ```
 
-**Key principle:** The scanner **never executes** the code it's analyzing. It clones the repo with `git clone --depth 1`, reads the files, runs regex patterns, and deletes the clone. That's it. Static analysis only.
+**Key principle:** The scanner **never executes** the code it's analyzing. It downloads the files, reads them, runs regex patterns, and deletes them. That's it. Static analysis only.
 
 ### Architecture
 
 | Layer | Technology | Cost |
 |-------|-----------|------|
+| CLI | TypeScript + tsx | Free (npm) |
 | Frontend | Next.js 15, Tailwind CSS, Shadcn UI | Free (Vercel) |
 | Database | `registry.json` committed to git | Free |
-| Scanner | TypeScript + regex (Node.js built-ins) | Free |
+| Scanner | TypeScript + regex (Node.js built-ins only) | Free |
 | Automation | GitHub Actions (3 workflows) | Free (public repo) |
-| API | Octokit for `repository_dispatch` | Free |
+| npm package | 22.9KB, 2 production deps (tar, tsx) | Free |
 
 **Total cost to run: $0/month.**
+
+### npm Package — Lightweight by Design
+
+The CLI ships with only **2 production dependencies** (tar + tsx). The web dashboard dependencies (React, Next.js, Tailwind) are dev-only and never downloaded when you run `npx skill-sentry`. Total install size for CLI users: ~14MB.
 
 ---
 
@@ -319,37 +297,42 @@ npm test
 
 ```
 skill-sentry/
-├── app/                          # Next.js App Router
+├── bin/                          # npm CLI entry point
+│   ├── cli.js                    # Node wrapper (loads tsx)
+│   └── skill-sentry.ts           # CLI with colored output + flags
+├── app/                          # Next.js App Router (dashboard)
 │   ├── page.tsx                  # Dashboard
-│   ├── api/submit/route.ts       # Submit → GitHub dispatch
+│   ├── api/submit/route.ts       # Scan API (runs auditor directly)
+│   ├── api/check/route.ts        # Registry lookup API
 │   └── repo/[owner]/[name]/      # Per-repo report pages
-├── components/security/          # UI components
-│   ├── SkillsTable.tsx           # Searchable skills table
-│   ├── SubmitSkillForm.tsx       # Submit URL form
+├── components/security/          # Dashboard UI components
+│   ├── DashboardClient.tsx       # Interactive stats + ticker + table
+│   ├── SkillsTable.tsx           # Searchable skills table (desktop + mobile)
+│   ├── SubmitSkillForm.tsx       # Submit form with inline results
 │   ├── RiskBadge.tsx             # Color-coded risk scores
-│   ├── FindingCard.tsx           # Individual finding display
+│   ├── FindingCard.tsx           # Finding with plain English + source link
 │   ├── ThreatBar.tsx             # Severity distribution bar
-│   ├── StatsHeader.tsx           # Aggregate statistics
 │   ├── SearchFilter.tsx          # Search + filter controls
 │   └── ReportHeader.tsx          # Report page header
-├── scripts/                      # Backend scripts
-│   ├── auditor.ts                # Core: auditRepo(url) → JSON
-│   ├── clone-repo.ts             # Shallow git clone + cleanup
-│   ├── scan-files.ts             # Regex scanner engine
-│   ├── cli.ts                    # CLI entry point
+├── scripts/                      # Scanner engine
+│   ├── auditor.ts                # Core: auditRepo(url) → RegistryEntry
+│   ├── clone-repo.ts             # Git clone or tarball download + cleanup
+│   ├── scan-files.ts             # File walker + regex matcher
+│   ├── cli.ts                    # JSON CLI (used by GitHub Actions)
 │   ├── scraper.ts                # GitHub topic discovery
 │   └── update-registry.ts        # Registry upsert
-├── lib/                          # Shared types & constants
+├── lib/                          # Shared types & logic
 │   ├── types.ts                  # TypeScript data contract
-│   ├── constants.ts              # 11 security heuristic rules
+│   ├── constants.ts              # 11 security rules with plain English
 │   ├── registry.ts               # Server-side registry helpers
-│   └── registry-utils.ts         # Client-safe utilities
+│   ├── registry-utils.ts         # Client-safe: verdicts, impact, search
+│   └── verified-publishers.ts    # Publisher whitelist + typosquat detection
 ├── .github/workflows/            # GitHub Actions
-│   ├── reusable-auditor.yml      # Core scan workflow
-│   ├── on-demand-scan.yml        # Submit button trigger
-│   └── scheduled-scrape.yml      # Daily discovery cron
+│   ├── reusable-auditor.yml      # Core scan workflow (called by others)
+│   ├── on-demand-scan.yml        # repository_dispatch trigger
+│   └── scheduled-scrape.yml      # Daily discovery cron (06:00 UTC)
 └── public/data/
-    └── registry.json             # The "database"
+    └── registry.json             # The "database" (128+ entries)
 ```
 
 ---
@@ -367,6 +350,7 @@ Skill Sentry is a **first-pass security scanner**. It's a smoke detector, not a 
 - Credential harvesting (`process.env.GITHUB_TOKEN`, secrets, API keys)
 - `eval()` usage (arbitrary code execution)
 - Obfuscated Base64 payloads, unpinned dependencies, suspicious network targets
+- Typosquatting (fake accounts mimicking known publishers)
 
 **What it cannot catch:**
 - Obfuscated or encoded malicious code (e.g., building `eval` from string concatenation)
@@ -376,13 +360,23 @@ Skill Sentry is a **first-pass security scanner**. It's a smoke detector, not a 
 - Zero-day exploits in legitimate dependencies
 
 **What this means for you:**
-- If Skill Sentry says **"safe"** → the obvious threats aren't there, but always use your judgment
+- A score of **0** means none of our detection rules matched — not that the package is guaranteed safe
 - If Skill Sentry says **"do not install"** → take it seriously, something is genuinely wrong
 - For critical production systems → combine this with Snyk, SonarQube, Checkmarx, and manual code review
 
-Most npm supply chain attacks are lazy — a `postinstall` script that `curl`s a payload is the #1 vector. Skill Sentry catches those in seconds. That's 90% of the risk addressed in 30 seconds. The remaining 10% is where enterprise tools and manual review come in.
+Most npm supply chain attacks are lazy — a `postinstall` script that `curl`s a payload is the #1 vector. Skill Sentry catches those in seconds. That's the most common attack addressed in 30 seconds. The long tail of sophisticated attacks is where enterprise tools and manual review come in.
 
 **Being honest about limitations builds more trust than pretending to be perfect.** I'd rather you know exactly what this tool does than find out the hard way what it doesn't.
+
+---
+
+## How I Built This
+
+I built Skill Sentry in one session using Claude Code (Opus). The full build process — from pain point to published npm package — is documented step by step:
+
+**[Read the full build walkthrough →](docs/HOW-I-BUILT-THIS.md)**
+
+It covers the architecture decisions, what went wrong and how I fixed it, the community feedback that made it better, and principles for building your own tools.
 
 ---
 
@@ -404,9 +398,9 @@ I built Skill Sentry because I needed it. If you find it useful, I'd love your h
 ### What I'd Love Help With
 
 - **More security rules** — See patterns I missed? Add them to `lib/constants.ts`
+- **AST parsing** — Moving beyond regex to reduce false positives
 - **Better regex** — Some rules might have false positives/negatives
 - **UI improvements** — The dashboard can always look better
-- **Documentation** — Help others understand how to use and contribute
 - **Testing** — More edge cases, more fixtures, more confidence
 - **Accessibility** — Make the dashboard usable for everyone
 
@@ -422,8 +416,9 @@ I built Skill Sentry because I needed it. If you find it useful, I'd love your h
 
 The `main` branch is protected. All changes go through pull requests with:
 - At least 1 review required
-- All tests must pass
-- Build must succeed
+- Stale reviews dismissed on new pushes
+- No force pushes
+- No branch deletion
 
 This isn't bureaucracy — it's a security project. We practice what we preach.
 
@@ -442,7 +437,7 @@ This isn't bureaucracy — it's a security project. We practice what we preach.
 Create a `.env.local` file:
 
 ```env
-# Required for the Submit button to trigger GitHub Actions
+# Optional — only needed for the web dashboard's submit button
 GH_TOKEN=your_github_personal_access_token
 
 # Optional — defaults to this repo
@@ -450,10 +445,7 @@ GITHUB_OWNER=mamabearmehmi-hub
 GITHUB_REPO=skill-sentry
 ```
 
-To create a `GH_TOKEN`:
-1. Go to GitHub → Settings → Developer Settings → Personal Access Tokens → Tokens (classic)
-2. Generate a new token with `repo` and `workflow` scopes
-3. Never commit this token to the repo
+The CLI (`npx skill-sentry`) does not require any environment variables. It uses `git clone` locally or the GitHub API tarball download (with optional `GH_TOKEN` for higher rate limits).
 
 ---
 
@@ -464,7 +456,7 @@ To create a `GH_TOKEN`:
     <td align="center">
       <a href="https://github.com/mamabearmehmi-hub">
         <br />
-        <sub><b>Mehmi</b></sub>
+        <sub><b>V</b></sub>
       </a>
       <br />
       <sub>Creator & Maintainer</sub>
@@ -488,5 +480,5 @@ MIT License — use it, fork it, improve it. Just keep building safely.
 <p align="center">
   <strong>Static analysis only — no code executed. Ever.</strong>
   <br />
-  <sub>Built with care by someone who is a Claude Builder just wanted to feel safe clicking install.</sub>
+  <sub>Built with care by a Claude builder who just wanted to feel safe clicking install.</sub>
 </p>
