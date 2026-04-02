@@ -8,7 +8,7 @@ Build a zero-cost, open-source security dashboard for the Claude MCP ecosystem. 
 
 **v0.1 Initial Release** (v0.1.0)
 Status: In progress
-Phases: 5 of 6 complete
+Phases: 6 of 6 complete
 
 ## Phases
 
@@ -23,7 +23,7 @@ Phases: 5 of 6 complete
 | 3 | GitHub Actions & Automation | 2 | Complete | 2026-04-02 |
 | 4 | Dashboard UI | 1 | Complete | 2026-04-02 |
 | 5 | Submit Button & Dispatch Bridge | 1 | Complete | 2026-04-02 |
-| 6 | Report Pages & Polish | 2 | Not started | - |
+| 6 | Report Pages & Polish | 1 | Complete | 2026-04-02 |
 
 ## Phase Details
 
@@ -123,8 +123,7 @@ Phases: 5 of 6 complete
 - SEO metadata for sharing audit reports
 
 **Plans:**
-- [ ] 06-01: Report page with finding cards and source links
-- [ ] 06-02: SEO metadata + sharing polish + launch readiness
+- [x] 06-01: Report pages + finding cards + source links + SEO (consolidated)
 
 ---
 *Roadmap created: 2026-04-02*

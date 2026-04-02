@@ -5,75 +5,76 @@
 See: .paul/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Safely vet your Claude skills before installing them — without running any code.
-**Current focus:** Phase 5 complete — ready for Phase 6 (Report Pages — FINAL)
+**Current focus:** MILESTONE v0.1 COMPLETE
 
 ## Current Position
 
-Milestone: v0.1 Initial Release
-Phase: 5 of 6 (Submit Button & Dispatch Bridge) — Complete
-Plan: 05-01 complete, pushed to GitHub
-Status: Loop closed, ready for Phase 6 PLAN
-Last activity: 2026-04-02 — Phase 5 complete
+Milestone: v0.1 Initial Release — COMPLETE
+Phase: 6 of 6 — All phases complete
+Status: Milestone shipped, pushed to GitHub
+Last activity: 2026-04-02 — Phase 6 complete, v0.1 launch-ready
 
 Progress:
-- Milestone: [████████░░] 83%
-- Phase 1-5: Complete
-- Phase 6: Pending (FINAL)
+- Milestone: [██████████] 100%
+- All 6 phases complete
+- All 8 plans executed
+- 20/20 tests passing
 
 ## Loop Position
 
-Current loop state:
-```
-PLAN ──▶ APPLY ──▶ UNIFY
-  ✓        ✓        ✓     [Loop complete - ready for next PLAN]
-```
+All loops closed.
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: ~10min
+- Total plans completed: 8
+- Total estimated time: ~100min
 
 **By Phase:**
 
-| Phase | Plans | Total Time | Avg/Plan |
-|-------|-------|------------|----------|
-| 01-registry-scaffolding | 1/1 | ~15min | ~15min |
-| 02-security-auditor-engine | 2/2 | ~18min | ~9min |
-| 03-github-actions-automation | 2/2 | ~15min | ~7min |
-| 04-dashboard-ui | 1/1 | ~15min | ~15min |
-| 05-submit-dispatch-bridge | 1/1 | ~10min | ~10min |
+| Phase | Plans | Approx Time |
+|-------|-------|-------------|
+| 01-registry-scaffolding | 1 | ~15min |
+| 02-security-auditor-engine | 2 | ~18min |
+| 03-github-actions-automation | 2 | ~15min |
+| 04-dashboard-ui | 1 | ~15min |
+| 05-submit-dispatch-bridge | 1 | ~10min |
+| 06-report-pages-polish | 1 | ~12min |
 
-## Accumulated Context
+## What Was Built
 
-### Decisions
-| Decision | Phase | Impact |
-|----------|-------|--------|
-| Vercel + Git-as-a-DB + GitHub Actions | Init | Zero-cost architecture locked in |
-| Static analysis only | Init | Security-first — never execute scanned code |
-| Stateless auditor design | Phase 2 | URL in → JSON out, reusable by scraper + submit |
-| vitest for testing | Phase 2 | Lightweight, fast, native TS support |
-| git-auto-commit-action@v5 | Phase 3 | Commits only registry.json after scans |
-| Dark industrial aesthetic | Phase 4 | JetBrains Mono + Outfit, teal/red threat palette |
-| Octokit for dispatch | Phase 5 | Reliable typed GitHub API client |
-| No CAPTCHA on submit | Phase 5 | Zero cost constraint, can add later |
+| Feature | Status |
+|---------|--------|
+| Next.js 15 + Tailwind + Shadcn scaffold | Shipped |
+| TypeScript data contract (6 types) | Shipped |
+| 11 security heuristic rules | Shipped |
+| Stateless auditor engine (auditRepo) | Shipped |
+| CLI runner (npx tsx scripts/cli.ts) | Shipped |
+| 20 integration tests (vitest) | Shipped |
+| Reusable auditor GitHub Action | Shipped |
+| On-demand scan (repository_dispatch) | Shipped |
+| Daily scraper (cron + topic search) | Shipped |
+| Registry update script (upsert) | Shipped |
+| Dark industrial dashboard UI | Shipped |
+| Submit skill form + API route | Shipped |
+| Per-repo report pages with findings | Shipped |
+| SEO metadata for sharing | Shipped |
 
-### Deferred Issues
+## Deferred Issues
 
-| Issue | Origin | Effort | Revisit |
-|-------|--------|--------|---------|
-| /review skill not invoked | Phase 1-5 | S | Before launch |
-| E2E submit testing | Phase 5 | M | After deploy with live token |
+| Issue | Effort | Notes |
+|-------|--------|-------|
+| /review skill not invoked | S | Accumulated — recommend before v0.2 |
+| E2E submit testing | M | Needs deployed GH_TOKEN |
+| Rate limiting on /api/submit | S | Add if abuse occurs |
 
-### Blockers/Concerns
-None.
+## Next Steps
 
-## Session Continuity
-
-Last session: 2026-04-02
-Stopped at: Phase 5 complete — pushed to GitHub
-Next action: Run /paul:plan for Phase 6 (Report Pages & Polish — FINAL PHASE)
-Resume file: .paul/phases/05-submit-dispatch-bridge/05-01-SUMMARY.md
+1. Deploy to Vercel (connect GitHub repo)
+2. Set GH_TOKEN in Vercel environment variables
+3. Set GH_TOKEN in GitHub repo Secrets
+4. Trigger first real scan via submit button
+5. Share on Claude community channels
 
 ---
-*STATE.md — Updated after every significant action*
+*STATE.md — v0.1 MILESTONE COMPLETE — 2026-04-02*
