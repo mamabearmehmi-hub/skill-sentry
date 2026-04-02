@@ -148,12 +148,12 @@ export function getVerdict(entry: RegistryEntry): {
     return {
       recommendation: "safe",
       headline: publisher
-        ? `Verified safe — from ${publisher.name}`
-        : "Looks safe to install",
+        ? `No known risks detected — from ${publisher.name}`
+        : "No known risk patterns detected",
       explanation:
-        "We scanned every file in this package and found no dangerous patterns. " +
-        "No hidden scripts, no credential theft, no suspicious code. " +
-        "You can install this with confidence.",
+        "We scanned every file in this package against our rule set and found no matches. " +
+        "This does not guarantee safety — it means none of our current detection patterns triggered. " +
+        "Always review code from unfamiliar authors before installing.",
     };
   }
 

@@ -114,7 +114,7 @@ export function ReportHeader({ entry }: ReportHeaderProps) {
           <div className="mt-5 flex items-center gap-2 rounded-md bg-[#00e5a0]/10 border border-[#00e5a0]/20 px-4 py-2.5">
             <ShieldCheck className="h-5 w-5 text-[#00e5a0]" />
             <span className="text-sm font-semibold text-[#00e5a0]">
-              Verified Safe — no security threats detected
+              No known risk patterns detected
             </span>
           </div>
         )}

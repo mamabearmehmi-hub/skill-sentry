@@ -212,12 +212,12 @@ export default async function ReportPage({ params }: ReportPageProps) {
             <div className="rounded-lg border border-[#00e5a0]/20 bg-[#00e5a0]/5 p-8 text-center">
               <ShieldCheck className="h-12 w-12 text-[#00e5a0] mx-auto mb-3" />
               <h2 className="text-lg font-mono font-semibold text-[#00e5a0] mb-1">
-                No Security Threats Detected
+                No Known Risk Patterns Detected
               </h2>
               <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                We scanned every file in this package and checked for 11
-                different types of security threats. Nothing dangerous was
-                found. This package looks safe to install.
+                We scanned every file in this package against 11 detection
+                rules and found no matches. This does not guarantee safety —
+                always review code from unfamiliar authors before installing.
               </p>
             </div>
           )}

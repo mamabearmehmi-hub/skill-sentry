@@ -23,22 +23,6 @@ const SKIP_DIRS = new Set([
   ".github",
 ]);
 
-/** Files to skip — security tool configs that would false-positive on their own rules. */
-const SKIP_FILES = new Set([
-  "constants.ts",
-  "constants.js",
-]);
-
-/** File path patterns to skip — tool/build infrastructure, not application code. */
-const SKIP_PATH_PATTERNS = [
-  /^\./, // dotfiles at root
-  /eslint/i,
-  /prettier/i,
-  /vitest\.config/,
-  /jest\.config/,
-  /tsconfig/,
-];
-
 /** Maximum file size to scan (1MB). Skip binary/large files. */
 const MAX_FILE_SIZE = 1_048_576;
 
@@ -83,10 +67,7 @@ function walkDirectory(dir: string, rootDir: string): string[] {
       files.push(...walkDirectory(fullPath, rootDir));
     } else if (stat.isFile()) {
       if (stat.size > MAX_FILE_SIZE) continue;
-      if (SKIP_FILES.has(entry)) continue;
-      const relPath = relative(rootDir, fullPath);
-      if (SKIP_PATH_PATTERNS.some((p) => p.test(relPath))) continue;
-      files.push(relPath);
+      files.push(relative(rootDir, fullPath));
     }
   }
 

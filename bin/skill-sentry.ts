@@ -69,8 +69,10 @@ function printUsage() {
   console.log();
   console.log(`  ${c.bold}Flags:${c.reset}`);
   console.log();
-  console.log(`    ${c.cyan}--json${c.reset}    Output raw JSON (for piping/CI)`);
-  console.log(`    ${c.cyan}--help${c.reset}    Show this message`);
+  console.log(`    ${c.cyan}--json${c.reset}           Output raw JSON (for piping/CI)`);
+  console.log(`    ${c.cyan}--strict${c.reset}         Exit 1 if any HIGH or CRITICAL finding`);
+  console.log(`    ${c.cyan}--threshold${c.reset} ${c.dim}<N>${c.reset}  Exit 1 if risk score >= N (0-100)`);
+  console.log(`    ${c.cyan}--help${c.reset}           Show this message`);
   console.log();
   console.log(
     `  ${c.dim}Static analysis only — no code is ever executed.${c.reset}`
@@ -82,11 +84,29 @@ async function main() {
   const args = process.argv.slice(2);
   const jsonMode = args.includes("--json");
   const helpMode = args.includes("--help") || args.includes("-h");
-  const url = args.find((a) => !a.startsWith("--") && !a.startsWith("-"));
+  const strictMode = args.includes("--strict");
+  const thresholdIdx = args.indexOf("--threshold");
+  const threshold = thresholdIdx !== -1 ? parseInt(args[thresholdIdx + 1], 10) : null;
+
+  // Find URL — skip flags and flag values
+  const flagsWithValues = new Set(["--threshold"]);
+  const url = args.find(
+    (a, i) =>
+      !a.startsWith("--") &&
+      !a.startsWith("-") &&
+      !(i > 0 && flagsWithValues.has(args[i - 1]))
+  );
 
   if (helpMode || !url) {
     printUsage();
     process.exit(url ? 0 : 1);
+  }
+
+  function getExitCode(result: { riskScore: number; totalFindings: { critical: number; high: number } }): number {
+    if (strictMode && (result.totalFindings.critical > 0 || result.totalFindings.high > 0)) return 1;
+    if (threshold !== null && result.riskScore >= threshold) return 1;
+    if (!strictMode && threshold === null && result.riskScore > 0) return 1;
+    return 0;
   }
 
   if (jsonMode) {
@@ -94,7 +114,7 @@ async function main() {
     try {
       const result = await auditRepo(url);
       console.log(JSON.stringify(result, null, 2));
-      process.exit(result.riskScore > 0 ? 1 : 0);
+      process.exit(getExitCode(result));
     } catch (error) {
       console.error(
         JSON.stringify({
@@ -187,7 +207,7 @@ async function main() {
       console.log(line());
       console.log();
       console.log(
-        `  ${c.green}${c.bold}✓ No security threats detected${c.reset}`
+        `  ${c.green}${c.bold}✓ No known risk patterns detected${c.reset}`
       );
       console.log(
         `  ${c.dim}All ${result.scannedFiles} files passed 11 security checks.${c.reset}`
@@ -210,8 +230,7 @@ async function main() {
     );
     console.log();
 
-    // Exit code: 0 = safe, 1 = findings (useful for CI)
-    process.exit(result.riskScore > 0 ? 1 : 0);
+    process.exit(getExitCode(result));
   } catch (error) {
     console.log();
     console.log(

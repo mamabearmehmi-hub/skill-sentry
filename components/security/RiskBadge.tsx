@@ -35,7 +35,7 @@ export function RiskBadge({ score, size = "md" }: RiskBadgeProps) {
         )}
       >
         <ShieldCheck className="h-3.5 w-3.5" />
-        Safe
+        Clear
       </span>
     );
   }
