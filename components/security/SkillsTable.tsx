@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
+import Link from "next/link";
 import { Star, ExternalLink, ArrowUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { RegistryEntry } from "@/lib/types";
@@ -122,11 +123,12 @@ export function SkillsTable({ entries }: SkillsTableProps) {
             {filtered.map((entry) => {
               const level = getRiskLevel(entry.riskScore);
               return (
-                <div
+                <Link
                   key={`${entry.owner}/${entry.name}`}
+                  href={`/repo/${entry.owner}/${entry.name}`}
                   className={cn(
                     "grid grid-cols-[1fr_2fr_100px_140px_80px] gap-4 px-5 py-4 items-center",
-                    "bg-[#12121a] transition-all duration-200 cursor-default",
+                    "bg-[#12121a] transition-all duration-200",
                     "hover:bg-[#161622]",
                     rowGlowStyles[level]
                   )}
@@ -160,7 +162,7 @@ export function SkillsTable({ entries }: SkillsTableProps) {
                     <Star className="h-3.5 w-3.5 fill-current opacity-40" />
                     <span className="font-mono tabular-nums">{entry.stars}</span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

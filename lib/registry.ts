@@ -1,7 +1,7 @@
 import "server-only";
 import { readFileSync } from "fs";
 import { resolve } from "path";
-import type { Registry } from "./types";
+import type { Registry, RegistryEntry } from "./types";
 import { RISK_THRESHOLDS } from "./constants";
 
 const REGISTRY_PATH = resolve(process.cwd(), "public/data/registry.json");
@@ -30,4 +30,17 @@ export function getStats(registry: Registry) {
   ).length;
 
   return { totalScanned, verifiedSafe, averageRisk, criticalCount };
+}
+
+/**
+ * Find a single registry entry by owner and repo name.
+ */
+export function getEntryBySlug(
+  owner: string,
+  name: string
+): RegistryEntry | undefined {
+  const registry = getRegistry();
+  return registry.entries.find(
+    (e) => e.owner === owner && e.name === name
+  );
 }
