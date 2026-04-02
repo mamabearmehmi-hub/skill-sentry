@@ -50,7 +50,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const verdictStyles = {
+const verdictStyles: Record<string, { bg: string; border: string; iconColor: string; headlineColor: string }> = {
   safe: {
     bg: "bg-[#00e5a0]/5",
     border: "border-[#00e5a0]/20",
@@ -75,13 +75,27 @@ const verdictStyles = {
     iconColor: "text-[#ff0040]",
     headlineColor: "text-[#ff0040]",
   },
+  "verified-publisher": {
+    bg: "bg-[#6366f1]/5",
+    border: "border-[#6366f1]/20",
+    iconColor: "text-[#818cf8]",
+    headlineColor: "text-[#818cf8]",
+  },
+  "typosquat-warning": {
+    bg: "bg-[#ff0040]/10",
+    border: "border-[#ff0040]/30",
+    iconColor: "text-[#ff0040]",
+    headlineColor: "text-[#ff0040]",
+  },
 };
 
-const verdictIcons = {
+const verdictIcons: Record<string, typeof CircleCheck> = {
   safe: CircleCheck,
   caution: ShieldAlert,
   danger: ShieldAlert,
   "do-not-install": ShieldX,
+  "verified-publisher": CircleCheck,
+  "typosquat-warning": ShieldX,
 };
 
 export default async function ReportPage({ params }: ReportPageProps) {

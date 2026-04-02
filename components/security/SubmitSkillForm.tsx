@@ -221,18 +221,22 @@ export function SubmitSkillForm() {
 function VerdictBanner({ entry }: { entry: RegistryEntry }) {
   const verdict = getVerdict(entry);
 
-  const styles = {
+  const styles: Record<string, { bg: string; text: string }> = {
     safe: { bg: "bg-[#00e5a0]/5", text: "text-[#00e5a0]" },
     caution: { bg: "bg-[#ff9a00]/5", text: "text-[#ff9a00]" },
     danger: { bg: "bg-[#ff2d55]/5", text: "text-[#ff2d55]" },
     "do-not-install": { bg: "bg-[#ff0040]/8", text: "text-[#ff0040]" },
+    "verified-publisher": { bg: "bg-[#6366f1]/5", text: "text-[#818cf8]" },
+    "typosquat-warning": { bg: "bg-[#ff0040]/10", text: "text-[#ff0040]" },
   };
 
-  const icons = {
+  const icons: Record<string, typeof ShieldCheck> = {
     safe: ShieldCheck,
     caution: ShieldAlert,
     danger: ShieldAlert,
     "do-not-install": ShieldX,
+    "verified-publisher": ShieldCheck,
+    "typosquat-warning": ShieldX,
   };
 
   const s = styles[verdict.recommendation];
