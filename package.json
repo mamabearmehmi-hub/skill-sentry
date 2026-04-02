@@ -1,6 +1,6 @@
 {
   "name": "skill-sentry",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Security scanner for Claude MCP skills — scan before you install",
   "author": "V (mamabearmehmi-hub)",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "supply-chain"
   ],
   "bin": {
-    "skill-sentry": "./bin/skill-sentry.ts"
+    "skill-sentry": "./bin/skill-sentry"
   },
   "scripts": {
     "dev": "next dev",
