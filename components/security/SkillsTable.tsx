@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
-import { Star, ExternalLink, ArrowUpDown, FlaskConical } from "lucide-react";
+import { Star, ExternalLink, ArrowUpDown, FlaskConical, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { RegistryEntry } from "@/lib/types";
 import {
@@ -31,22 +31,14 @@ const rowGlowStyles: Record<string, string> = {
 };
 
 const impactBadgeStyles: Record<string, string> = {
-  "High Impact":
-    "bg-[#ff0040]/10 text-[#ff0040] border-[#ff0040]/20",
-  Notable:
-    "bg-[#ff9a00]/10 text-[#ff9a00] border-[#ff9a00]/20",
-  Watch:
-    "bg-[#ff9a00]/8 text-[#ff9a00]/80 border-[#ff9a00]/15",
-  "Low Profile":
-    "bg-white/[0.03] text-muted-foreground/60 border-white/[0.06]",
-  "Widely Trusted":
-    "bg-[#00e5a0]/10 text-[#00e5a0] border-[#00e5a0]/20",
-  Trusted:
-    "bg-[#00e5a0]/8 text-[#00e5a0]/80 border-[#00e5a0]/15",
-  Safe:
-    "bg-[#00e5a0]/5 text-[#00e5a0]/60 border-[#00e5a0]/10",
-  Demo:
-    "bg-white/[0.03] text-muted-foreground/40 border-white/[0.04]",
+  "High Impact": "bg-[#ff0040]/10 text-[#ff0040] border-[#ff0040]/20",
+  Notable: "bg-[#ff9a00]/10 text-[#ff9a00] border-[#ff9a00]/20",
+  Watch: "bg-[#ff9a00]/8 text-[#ff9a00]/80 border-[#ff9a00]/15",
+  "Low Profile": "bg-white/[0.03] text-white/40 border-white/[0.06]",
+  "Widely Trusted": "bg-[#00e5a0]/10 text-[#00e5a0] border-[#00e5a0]/20",
+  Trusted: "bg-[#00e5a0]/8 text-[#00e5a0]/80 border-[#00e5a0]/15",
+  Safe: "bg-[#00e5a0]/5 text-[#00e5a0]/60 border-[#00e5a0]/10",
+  Demo: "bg-white/[0.03] text-white/30 border-white/[0.04]",
 };
 
 export function SkillsTable({ entries }: SkillsTableProps) {
@@ -75,7 +67,6 @@ export function SkillsTable({ entries }: SkillsTableProps) {
     if (safeOnly) {
       result = result.filter((e) => e.verifiedSafe);
     }
-    // Sort demos to bottom always, then by selected field
     result.sort((a, b) => {
       if (a.isDemo && !b.isDemo) return 1;
       if (!a.isDemo && b.isDemo) return -1;
@@ -84,11 +75,9 @@ export function SkillsTable({ entries }: SkillsTableProps) {
       if (typeof aVal === "number" && typeof bVal === "number") {
         return sortDir === "asc" ? aVal - bVal : bVal - aVal;
       }
-      const aStr = String(aVal);
-      const bStr = String(bVal);
       return sortDir === "asc"
-        ? aStr.localeCompare(bStr)
-        : bStr.localeCompare(aStr);
+        ? String(aVal).localeCompare(String(bVal))
+        : String(bVal).localeCompare(String(aVal));
     });
     return result;
   }, [entries, query, safeOnly, sortField, sortDir]);
@@ -96,20 +85,14 @@ export function SkillsTable({ entries }: SkillsTableProps) {
   function SortHeader({
     field,
     children,
-    className,
   }: {
     field: SortField;
     children: React.ReactNode;
-    className?: string;
   }) {
     return (
       <button
         onClick={() => toggleSort(field)}
-        className={cn(
-          "inline-flex items-center gap-1 text-xs font-mono font-semibold uppercase tracking-widest text-muted-foreground",
-          "hover:text-foreground transition-colors",
-          className
-        )}
+        className="inline-flex items-center gap-1 text-xs font-mono font-semibold uppercase tracking-widest text-white/50 hover:text-white transition-colors"
       >
         {children}
         <ArrowUpDown
@@ -126,26 +109,25 @@ export function SkillsTable({ entries }: SkillsTableProps) {
     <div className="space-y-4">
       <SearchFilter onSearch={handleSearch} onFilterSafe={handleFilterSafe} />
 
-      <div className="rounded-lg border border-white/[0.06] overflow-hidden">
-        {/* Table Header */}
+      {/* Desktop table */}
+      <div className="hidden md:block rounded-lg border border-white/[0.06] overflow-hidden">
         <div className="grid grid-cols-[minmax(140px,1.2fr)_2fr_90px_120px_70px_90px] gap-3 px-5 py-3 bg-[#0e0e16] border-b border-white/[0.04]">
           <SortHeader field="name">Skill</SortHeader>
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-muted-foreground">
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-white/50">
             Description
           </span>
           <SortHeader field="riskScore">Risk</SortHeader>
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-muted-foreground">
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-white/50">
             Findings
           </span>
           <SortHeader field="stars">Stars</SortHeader>
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-muted-foreground">
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-white/50">
             Impact
           </span>
         </div>
 
-        {/* Table Body */}
         {filtered.length === 0 ? (
-          <div className="px-5 py-12 text-center text-muted-foreground text-sm">
+          <div className="px-5 py-12 text-center text-white/40 text-sm">
             No skills match your search.
           </div>
         ) : (
@@ -165,46 +147,39 @@ export function SkillsTable({ entries }: SkillsTableProps) {
                     rowGlowStyles[level]
                   )}
                 >
-                  {/* Skill name */}
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
                       {entry.isDemo && (
-                        <FlaskConical className="h-3 w-3 text-muted-foreground/40 flex-shrink-0" />
+                        <FlaskConical className="h-3 w-3 text-white/30 flex-shrink-0" />
                       )}
-                      <span className="font-mono font-semibold text-sm text-foreground truncate">
+                      <span className="font-mono font-semibold text-sm text-white truncate">
                         {entry.name}
                       </span>
                       {!entry.isDemo && (
-                        <ExternalLink className="h-3 w-3 text-muted-foreground/40 flex-shrink-0" />
+                        <ExternalLink className="h-3 w-3 text-white/30 flex-shrink-0" />
                       )}
                     </div>
-                    <span className="text-xs text-muted-foreground/60 font-mono">
+                    <span className="text-xs text-white/40 font-mono">
                       {entry.isDemo ? "demo" : entry.owner}
                     </span>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground truncate">
+                  <p className="text-sm text-white/50 truncate">
                     {entry.isDemo
                       ? "Demo entry for testing"
                       : entry.description ?? "No description"}
                   </p>
 
-                  {/* Risk Score */}
                   <RiskBadge score={entry.riskScore} size="sm" />
-
-                  {/* Findings */}
                   <ThreatBar findings={entry.totalFindings} />
 
-                  {/* Stars */}
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1 text-sm text-white/50">
                     <Star className="h-3.5 w-3.5 fill-current opacity-40" />
                     <span className="font-mono tabular-nums text-xs">
                       {formatStars(entry.stars)}
                     </span>
                   </div>
 
-                  {/* Impact */}
                   <span
                     className={cn(
                       "inline-flex items-center justify-center rounded-full border px-2 py-0.5",
@@ -222,8 +197,106 @@ export function SkillsTable({ entries }: SkillsTableProps) {
         )}
       </div>
 
-      {/* Result count */}
-      <p className="text-xs font-mono text-muted-foreground/50 text-right">
+      {/* Mobile card layout */}
+      <div className="md:hidden space-y-3">
+        {/* Mobile sort controls */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1">
+          <span className="text-xs font-mono text-white/40 flex-shrink-0">Sort:</span>
+          {(
+            [
+              ["stars", "Popular"],
+              ["riskScore", "Risk"],
+              ["name", "Name"],
+            ] as const
+          ).map(([field, label]) => (
+            <button
+              key={field}
+              onClick={() => toggleSort(field)}
+              className={cn(
+                "text-xs font-mono px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors",
+                sortField === field
+                  ? "border-[#00e5a0]/30 bg-[#00e5a0]/10 text-[#00e5a0]"
+                  : "border-white/[0.06] text-white/40 hover:text-white/60"
+              )}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {filtered.length === 0 ? (
+          <div className="py-12 text-center text-white/40 text-sm">
+            No skills match your search.
+          </div>
+        ) : (
+          filtered.map((entry) => {
+            const level = getRiskLevel(entry.riskScore);
+            const impact = getImpact(entry);
+            return (
+              <Link
+                key={`m-${entry.owner}/${entry.name}`}
+                href={entry.isDemo ? "#" : `/repo/${entry.owner}/${entry.name}`}
+                className={cn(
+                  "block rounded-lg border border-white/[0.06] bg-[#12121a] p-4",
+                  "transition-all duration-200 active:scale-[0.99]",
+                  entry.isDemo && "opacity-50",
+                  rowGlowStyles[level]
+                )}
+              >
+                {/* Top row: name + risk badge */}
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5">
+                      {entry.isDemo && (
+                        <FlaskConical className="h-3 w-3 text-white/30 flex-shrink-0" />
+                      )}
+                      <span className="font-mono font-semibold text-sm text-white truncate">
+                        {entry.name}
+                      </span>
+                    </div>
+                    <span className="text-xs text-white/40 font-mono">
+                      {entry.isDemo ? "demo" : entry.owner}
+                    </span>
+                  </div>
+                  <RiskBadge score={entry.riskScore} size="sm" />
+                </div>
+
+                {/* Description */}
+                <p className="text-sm text-white/40 mb-3 line-clamp-2">
+                  {entry.isDemo
+                    ? "Demo entry"
+                    : entry.description ?? "No description"}
+                </p>
+
+                {/* Bottom row: stats */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1 text-xs text-white/40">
+                      <Star className="h-3 w-3 fill-current opacity-40" />
+                      <span className="font-mono tabular-nums">
+                        {formatStars(entry.stars)}
+                      </span>
+                    </div>
+                    <ThreatBar findings={entry.totalFindings} />
+                    <span
+                      className={cn(
+                        "inline-flex items-center rounded-full border px-2 py-0.5",
+                        "text-[9px] font-mono font-semibold uppercase tracking-wider",
+                        impactBadgeStyles[impact.label]
+                      )}
+                    >
+                      {impact.label}
+                    </span>
+                  </div>
+                  <ChevronRight className="h-4 w-4 text-white/20 flex-shrink-0" />
+                </div>
+              </Link>
+            );
+          })
+        )}
+      </div>
+
+      <p className="text-xs font-mono text-white/30 text-right">
         {filtered.length} of {entries.length} skills
       </p>
     </div>

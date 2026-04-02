@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import {
   Shield,
   ShieldCheck,
@@ -8,6 +9,7 @@ import {
   Skull,
   MousePointerClick,
   TrendingUp,
+  AlertCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { RegistryEntry } from "@/lib/types";
@@ -29,7 +31,6 @@ type StatFilter = null | "all" | "safe" | "threats" | "critical";
 export function DashboardClient({ entries, stats }: DashboardClientProps) {
   const [activeFilter, setActiveFilter] = useState<StatFilter>(null);
 
-  // Compute the "headline" finding: highest risk + most stars
   const headline = useMemo(() => {
     const realEntries = entries.filter((e) => !e.isDemo);
     const highestRiskPopular = realEntries
@@ -41,11 +42,11 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
     return { highestRiskPopular, mostPopularSafe };
   }, [entries]);
 
-  // Filter entries based on active stat tile
   const filteredEntries = useMemo(() => {
     if (!activeFilter || activeFilter === "all") return entries;
     if (activeFilter === "safe") return entries.filter((e) => e.verifiedSafe);
-    if (activeFilter === "threats") return entries.filter((e) => !e.verifiedSafe && !e.isDemo);
+    if (activeFilter === "threats")
+      return entries.filter((e) => !e.verifiedSafe && !e.isDemo);
     if (activeFilter === "critical")
       return entries.filter((e) => e.riskScore >= 80 && !e.isDemo);
     return entries;
@@ -79,11 +80,11 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
       <button
         onClick={() => setActiveFilter(isActive ? null : filter)}
         className={cn(
-          "relative rounded-lg border bg-[#12121a] p-5 overflow-hidden text-left",
+          "relative rounded-lg border bg-[#12121a] p-4 sm:p-5 overflow-hidden text-left w-full",
           "transition-all duration-300 cursor-pointer",
           isActive
-            ? "border-white/[0.2] ring-1 ring-white/[0.1] scale-[1.02]"
-            : "border-white/[0.06] hover:border-white/[0.12]",
+            ? "border-white/[0.25] ring-1 ring-white/[0.15] scale-[1.02]"
+            : "border-white/[0.06] hover:border-white/[0.15]",
           glow
         )}
       >
@@ -95,24 +96,26 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
         )}
         <div className="flex items-start justify-between">
           <div>
-            <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+            <p className="text-xs sm:text-sm font-medium text-muted-foreground tracking-wide uppercase">
               {label}
             </p>
             <p
-              className="mt-2 text-3xl font-mono font-bold tracking-tight"
+              className="mt-1 sm:mt-2 text-2xl sm:text-3xl font-mono font-bold tracking-tight"
               style={{ color: accent }}
             >
               {value}
             </p>
           </div>
-          <div className="rounded-md bg-white/[0.04] p-2" style={{ color: accent }}>
+          <div
+            className="rounded-md bg-white/[0.04] p-1.5 sm:p-2"
+            style={{ color: accent }}
+          >
             {icon}
           </div>
         </div>
-        {/* Click hint */}
-        <p className="mt-2 text-[10px] font-mono text-muted-foreground/30 flex items-center gap-1">
-          <MousePointerClick className="h-2.5 w-2.5" />
-          {isActive ? "Click to clear filter" : "Click to filter"}
+        <p className="mt-2 text-[11px] font-mono text-white/50 flex items-center gap-1">
+          <MousePointerClick className="h-3 w-3" />
+          {isActive ? "Tap to clear" : "Tap to filter"}
         </p>
       </button>
     );
@@ -120,61 +123,117 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
 
   return (
     <>
-      {/* News Ticker */}
+      {/* Ticker Tape — scrolling marquee */}
       {headline.highestRiskPopular && (
-        <div className="mb-6 overflow-hidden rounded-lg border border-white/[0.06] bg-[#0e0e16]">
-          <div className="flex items-center gap-3 px-4 py-2.5 animate-fade-in-up">
-            <TrendingUp className="h-4 w-4 text-[#ff9a00] flex-shrink-0" />
-            <div className="flex gap-6 text-xs font-mono overflow-hidden">
-              {headline.highestRiskPopular && (
-                <span className="flex items-center gap-2 whitespace-nowrap">
-                  <span className="text-[#ff2d55] font-semibold">TOP FINDING</span>
-                  <span className="text-foreground/80">
-                    {headline.highestRiskPopular.owner}/{headline.highestRiskPopular.name}
-                  </span>
-                  <span className="text-muted-foreground/50">
-                    ({formatStars(headline.highestRiskPopular.stars)} stars, risk {headline.highestRiskPopular.riskScore})
-                  </span>
-                  <span className="text-[#ff2d55]/70">
-                    — {headline.highestRiskPopular.findings.length} issues found
-                  </span>
-                </span>
-              )}
-              {headline.mostPopularSafe && (
-                <>
-                  <span className="text-muted-foreground/20">|</span>
-                  <span className="flex items-center gap-2 whitespace-nowrap">
-                    <span className="text-[#00e5a0] font-semibold">VERIFIED SAFE</span>
-                    <span className="text-foreground/80">
-                      {headline.mostPopularSafe.owner}/{headline.mostPopularSafe.name}
+        <div className="mb-6 rounded-lg border border-white/[0.06] bg-[#0e0e16] overflow-hidden">
+          <div className="relative flex items-center py-2.5 px-3">
+            <AlertCircle className="h-4 w-4 text-[#ff9a00] flex-shrink-0 mr-3 z-10" />
+            <div className="overflow-hidden flex-1">
+              <div className="flex gap-12 animate-ticker whitespace-nowrap">
+                {/* Top Finding — clickable */}
+                {headline.highestRiskPopular && (
+                  <Link
+                    href={`/repo/${headline.highestRiskPopular.owner}/${headline.highestRiskPopular.name}`}
+                    className="inline-flex items-center gap-2 text-xs font-mono hover:opacity-80 transition-opacity"
+                  >
+                    <span className="text-[#ff2d55] font-bold">
+                      TOP FINDING
                     </span>
-                    <span className="text-muted-foreground/50">
-                      ({formatStars(headline.mostPopularSafe.stars)} stars)
+                    <span className="text-white">
+                      {headline.highestRiskPopular.owner}/
+                      {headline.highestRiskPopular.name}
                     </span>
-                    <span className="text-[#00e5a0]/70">
-                      — clean scan
+                    <span className="text-white/40">
+                      {formatStars(headline.highestRiskPopular.stars)} stars
                     </span>
-                  </span>
-                </>
-              )}
+                    <span className="text-[#ff2d55]">
+                      risk {headline.highestRiskPopular.riskScore} —{" "}
+                      {headline.highestRiskPopular.findings.length} issues
+                    </span>
+                    <span className="text-white/30">Click to view report</span>
+                  </Link>
+                )}
+
+                {/* Most Popular Safe — clickable */}
+                {headline.mostPopularSafe && (
+                  <Link
+                    href={`/repo/${headline.mostPopularSafe.owner}/${headline.mostPopularSafe.name}`}
+                    className="inline-flex items-center gap-2 text-xs font-mono hover:opacity-80 transition-opacity"
+                  >
+                    <span className="text-[#00e5a0] font-bold">
+                      VERIFIED SAFE
+                    </span>
+                    <span className="text-white">
+                      {headline.mostPopularSafe.owner}/
+                      {headline.mostPopularSafe.name}
+                    </span>
+                    <span className="text-white/40">
+                      {formatStars(headline.mostPopularSafe.stars)} stars
+                    </span>
+                    <span className="text-[#00e5a0]">clean scan</span>
+                    <span className="text-white/30">Click to view report</span>
+                  </Link>
+                )}
+
+                {/* Duplicate for seamless loop */}
+                {headline.highestRiskPopular && (
+                  <Link
+                    href={`/repo/${headline.highestRiskPopular.owner}/${headline.highestRiskPopular.name}`}
+                    className="inline-flex items-center gap-2 text-xs font-mono hover:opacity-80 transition-opacity"
+                  >
+                    <span className="text-[#ff2d55] font-bold">
+                      TOP FINDING
+                    </span>
+                    <span className="text-white">
+                      {headline.highestRiskPopular.owner}/
+                      {headline.highestRiskPopular.name}
+                    </span>
+                    <span className="text-white/40">
+                      {formatStars(headline.highestRiskPopular.stars)} stars
+                    </span>
+                    <span className="text-[#ff2d55]">
+                      risk {headline.highestRiskPopular.riskScore} —{" "}
+                      {headline.highestRiskPopular.findings.length} issues
+                    </span>
+                  </Link>
+                )}
+                {headline.mostPopularSafe && (
+                  <Link
+                    href={`/repo/${headline.mostPopularSafe.owner}/${headline.mostPopularSafe.name}`}
+                    className="inline-flex items-center gap-2 text-xs font-mono hover:opacity-80 transition-opacity"
+                  >
+                    <span className="text-[#00e5a0] font-bold">
+                      VERIFIED SAFE
+                    </span>
+                    <span className="text-white">
+                      {headline.mostPopularSafe.owner}/
+                      {headline.mostPopularSafe.name}
+                    </span>
+                    <span className="text-white/40">
+                      {formatStars(headline.mostPopularSafe.stars)} stars
+                    </span>
+                    <span className="text-[#00e5a0]">clean scan</span>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>
       )}
 
       {/* Clickable Stats */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 stagger-children mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 stagger-children mb-8">
         <StatCard
           label="Skills Scanned"
           value={stats.totalScanned}
-          icon={<Shield className="h-5 w-5" />}
+          icon={<Shield className="h-4 w-4 sm:h-5 sm:w-5" />}
           accent="#8888a0"
           filter="all"
         />
         <StatCard
           label="Verified Safe"
           value={stats.verifiedSafe}
-          icon={<ShieldCheck className="h-5 w-5" />}
+          icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />}
           accent="#00e5a0"
           glow="hover:shadow-[0_0_30px_rgba(0,229,160,0.08)]"
           filter="safe"
@@ -182,14 +241,14 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
         <StatCard
           label="Avg Risk Score"
           value={stats.averageRisk}
-          icon={<AlertTriangle className="h-5 w-5" />}
+          icon={<AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5" />}
           accent={avgColor}
           filter="threats"
         />
         <StatCard
           label="Critical Threats"
           value={stats.criticalCount}
-          icon={<Skull className="h-5 w-5" />}
+          icon={<Skull className="h-4 w-4 sm:h-5 sm:w-5" />}
           accent={stats.criticalCount > 0 ? "#ff0040" : "#8888a0"}
           glow={
             stats.criticalCount > 0
@@ -203,8 +262,8 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
       {/* Active filter indicator */}
       {activeFilter && (
         <div className="mb-4 flex items-center gap-2 text-xs font-mono animate-fade-in-up">
-          <span className="text-muted-foreground/50">Showing:</span>
-          <span className="rounded-full bg-white/[0.06] border border-white/[0.08] px-3 py-1 text-foreground/70">
+          <span className="text-white/50">Showing:</span>
+          <span className="rounded-full bg-white/[0.06] border border-white/[0.08] px-3 py-1 text-white/70">
             {activeFilter === "all" && "All skills"}
             {activeFilter === "safe" && "Verified safe only"}
             {activeFilter === "threats" && "Flagged skills only"}
@@ -212,7 +271,7 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
           </span>
           <button
             onClick={() => setActiveFilter(null)}
-            className="text-muted-foreground/40 hover:text-foreground/60 transition-colors"
+            className="text-white/40 hover:text-white/70 transition-colors"
           >
             Clear
           </button>
@@ -220,7 +279,7 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
       )}
 
       {/* Table hint */}
-      <p className="mb-3 text-xs font-mono text-muted-foreground/40 flex items-center gap-1.5">
+      <p className="mb-3 text-xs font-mono text-white/50 flex items-center gap-1.5">
         <MousePointerClick className="h-3 w-3" />
         Click any row to see the full security report
       </p>
