@@ -8,7 +8,7 @@ Build a zero-cost, open-source security dashboard for the Claude MCP ecosystem. 
 
 **v0.1 Initial Release** (v0.1.0)
 Status: In progress
-Phases: 1 of 6 complete
+Phases: 3 of 6 complete
 
 ## Phases
 
@@ -19,8 +19,8 @@ Phases: 1 of 6 complete
 | Phase | Name | Plans | Status | Completed |
 |-------|------|-------|--------|-----------|
 | 1 | Registry & Scaffolding | 1 | Complete | 2026-04-02 |
-| 2 | Security Auditor Engine | 2 | Planning | - |
-| 3 | GitHub Actions & Automation | 2 | Not started | - |
+| 2 | Security Auditor Engine | 2 | Complete | 2026-04-02 |
+| 3 | GitHub Actions & Automation | 2 | Complete | 2026-04-02 |
 | 4 | Dashboard UI | 2 | Not started | - |
 | 5 | Submit Button & Dispatch Bridge | 2 | Not started | - |
 | 6 | Report Pages & Polish | 2 | Not started | - |
@@ -58,8 +58,8 @@ Phases: 1 of 6 complete
 - Risk score calculation: min(100, Σ findings)
 
 **Plans:**
-- [ ] 02-01: Core auditor engine with all heuristic rules
-- [ ] 02-02: Auditor CLI runner + integration tests with mock repos
+- [x] 02-01: Core auditor engine with all heuristic rules
+- [x] 02-02: Auditor CLI runner + integration tests with mock repos
 
 ### Phase 3: GitHub Actions & Automation
 
@@ -76,8 +76,8 @@ Phases: 1 of 6 complete
 - `git-auto-commit-action` integration for registry updates
 
 **Plans:**
-- [ ] 03-01: Reusable auditor workflow + on-demand scan workflow
-- [ ] 03-02: Daily scraper script + scheduled workflow
+- [x] 03-01: Reusable auditor workflow + on-demand scan workflow
+- [x] 03-02: Daily scraper script + scheduled workflow
 
 ### Phase 4: Dashboard UI
 

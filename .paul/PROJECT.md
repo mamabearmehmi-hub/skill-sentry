@@ -32,14 +32,16 @@ There are 1000's of Claude skills available — can you guarantee they are safe 
 - [x] Data contract (TypeScript types for all system data) — Phase 1
 - [x] Security heuristic constants (11 regex rules) — Phase 1
 - [x] Seeded registry with mock data — Phase 1
+- [x] Security scanner engine (`auditor.ts`) — Phase 2
+- [x] CLI runner + 20 integration tests — Phase 2
+- [x] GitHub Actions (reusable auditor + on-demand scan + daily scraper) — Phase 3
+- [x] Registry update script + git-auto-commit — Phase 3
 
 ### Active (In Progress)
-- [ ] Security scanner engine (`auditor.ts`) — Phase 2 next
+- [ ] Dashboard UI with search and filtering — Phase 4 next
 
 ### Planned (Next)
-- [ ] Dashboard UI with search and filtering
 - [ ] Submit button with GitHub Actions bridge
-- [ ] Daily scraper automation
 - [ ] Detailed report pages
 
 ### Out of Scope
