@@ -8,7 +8,7 @@ Build a zero-cost, open-source security dashboard for the Claude MCP ecosystem. 
 
 **v0.1 Initial Release** (v0.1.0)
 Status: In progress
-Phases: 4 of 6 complete
+Phases: 5 of 6 complete
 
 ## Phases
 
@@ -22,7 +22,7 @@ Phases: 4 of 6 complete
 | 2 | Security Auditor Engine | 2 | Complete | 2026-04-02 |
 | 3 | GitHub Actions & Automation | 2 | Complete | 2026-04-02 |
 | 4 | Dashboard UI | 1 | Complete | 2026-04-02 |
-| 5 | Submit Button & Dispatch Bridge | 2 | Not started | - |
+| 5 | Submit Button & Dispatch Bridge | 1 | Complete | 2026-04-02 |
 | 6 | Report Pages & Polish | 2 | Not started | - |
 
 ## Phase Details
@@ -108,8 +108,7 @@ Phases: 4 of 6 complete
 - End-to-end integration test: button click → 202 → Action starts → registry updated
 
 **Plans:**
-- [ ] 05-01: Submit form component + API route + dispatch bridge
-- [ ] 05-02: E2E integration testing with chrome-devtools + gh verification
+- [x] 05-01: Submit form + API route + dispatch bridge (consolidated)
 
 ### Phase 6: Report Pages & Polish
 

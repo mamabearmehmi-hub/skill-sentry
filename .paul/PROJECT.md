@@ -37,12 +37,13 @@ There are 1000's of Claude skills available — can you guarantee they are safe 
 - [x] GitHub Actions (reusable auditor + on-demand scan + daily scraper) — Phase 3
 - [x] Registry update script + git-auto-commit — Phase 3
 - [x] Dashboard UI (dark industrial aesthetic, search, filter, risk badges) — Phase 4
+- [x] Submit button + API route + repository_dispatch bridge — Phase 5
 
 ### Active (In Progress)
-- [ ] Submit button with GitHub Actions bridge — Phase 5 next
+- [ ] Detailed report pages — Phase 6 next
 
 ### Planned (Next)
-- [ ] Detailed report pages
+None — Phase 6 is the final phase.
 
 ### Out of Scope
 - Running `npm install` on scanned repos — static analysis only
