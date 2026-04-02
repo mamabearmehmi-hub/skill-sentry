@@ -134,6 +134,28 @@ Every report page has a unique URL. If you find something dangerous:
 
 ---
 
+## Auto-Discovery: The Registry Grows Itself
+
+You don't have to manually submit every skill. Skill Sentry has a **daily automated scraper** that:
+
+1. **Runs every day at 06:00 UTC** via GitHub Actions
+2. **Searches GitHub** for repos tagged `mcp-server`, `mcp-tool`, `claude-skill`, and `model-context-protocol`
+3. **Skips repos already scanned** (no duplicates)
+4. **Audits each new repo** against all 11 security rules
+5. **Commits results** to the registry automatically
+6. **Vercel auto-redeploys** — new skills appear on the dashboard within minutes
+
+This means the registry grows every single day without anyone lifting a finger. The community also feeds it through the Submit button — creating a **virtuous cycle** where the more people use it, the more comprehensive it becomes.
+
+**Current registry:** 40+ skills scanned and growing daily.
+
+Want to trigger it manually? If you're a contributor:
+```bash
+gh workflow run "Daily Scrape" --repo mamabearmehmi-hub/skill-sentry
+```
+
+---
+
 ## "But My Company Already Has SonarQube / Snyk / Checkmarx..."
 
 Good. Keep using them. Skill Sentry fills a different gap.
