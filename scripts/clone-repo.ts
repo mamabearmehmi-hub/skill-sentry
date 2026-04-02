@@ -1,9 +1,8 @@
 import { execSync } from "child_process";
-import { mkdtempSync, rmSync, createWriteStream } from "fs";
+import { mkdtempSync, rmSync, writeFileSync } from "fs";
 import { join } from "path";
 import { tmpdir } from "os";
-import { pipeline } from "stream/promises";
-import { Readable } from "stream";
+import { extract } from "tar";
 
 /**
  * Parse a GitHub URL into owner and repo name.
@@ -35,9 +34,9 @@ function hasGit(): boolean {
 
 /**
  * Download and extract a GitHub repo tarball via the API.
- * Works in serverless environments (Vercel) where git is not available.
+ * Uses the `tar` npm package — works everywhere including Vercel.
  */
-async function downloadTarball(
+async function downloadAndExtract(
   owner: string,
   name: string,
   repoDir: string
@@ -65,22 +64,17 @@ async function downloadTarball(
     throw new Error("No response body from GitHub API");
   }
 
-  // Save tarball to temp file
+  // Download the entire tarball to a buffer
+  const arrayBuffer = await res.arrayBuffer();
   const tarPath = join(repoDir, "_archive.tar.gz");
-  const webStream = res.body as ReadableStream<Uint8Array>;
-  const nodeStream = Readable.fromWeb(webStream as Parameters<typeof Readable.fromWeb>[0]);
-  await pipeline(nodeStream, createWriteStream(tarPath));
+  writeFileSync(tarPath, Buffer.from(arrayBuffer));
 
-  // Extract using tar (available on Vercel's Amazon Linux)
-  try {
-    execSync(`tar xzf "${tarPath}" --strip-components=1 -C "${repoDir}"`, {
-      timeout: 30_000,
-      stdio: ["ignore", "ignore", "pipe"],
-    });
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "tar extraction failed";
-    throw new Error(`Failed to extract tarball for ${owner}/${name}: ${message}`);
-  }
+  // Extract using the tar npm package (pure JS, works on Vercel)
+  await extract({
+    file: tarPath,
+    cwd: repoDir,
+    strip: 1, // Remove the top-level directory (owner-repo-sha/)
+  });
 
   // Clean up the tarball
   try {
@@ -121,14 +115,12 @@ export async function cloneRepo(
 
   try {
     if (hasGit()) {
-      // Local dev / CI — use git clone (fastest)
       execSync(`git clone --depth 1 "${url}" "${repoDir}"`, {
         timeout: 30_000,
         stdio: ["ignore", "ignore", "pipe"],
       });
     } else {
-      // Vercel / serverless — download tarball via API
-      await downloadTarball(owner, name, repoDir);
+      await downloadAndExtract(owner, name, repoDir);
     }
   } catch (error) {
     await cleanup();
