@@ -210,13 +210,49 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
 
-### Scan a Skill from the Command Line
+### Scan from Your Terminal (no install needed)
 
 ```bash
-npx tsx scripts/cli.ts https://github.com/owner/repo
+npx skill-sentry https://github.com/owner/repo
 ```
 
-This outputs a JSON report to stdout — no web server needed.
+You'll see a colored report with a plain English verdict:
+
+```
+  ┌─────────────────────────────────────┐
+  │       SKILL SENTRY  v0.1            │
+  │  Security scanner for Claude skills  │
+  └─────────────────────────────────────┘
+
+  Scanning: https://github.com/owner/repo
+  Cloning and analyzing...
+
+  ════════════════════════════════════════
+   LOOKS SAFE TO INSTALL
+  ════════════════════════════════════════
+
+  Risk Score:  0/100
+  Files:       42 scanned
+  Findings:    0 issues
+
+  ✓ No security threats detected
+  All 42 files passed 11 security checks.
+```
+
+**Flags:**
+- `--json` — Output raw JSON (for piping to other tools or CI)
+- `--help` — Show usage
+
+**Exit codes** (useful for CI/CD):
+- `0` = safe (no findings)
+- `1` = findings detected
+- `2` = error (invalid URL, network issue)
+
+**Use in CI:**
+```bash
+# Block PRs that add dangerous MCP dependencies
+npx skill-sentry https://github.com/owner/new-skill || exit 1
+```
 
 ### Run the Tests
 
