@@ -1,5 +1,5 @@
-import type { RegistryEntry } from "./types";
-import { RISK_THRESHOLDS } from "./constants";
+import type { RegistryEntry, AuditFinding } from "./types";
+import { RISK_THRESHOLDS, SECURITY_RULES } from "./constants";
 
 /**
  * Filter entries by search query (matches owner, name, description, packageName).
@@ -32,4 +32,93 @@ export function getRiskLevel(
   if (score <= RISK_THRESHOLDS.medium.max) return "medium";
   if (score <= RISK_THRESHOLDS.high.max) return "high";
   return "critical";
+}
+
+/**
+ * Get the plain English explanation for a finding.
+ */
+export function getPlainEnglish(finding: AuditFinding): string {
+  const rule = SECURITY_RULES.find((r) => r.id === finding.ruleId);
+  return rule?.plainEnglish ?? finding.message;
+}
+
+/**
+ * Get a plain English verdict for a registry entry.
+ * This is the "Should I install this?" answer.
+ */
+export function getVerdict(entry: RegistryEntry): {
+  recommendation: "safe" | "caution" | "danger" | "do-not-install";
+  headline: string;
+  explanation: string;
+} {
+  if (entry.verifiedSafe) {
+    return {
+      recommendation: "safe",
+      headline: "Looks safe to install",
+      explanation:
+        "We scanned every file in this package and found no dangerous patterns. " +
+        "No hidden scripts, no credential theft, no suspicious code. " +
+        "You can install this with confidence.",
+    };
+  }
+
+  const hasCritical = entry.totalFindings.critical > 0;
+  const hasSSH = entry.findings.some((f) => f.ruleId === "HIGH-004");
+  const hasPostinstall = entry.findings.some(
+    (f) => f.ruleId === "CRIT-001" || f.ruleId === "CRIT-002"
+  );
+
+  if (hasCritical || hasSSH || hasPostinstall) {
+    return {
+      recommendation: "do-not-install",
+      headline: "Do not install this package",
+      explanation:
+        "We found dangerous patterns that could harm your computer or steal your data. " +
+        (hasPostinstall
+          ? "This package runs hidden code automatically when you install it. "
+          : "") +
+        (hasSSH
+          ? "This package tries to access your SSH keys and credentials. "
+          : "") +
+        "Unless you are 100% sure you trust the author and have reviewed the code yourself, " +
+        "do not install this.",
+    };
+  }
+
+  const hasHighEnv = entry.findings.some((f) => f.ruleId === "HIGH-005");
+  const hasExec = entry.findings.some(
+    (f) => f.ruleId === "HIGH-002" || f.ruleId === "HIGH-003"
+  );
+
+  if (hasHighEnv && hasExec) {
+    return {
+      recommendation: "danger",
+      headline: "High risk — review carefully before installing",
+      explanation:
+        "This package can run commands on your computer AND reads your secret tokens. " +
+        "That combination means it could potentially steal your credentials. " +
+        "Only install this if you trust the author and understand why it needs these permissions.",
+    };
+  }
+
+  if (entry.riskScore >= 50) {
+    return {
+      recommendation: "danger",
+      headline: "High risk — review the findings below",
+      explanation:
+        "We found multiple concerning patterns in this package. " +
+        "Some of these might be legitimate (for example, a build tool might need to run commands), " +
+        "but you should review each finding below and decide if the explanations make sense " +
+        "for what this package claims to do.",
+    };
+  }
+
+  return {
+    recommendation: "caution",
+    headline: "Some concerns found — review before installing",
+    explanation:
+      "We found some patterns that are worth checking. They might be harmless, " +
+      "but it's good practice to understand what a package does before trusting it. " +
+      "Read through the findings below.",
+  };
 }

@@ -27,6 +27,10 @@ const CRITICAL_RULES: SecurityRule[] = [
     description:
       "Lifecycle script (preinstall/postinstall/install) executes shell commands. " +
       "This is the #1 vector for npm supply chain attacks — code runs automatically on install.",
+    plainEnglish:
+      "DO NOT INSTALL. This package runs hidden code the moment you type npm install — " +
+      "before you can even look at what's inside. It downloads and executes a script " +
+      "from the internet automatically. This is the #1 way malware spreads through npm.",
     fileTargets: ["package.json"],
   },
   {
@@ -38,6 +42,10 @@ const CRITICAL_RULES: SecurityRule[] = [
     description:
       "Any preinstall script is suspicious. Legitimate packages almost never need to " +
       "run code before installation. This hook executes before the user can inspect the package.",
+    plainEnglish:
+      "DO NOT INSTALL. This package runs code BEFORE you can even see what it does. " +
+      "Almost no legitimate package needs this. It's like a delivery driver demanding " +
+      "to enter your house before you can check what's in the box.",
     fileTargets: ["package.json"],
   },
 ];
@@ -55,6 +63,10 @@ const HIGH_RULES: SecurityRule[] = [
     description:
       "eval() executes arbitrary strings as code. In an MCP context, this could " +
       "allow prompt injection to escalate into code execution.",
+    plainEnglish:
+      "Caution. This package can turn any text into running code. " +
+      "A bad actor could trick it into running harmful commands on your computer. " +
+      "Legitimate tools almost never need this.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
   {
@@ -66,6 +78,10 @@ const HIGH_RULES: SecurityRule[] = [
     description:
       "Importing child_process gives the package ability to spawn shell commands. " +
       "MCP servers should not need to execute arbitrary system commands.",
+    plainEnglish:
+      "Caution. This package can open a terminal on your computer and run any command " +
+      "it wants — with YOUR permissions. It could delete files, install malware, " +
+      "or steal your data without you seeing anything happen.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
   {
@@ -77,6 +93,10 @@ const HIGH_RULES: SecurityRule[] = [
     description:
       "Direct process execution functions (exec, spawn) can run arbitrary commands. " +
       "Combined with user input, this enables remote code execution.",
+    plainEnglish:
+      "Caution. This package runs system commands on your computer. " +
+      "This is like giving someone the keys to your terminal. They could run " +
+      "anything — download files, change settings, or access your private data.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
   {
@@ -88,6 +108,11 @@ const HIGH_RULES: SecurityRule[] = [
     description:
       "Accessing SSH keys or known_hosts is a strong indicator of credential theft. " +
       "No legitimate MCP server needs access to SSH configuration.",
+    plainEnglish:
+      "DO NOT INSTALL. This package tries to read your SSH keys — the same keys " +
+      "that unlock your servers, your GitHub account, and your deployments. " +
+      "No Claude skill should ever need to touch these files. This looks like " +
+      "credential theft.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
   {
@@ -100,6 +125,10 @@ const HIGH_RULES: SecurityRule[] = [
     description:
       "Reading sensitive environment variables (tokens, secrets, keys, passwords) " +
       "suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+    plainEnglish:
+      "Caution. This package reads your secret passwords and API tokens from " +
+      "your system. If it also has network access, your credentials could be " +
+      "sent to someone else's server. Check WHY it needs your secrets.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
 ];
@@ -117,6 +146,10 @@ const MEDIUM_RULES: SecurityRule[] = [
     description:
       "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. " +
       "Legitimate code rarely embeds large encoded blobs inline.",
+    plainEnglish:
+      "Suspicious. This package contains hidden encoded text — like a secret message " +
+      "that gets decoded when the code runs. Legitimate packages don't usually " +
+      "hide their code this way. It could be a disguised payload.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
   {
@@ -128,6 +161,10 @@ const MEDIUM_RULES: SecurityRule[] = [
     description:
       "Using '*' or 'latest' as a dependency version means any future version " +
       "will be installed automatically — including compromised ones.",
+    plainEnglish:
+      "Risky. This package doesn't lock its dependency versions. That means if " +
+      "one of its dependencies gets hacked tomorrow, you'd automatically download " +
+      "the hacked version. Good packages always pin their versions.",
     fileTargets: ["package.json"],
   },
   {
@@ -140,6 +177,10 @@ const MEDIUM_RULES: SecurityRule[] = [
     description:
       "Network requests to paste sites or raw GitHub content may indicate " +
       "payload downloading. Legitimate dependencies use npm, not pastebins.",
+    plainEnglish:
+      "Suspicious. This package downloads code from paste sites or raw URLs " +
+      "instead of using normal package managers. This is a common trick to " +
+      "sneak in malicious code that doesn't show up in the package itself.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
   {
@@ -151,6 +192,10 @@ const MEDIUM_RULES: SecurityRule[] = [
     description:
       "Dynamic require/import with variable arguments loads code determined at runtime. " +
       "This can be used to load payloads that static analysis can't detect.",
+    plainEnglish:
+      "Suspicious. This package loads code from an unknown location decided at runtime. " +
+      "We can't tell what it will actually run because it depends on a variable. " +
+      "This makes it harder to verify the package is safe.",
     fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
   },
 ];

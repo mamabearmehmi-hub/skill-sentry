@@ -33,6 +33,8 @@ export interface SecurityRule {
   score: number;
   /** What this rule detects and why it matters */
   description: string;
+  /** Plain English explanation for non-technical users */
+  plainEnglish: string;
   /** Glob patterns for files this rule scans, e.g. ["package.json"] or ["**\/*.ts"] */
   fileTargets: string[];
 }
