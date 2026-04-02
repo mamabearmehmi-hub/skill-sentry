@@ -97,6 +97,8 @@ export interface RegistryEntry {
   scannedFiles: number;
   /** npm package name from package.json, if present */
   packageName: string | null;
+  /** Whether this is a demo/mock entry (not a real scan) */
+  isDemo?: boolean;
 }
 
 /**

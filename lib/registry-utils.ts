@@ -1,4 +1,4 @@
-import type { RegistryEntry, AuditFinding } from "./types";
+import type { RegistryEntry, AuditFinding, RiskScore } from "./types";
 import { RISK_THRESHOLDS, SECURITY_RULES } from "./constants";
 
 /**
@@ -32,6 +32,63 @@ export function getRiskLevel(
   if (score <= RISK_THRESHOLDS.medium.max) return "medium";
   if (score <= RISK_THRESHOLDS.high.max) return "high";
   return "critical";
+}
+
+/**
+ * Compute an "impact" rating: how many people are at risk.
+ * A high-star repo with threats = high impact (many people exposed).
+ * Returns a label + numeric score for sorting.
+ */
+export function getImpact(entry: RegistryEntry): {
+  label: string;
+  score: number;
+  description: string;
+} {
+  if (entry.isDemo) {
+    return { label: "Demo", score: -1, description: "Example entry for demonstration" };
+  }
+
+  if (entry.verifiedSafe) {
+    if (entry.stars >= 10000) return { label: "Widely Trusted", score: 0, description: "Popular and verified safe" };
+    if (entry.stars >= 100) return { label: "Trusted", score: 0, description: "Used by many and verified safe" };
+    return { label: "Safe", score: 0, description: "Verified safe" };
+  }
+
+  // Flagged repos — impact scales with stars
+  if (entry.stars >= 10000) {
+    return {
+      label: "High Impact",
+      score: 100,
+      description: `${entry.stars.toLocaleString()} people may be affected by these findings`,
+    };
+  }
+  if (entry.stars >= 1000) {
+    return {
+      label: "Notable",
+      score: 75,
+      description: `${entry.stars.toLocaleString()} users — review findings carefully`,
+    };
+  }
+  if (entry.stars >= 100) {
+    return {
+      label: "Watch",
+      score: 50,
+      description: "Growing usage — findings worth reviewing",
+    };
+  }
+  return {
+    label: "Low Profile",
+    score: 25,
+    description: "Few users, but findings still matter",
+  };
+}
+
+/**
+ * Format star count for display (e.g., 51431 → "51.4k")
+ */
+export function formatStars(stars: number): string {
+  if (stars >= 1000) return (stars / 1000).toFixed(stars >= 10000 ? 0 : 1) + "k";
+  return String(stars);
 }
 
 /**
