@@ -138,20 +138,31 @@ Every report page has a unique URL. If you find something dangerous:
 
 Good. Keep using them. Skill Sentry fills a different gap.
 
-| Tool | When It Scans | What It Catches |
-|------|:---:|---|
-| **SonarQube** | After code is in your repo | Code quality, bugs, security smells in YOUR code |
-| **Snyk / Checkmarx** | After `npm install` | Known CVEs in your dependency tree |
-| **Azure Defender** | At runtime | Threats in deployed infrastructure |
-| **Skill Sentry** | **Before you install** | Malicious intent in packages you're ABOUT to trust |
+| Tool | When It Acts | What It Covers | The Gap |
+|------|:---:|---|---|
+| **SonarQube** | After code is in your repo | Code quality, bugs, security smells in YOUR code | Doesn't scan third-party packages before install |
+| **Snyk / Checkmarx** | After `npm install` | Known CVEs in your dependency tree | The malicious `postinstall` already ran by this point |
+| **Azure Defender** | At runtime | Threats in deployed infrastructure | Doesn't cover developer machines or local `npx` |
+| **Ivanti App Control** | At the endpoint | Whitelists/blocks executables and scripts on managed devices | Doesn't understand npm packages — blocks by binary, not by intent. A `node.exe` running a malicious skill looks the same as a safe one |
+| **Skill Sentry** | **Before you install** | **Malicious intent in packages you're ABOUT to trust** | **This is the gap** |
 
-Enterprise tools scan what you already have. **Skill Sentry scans what you're about to download.**
+Each of these tools is excellent at what it does. But look at the timeline of a developer installing a Claude skill:
 
-The real-world gap: someone in your team's Slack says *"hey check out this amazing Claude skill for database migrations"* and three people run `npx` before anyone checks the source. By the time Snyk flags the malicious `postinstall` script, it already ran on someone's machine.
+```
+1. Someone shares a skill URL in Slack
+2. Developer runs: npx some-mcp-skill         ← Skill Sentry checks HERE
+3. npm downloads the package                   ← Ivanti sees node.exe (allowed)
+4. postinstall script runs silently            ← Too late. Snyk hasn't scanned yet.
+5. Code is in node_modules                     ← NOW Snyk/Checkmarx can see it
+6. Developer commits and pushes                ← NOW SonarQube can see it
+7. App deploys to production                   ← NOW Azure Defender can see it
+```
 
-**Skill Sentry is the 30-second check before that moment.**
+Steps 3-4 are the kill zone. The malicious code runs **before any enterprise tool gets a chance to look at it.** Ivanti sees `node.exe` executing — which is whitelisted because every developer needs Node. Snyk sees the package — but only after it already ran its `postinstall`. SonarQube sees the code — but only after it's committed.
 
-It's not a replacement for your security stack. It's the missing first step your security stack doesn't cover — because it wasn't designed for the MCP ecosystem where people install community-built tools directly from GitHub.
+**Skill Sentry is the only check at step 2.** Before the download. Before the execution. Before any damage.
+
+It's not a replacement for your security stack. It's the missing first step none of them were designed to cover — because the MCP ecosystem is new, and community-built tools installed directly from GitHub didn't exist when those tools were built.
 
 ---
 
