@@ -13,6 +13,14 @@ const SKIP_DIRS = new Set([
   ".next",
   ".turbo",
   "__pycache__",
+  "__tests__",
+  "test",
+  "tests",
+  "fixtures",
+  "__fixtures__",
+  "__mocks__",
+  ".paul",
+  ".github",
 ]);
 
 /** Maximum file size to scan (1MB). Skip binary/large files. */

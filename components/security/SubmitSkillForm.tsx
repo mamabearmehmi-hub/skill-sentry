@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import {
   Send,
   AlertCircle,
@@ -11,7 +10,7 @@ import {
   ShieldX,
   ShieldAlert,
   X,
-  ArrowRight,
+  ExternalLink,
   FileCode,
   MessageCircleWarning,
 } from "lucide-react";
@@ -180,31 +179,28 @@ export function SubmitSkillForm() {
               <h4 className="text-xs font-mono font-semibold text-white/50 uppercase tracking-widest">
                 What We Found ({result.findings.length} {result.findings.length === 1 ? "issue" : "issues"})
               </h4>
-              {result.findings.slice(0, 3).map((f, i) => (
+              {result.findings.map((f, i) => (
                 <InlineFinding key={`${f.ruleId}-${i}`} finding={f} repoUrl={result.url} />
               ))}
-              {result.findings.length > 3 && (
-                <p className="text-xs font-mono text-white/30">
-                  + {result.findings.length - 3} more findings
-                </p>
-              )}
             </div>
           )}
 
           {/* Actions */}
           <div className="px-4 sm:px-5 py-3 border-t border-white/[0.04] flex flex-col sm:flex-row gap-2">
-            <Link
-              href={`/repo/${result.owner}/${result.name}`}
+            <a
+              href={result.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 flex-1",
                 "text-sm font-mono font-medium",
-                "border border-[#00e5a0]/20 bg-[#00e5a0]/10 text-[#00e5a0]",
-                "hover:bg-[#00e5a0]/15 transition-all"
+                "border border-white/[0.08] bg-white/[0.03] text-white/60",
+                "hover:text-white hover:border-white/[0.15] transition-all"
               )}
             >
-              View Full Report
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+              View on GitHub
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
             <button
               onClick={dismiss}
               className={cn(

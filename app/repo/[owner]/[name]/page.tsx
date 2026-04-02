@@ -39,6 +39,9 @@ export async function generateMetadata({
   };
 }
 
+// Allow dynamic pages for repos scanned via the live API
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const registry = getRegistry();
   return registry.entries.map((entry) => ({
@@ -86,7 +89,29 @@ export default async function ReportPage({ params }: ReportPageProps) {
   const entry = getEntryBySlug(owner, name);
 
   if (!entry) {
-    notFound();
+    return (
+      <main className="flex-1">
+        <div className="mx-auto max-w-4xl px-6 py-12">
+          <div className="rounded-lg border border-white/[0.08] bg-[#12121a] p-8 text-center">
+            <Shield className="h-12 w-12 text-white/20 mx-auto mb-4" />
+            <h1 className="text-xl font-mono font-semibold text-white mb-2">
+              {owner}/{name}
+            </h1>
+            <p className="text-sm text-white/50 mb-6 max-w-md mx-auto">
+              This repo hasn&apos;t been scanned yet, or the results haven&apos;t been
+              saved to the registry. Go back to the dashboard and paste the URL
+              to scan it.
+            </p>
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-mono font-medium bg-[#00e5a0]/10 border border-[#00e5a0]/20 text-[#00e5a0] hover:bg-[#00e5a0]/15 transition-all"
+            >
+              Go to Dashboard
+            </a>
+          </div>
+        </div>
+      </main>
+    );
   }
 
   const sortedFindings = [...entry.findings].sort((a, b) => b.score - a.score);
