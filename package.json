@@ -4,6 +4,18 @@
   "description": "Security scanner for Claude MCP skills — scan before you install",
   "author": "V (mamabearmehmi-hub)",
   "license": "MIT",
+  "files": [
+    "bin/",
+    "scripts/auditor.ts",
+    "scripts/clone-repo.ts",
+    "scripts/scan-files.ts",
+    "lib/types.ts",
+    "lib/constants.ts",
+    "lib/registry-utils.ts",
+    "lib/verified-publishers.ts",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/mamabearmehmi-hub/skill-sentry.git"
