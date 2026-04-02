@@ -1,0 +1,73 @@
+name: Daily Scrape
+
+# Discovers new MCP repos via GitHub API topic search
+# and audits each one using the reusable auditor workflow.
+#
+# Runs daily at 06:00 UTC. Can also be triggered manually
+# via workflow_dispatch for testing.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  scrape-and-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Discover new repos
+        id: scrape
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npx tsx scripts/scraper.ts > /tmp/discovered.txt 2>&1 || true
+          echo "Discovered repos:"
+          cat /tmp/discovered.txt
+
+      - name: Audit each discovered repo
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          COUNT=0
+          while IFS= read -r line; do
+            # Skip empty lines and stderr messages
+            URL=$(echo "$line" | node -e "
+              let d='';
+              process.stdin.on('data',c=>d+=c);
+              process.stdin.on('end',()=>{
+                try{console.log(JSON.parse(d).url)}
+                catch{process.exit(1)}
+              })
+            " 2>/dev/null) || continue
+
+            if [ -n "$URL" ]; then
+              echo "Auditing: $URL"
+              if npx tsx scripts/cli.ts "$URL" > /tmp/result.json 2>/dev/null; then
+                npx tsx scripts/update-registry.ts /tmp/result.json
+                COUNT=$((COUNT + 1))
+              else
+                echo "Failed to audit: $URL (skipping)"
+              fi
+            fi
+          done < /tmp/discovered.txt
+
+          echo "Successfully audited $COUNT repos"
+
+      - name: Commit updated registry
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "scrape: daily discovery $(date -u +%Y-%m-%d)"
+          file_pattern: public/data/registry.json
