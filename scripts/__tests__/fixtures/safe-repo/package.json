@@ -1,0 +1,9 @@
+{
+  "name": "mcp-safe-example",
+  "version": "1.0.0",
+  "description": "A perfectly safe MCP server",
+  "main": "src/index.js",
+  "dependencies": {
+    "zod": "^3.22.0"
+  }
+}

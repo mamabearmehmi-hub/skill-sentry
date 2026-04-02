@@ -6,7 +6,11 @@
       "Skill(paul:plan)",
       "Skill(paul:plan:*)",
       "Skill(paul:apply)",
-      "Skill(paul:apply:*)"
+      "Skill(paul:apply:*)",
+      "Skill(paul:unify)",
+      "Skill(paul:unify:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test:*)"
     ]
   }
 }

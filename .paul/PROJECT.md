@@ -28,14 +28,15 @@ There are 1000's of Claude skills available — can you guarantee they are safe 
 - **Security Engine** — Static analysis scanner scores repos 0-100 using regex-based heuristics (never executes scanned code)
 
 ### Validated (Shipped)
-None yet.
+- [x] Project scaffolding (Next.js 15 + Shadcn + Tailwind) — Phase 1
+- [x] Data contract (TypeScript types for all system data) — Phase 1
+- [x] Security heuristic constants (11 regex rules) — Phase 1
+- [x] Seeded registry with mock data — Phase 1
 
 ### Active (In Progress)
-None yet.
+- [ ] Security scanner engine (`auditor.ts`) — Phase 2 next
 
 ### Planned (Next)
-- [ ] Project scaffolding (Next.js 15 + Shadcn + Tailwind)
-- [ ] Security scanner engine (`auditor.ts`)
 - [ ] Dashboard UI with search and filtering
 - [ ] Submit button with GitHub Actions bridge
 - [ ] Daily scraper automation

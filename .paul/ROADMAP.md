@@ -8,7 +8,7 @@ Build a zero-cost, open-source security dashboard for the Claude MCP ecosystem. 
 
 **v0.1 Initial Release** (v0.1.0)
 Status: In progress
-Phases: 0 of 6 complete
+Phases: 1 of 6 complete
 
 ## Phases
 
@@ -18,8 +18,8 @@ Phases: 0 of 6 complete
 
 | Phase | Name | Plans | Status | Completed |
 |-------|------|-------|--------|-----------|
-| 1 | Registry & Scaffolding | 1 | Planning | - |
-| 2 | Security Auditor Engine | 2 | Not started | - |
+| 1 | Registry & Scaffolding | 1 | Complete | 2026-04-02 |
+| 2 | Security Auditor Engine | 2 | Planning | - |
 | 3 | GitHub Actions & Automation | 2 | Not started | - |
 | 4 | Dashboard UI | 2 | Not started | - |
 | 5 | Submit Button & Dispatch Bridge | 2 | Not started | - |
@@ -41,7 +41,7 @@ Phases: 0 of 6 complete
 - Project structure matching the ICM blueprint
 
 **Plans:**
-- [ ] 01-01: Project scaffolding + types + constants + seeded registry
+- [x] 01-01: Project scaffolding + types + constants + seeded registry
 
 ### Phase 2: Security Auditor Engine
 

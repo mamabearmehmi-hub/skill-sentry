@@ -5,27 +5,40 @@
 See: .paul/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Safely vet your Claude skills before installing them — without running any code.
-**Current focus:** Phase 1 — Registry & Scaffolding
+**Current focus:** Phase 2 — Security Auditor Engine (APPLY complete, Plan 2 of 2)
 
 ## Current Position
 
 Milestone: v0.1 Initial Release
-Phase: 1 of 6 (Registry & Scaffolding) — Planning
-Plan: 01-01 created, awaiting approval
-Status: PLAN created, ready for APPLY
-Last activity: 2026-04-02 — Created .paul/phases/01-registry-scaffolding/01-01-PLAN.md
+Phase: 2 of 6 (Security Auditor Engine) — Apply complete
+Plan: 02-02 executed, all tasks PASS (20/20 tests)
+Status: APPLY complete, ready for UNIFY
+Last activity: 2026-04-02 — Executed 02-02-PLAN.md (3/3 tasks PASS, 20/20 tests)
 
 Progress:
-- Milestone: [░░░░░░░░░░] 0%
-- Phase 1: [░░░░░░░░░░] 0%
+- Milestone: [███░░░░░░░] 33%
+- Phase 2: [██████████] 100% (2/2 plans)
 
 ## Loop Position
 
 Current loop state:
 ```
 PLAN ──▶ APPLY ──▶ UNIFY
-  ✓        ○        ○     [Plan created, awaiting approval]
+  ✓        ✓        ○     [Apply complete, ready for UNIFY]
 ```
+
+## Performance Metrics
+
+**Velocity:**
+- Total plans completed: 2
+- Average duration: ~12min
+
+**By Phase:**
+
+| Phase | Plans | Total Time | Avg/Plan |
+|-------|-------|------------|----------|
+| 01-registry-scaffolding | 1/1 | ~15min | ~15min |
+| 02-security-auditor-engine | 2/2 | ~20min | ~10min |
 
 ## Accumulated Context
 
@@ -35,22 +48,28 @@ PLAN ──▶ APPLY ──▶ UNIFY
 | Vercel + Git-as-a-DB + GitHub Actions | Init | Zero-cost architecture locked in |
 | Static analysis only | Init | Security-first — never execute scanned code |
 | frontend-design skill for UI | Init | Distinctive visual identity |
-| Stateless auditor design | Phase 2 prep | URL in → JSON out, reusable by scraper + submit |
-| Constants-first approach | Phase 1 | Define regex patterns before building scanner |
+| Stateless auditor design | Phase 2 | URL in → JSON out, reusable by scraper + submit |
+| Constants-first approach | Phase 1 | Regex patterns defined before building scanner |
 | Latest-only registry | Init | One entry per repo, no history (keeps JSON small) |
+| Node.js built-ins only for auditor | Phase 2 | No npm deps — fs, path, os, child_process only |
+| Content cache in scanner | Phase 2 | Avoids re-reading files when multiple rules target same file |
+| vitest for testing | Phase 2 | Lightweight, fast, native TS support |
 
 ### Deferred Issues
-None yet.
+
+| Issue | Origin | Effort | Revisit |
+|-------|--------|--------|---------|
+| /review skill not invoked for Phase 1 or 2 | Phase 1-2 UNIFY | S | Before Phase 3 |
 
 ### Blockers/Concerns
-None yet.
+None.
 
 ## Session Continuity
 
 Last session: 2026-04-02
-Stopped at: Plan 01-01 created for Phase 1
-Next action: Review and approve plan, then run /paul:apply
-Resume file: .paul/phases/01-registry-scaffolding/01-01-PLAN.md
+Stopped at: Phase 2 Plan 02-02 APPLY complete — CLI + tests built, 20/20 pass
+Next action: Run /paul:unify to close loop and complete Phase 2
+Resume file: .paul/phases/02-security-auditor-engine/02-02-PLAN.md
 
 ---
 *STATE.md — Updated after every significant action*
