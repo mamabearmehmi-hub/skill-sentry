@@ -36,12 +36,12 @@ There are 1000's of Claude skills available — can you guarantee they are safe 
 - [x] CLI runner + 20 integration tests — Phase 2
 - [x] GitHub Actions (reusable auditor + on-demand scan + daily scraper) — Phase 3
 - [x] Registry update script + git-auto-commit — Phase 3
+- [x] Dashboard UI (dark industrial aesthetic, search, filter, risk badges) — Phase 4
 
 ### Active (In Progress)
-- [ ] Dashboard UI with search and filtering — Phase 4 next
+- [ ] Submit button with GitHub Actions bridge — Phase 5 next
 
 ### Planned (Next)
-- [ ] Submit button with GitHub Actions bridge
 - [ ] Detailed report pages
 
 ### Out of Scope
