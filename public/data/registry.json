@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-04-02T00:00:00.000Z",
-  "totalEntries": 2,
+  "lastUpdated": "2026-04-02T15:24:50.221Z",
+  "totalEntries": 7,
   "entries": [
     {
       "owner": "anthropics",
@@ -9,7 +9,9 @@
       "url": "https://github.com/anthropics/mcp-hello-world",
       "description": "A simple hello world MCP server for testing",
       "stars": 42,
-      "topics": ["mcp-server"],
+      "topics": [
+        "mcp-server"
+      ],
       "lastAuditDate": "2026-04-02T00:00:00.000Z",
       "riskScore": 0,
       "findings": [],
@@ -30,7 +32,9 @@
       "url": "https://github.com/shady-dev/mcp-totally-safe",
       "description": "Definitely not malicious MCP server",
       "stars": 3,
-      "topics": ["mcp-server"],
+      "topics": [
+        "mcp-server"
+      ],
       "lastAuditDate": "2026-04-02T00:00:00.000Z",
       "riskScore": 100,
       "findings": [
@@ -72,6 +76,148 @@
       "verifiedSafe": false,
       "scannedFiles": 8,
       "packageName": "mcp-totally-safe"
+    },
+    {
+      "owner": "stacklok",
+      "name": "toolhive",
+      "url": "https://github.com/stacklok/toolhive",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-02T15:24:39.683Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 1850,
+      "packageName": null
+    },
+    {
+      "owner": "yepcode",
+      "name": "mcp-server-js",
+      "url": "https://github.com/yepcode/mcp-server-js",
+      "description": "MCP server for YepCode",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-02T15:24:42.107Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 32,
+      "packageName": "@yepcode/mcp-server"
+    },
+    {
+      "owner": "KEINOS",
+      "name": "mcp-text-mirror",
+      "url": "https://github.com/KEINOS/mcp-text-mirror",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-02T15:24:44.178Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 11,
+      "packageName": null
+    },
+    {
+      "owner": "mpress001",
+      "name": "mcp-claude-hackernews",
+      "url": "https://github.com/mpress001/mcp-claude-hackernews",
+      "description": "Model Context Protocol server for Hacker News using Claude Desktop",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-02T15:24:46.700Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 12,
+      "packageName": "mcp-claude-hackernews"
+    },
+    {
+      "owner": "eins78",
+      "name": "meteoswiss-llm-tools",
+      "url": "https://github.com/eins78/meteoswiss-llm-tools",
+      "description": "Swiss weather data for AI assistants — powered by MeteoSwiss Open Data",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-02T15:24:49.424Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "packages/meteoswiss-mcp/test/integration/inspector.test.ts",
+          "line": 47,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "packages/meteoswiss-mcp/test/integration/inspector.test.ts",
+          "line": 187,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "packages/meteoswiss-mcp/test/integration/mcp-client.ts",
+          "line": 78,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "packages/meteoswiss-mcp/test/integration/mcp-client.ts",
+          "line": 109,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 4,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 162,
+      "packageName": "meteoswiss-llm-tools"
     }
   ]
 }
