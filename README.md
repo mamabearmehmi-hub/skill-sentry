@@ -30,7 +30,7 @@ So I built myself a sentry.
 
 You're welcome to use it. I hope it helps keep us safe, and lets us keep enjoying building beautiful things with Claude.
 
-— **Mehmi** | *Just a builder who wanted to feel safe clicking install*
+— **V** | *Just a builder who wanted to feel safe clicking install*
 
 ---
 
@@ -71,8 +71,87 @@ Risk Score = min(100, sum of all finding scores)
 - **Browse** — Searchable dashboard of all audited MCP skills
 - **Submit** — Paste any GitHub URL to trigger a security scan
 - **Report** — Detailed per-repo audit with findings linked to source code lines
+- **Plain English** — Every finding explained in human language, not security jargon
+- **Verdict** — Clear "Should I install this?" recommendation on every report
 - **Auto-Discover** — Daily scraper finds new MCP repos automatically
 - **Zero Cost** — Runs entirely on Vercel free tier + GitHub Actions
+
+---
+
+## How to Use the Dashboard
+
+### Step 1: Check Before You Install
+
+Someone just shared a cool Claude skill in Slack. Before you run `npx` or `npm install`:
+
+1. Copy the GitHub URL
+2. Paste it into the **Submit a Skill for Audit** box on the dashboard
+3. Wait 1-2 minutes for the scan to complete
+4. Check the result
+
+### Step 2: Read the Verdict
+
+Every report page gives you a clear answer at the top:
+
+| What You See | What It Means | What To Do |
+|:---:|---|---|
+| **"Looks safe to install"** | We scanned every file and found nothing dangerous | Go ahead and install |
+| **"Some concerns found"** | Minor suspicious patterns detected | Read the findings, use your judgment |
+| **"High risk — review carefully"** | Multiple dangerous patterns, like reading your tokens AND running commands | Only install if you trust the author AND understand why it needs those permissions |
+| **"Do not install"** | Critical threats found — auto-executing scripts, credential theft, or SSH key access | Walk away. Do not install this. Tell others. |
+
+### Step 3: Understand the Findings
+
+Each finding is explained in plain English — no security degree needed:
+
+> **Caution.** This package can open a terminal on your computer and run any command it wants — with YOUR permissions. It could delete files, install malware, or steal your data without you seeing anything happen.
+
+If you want the technical details, click **"Technical details"** to expand. But the plain English version tells you everything you need to make a decision.
+
+### Step 4: Share the Report
+
+Every report page has a unique URL. If you find something dangerous:
+- Share the link with your team
+- Post it in the community channel where the skill was recommended
+- Help others avoid the same risk
+
+### The Dashboard at a Glance
+
+```
+┌─ Stats ──────────────────────────────────────────┐
+│  24 Scanned  │  17 Safe  │  Avg Risk: 35  │  6 Critical │
+├─ Submit ─────────────────────────────────────────┤
+│  [Paste any GitHub URL here...] [Scan Skill]     │
+├─ Results ────────────────────────────────────────┤
+│  Name          Risk    Findings                   │
+│  toolhive      ✅ 0    ████████████ Clean         │
+│  plugin-kit-ai 🔴 100  ▓▓▓▒▒░░░░░░ 7 issues      │
+│  mcp-server-js ✅ 0    ████████████ Clean         │
+│  octoweb       🔴 100  ▓▓▓▓▓▓▓▓▓▒░ 57 issues     │
+└──────────────────────────────────────────────────┘
+  Click any row → full report with plain English explanations
+```
+
+---
+
+## "But My Company Already Has SonarQube / Snyk / Checkmarx..."
+
+Good. Keep using them. Skill Sentry fills a different gap.
+
+| Tool | When It Scans | What It Catches |
+|------|:---:|---|
+| **SonarQube** | After code is in your repo | Code quality, bugs, security smells in YOUR code |
+| **Snyk / Checkmarx** | After `npm install` | Known CVEs in your dependency tree |
+| **Azure Defender** | At runtime | Threats in deployed infrastructure |
+| **Skill Sentry** | **Before you install** | Malicious intent in packages you're ABOUT to trust |
+
+Enterprise tools scan what you already have. **Skill Sentry scans what you're about to download.**
+
+The real-world gap: someone in your team's Slack says *"hey check out this amazing Claude skill for database migrations"* and three people run `npx` before anyone checks the source. By the time Snyk flags the malicious `postinstall` script, it already ran on someone's machine.
+
+**Skill Sentry is the 30-second check before that moment.**
+
+It's not a replacement for your security stack. It's the missing first step your security stack doesn't cover — because it wasn't designed for the MCP ecosystem where people install community-built tools directly from GitHub.
 
 ---
 
@@ -308,5 +387,5 @@ MIT License — use it, fork it, improve it. Just keep building safely.
 <p align="center">
   <strong>Static analysis only — no code executed. Ever.</strong>
   <br />
-  <sub>Built with care by someone who just wanted to feel safe clicking install.</sub>
+  <sub>Built with care by someone who is a Claude Builder just wanted to feel safe clicking install.</sub>
 </p>
