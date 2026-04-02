@@ -1,6 +1,6 @@
 # How I Built Skill Sentry: From "Am I Safe?" to a Published npm Package in One Session
 
-*A detailed walkthrough of building a zero-cost security scanner for the Claude MCP ecosystem — from pain point to production, step by step.*
+*A detailed walkthrough of building a zero-cost security scanner for the Claude MCP ecosystem. from pain point to production, step by step.*
 
 ---
 
@@ -10,7 +10,7 @@ I was about to install a Claude MCP skill someone shared in a community channel.
 
 What actually happens when I type `npx some-mcp-skill`?
 
-I opened the repo. I found a `postinstall` script that runs `execSync` with `child_process`. That means the moment I type `npm install`, this package opens a hidden terminal on my machine and runs commands — before I can even see what's inside.
+I opened the repo. I found a `postinstall` script that runs `execSync` with `child_process`. That means the moment I type `npm install`, this package opens a hidden terminal on my machine and runs commands. before I can even see what's inside.
 
 Three other people had already installed it.
 
@@ -29,19 +29,19 @@ I broke it into 6 phases:
 | Phase | What | Why This Order |
 |-------|------|----------------|
 | 1. Registry & Scaffolding | Types, constants, project setup | Everything depends on the data contract |
-| 2. Security Auditor Engine | The scanner itself | This IS the product — if this doesn't work, nothing matters |
+| 2. Security Auditor Engine | The scanner itself | This IS the product. if this doesn't work, nothing matters |
 | 3. GitHub Actions | Automation pipeline | Makes the scanner run automatically |
 | 4. Dashboard UI | The "face" | Now there's real data to display |
 | 5. Submit Button | Community input | The growth engine |
 | 6. Report Pages | Detailed results | The credibility builder |
 
-**Key insight:** Phases 1-3 are the "brain." Nobody sees them, but without them the whole thing is a shell. Phase 4-6 are the "face" — they only matter because the brain works.
+**Key insight:** Phases 1-3 are the "brain." Nobody sees them, but without them the whole thing is a shell. Phase 4-6 are the "face". they only matter because the brain works.
 
 ---
 
 ## Phase 1: Define Before You Build
 
-Before writing a single scanner function, I defined the data contract — the TypeScript types that every other part of the system depends on.
+Before writing a single scanner function, I defined the data contract. the TypeScript types that every other part of the system depends on.
 
 ```typescript
 // What does a finding look like?
@@ -62,11 +62,11 @@ interface RegistryEntry {
   riskScore: number;    // 0-100, capped
   findings: AuditFinding[];
   verifiedSafe: boolean; // true only when score === 0
-  // ... plus metadata
+  // .. plus metadata
 }
 ```
 
-**Why this matters:** When I later built the scanner, the UI, and the GitHub Actions — they all spoke the same language. No integration bugs because the contract was defined first.
+**Why this matters:** When I later built the scanner, the UI, and the GitHub Actions. they all spoke the same language. No integration bugs because the contract was defined first.
 
 I also defined all 11 security rules upfront:
 
@@ -88,20 +88,20 @@ The risk formula: `RiskScore = min(100, sum of all finding scores)`
 
 ---
 
-## Phase 2: The Scanner — Keep It Stupid Simple
+## Phase 2: The Scanner - Keep It Stupid Simple
 
 The auditor has three files, each doing one thing:
 
-### clone-repo.ts — Get the code
+### clone-repo.ts: Get the code
 ```
 Input:  GitHub URL
 Output: Temp directory with repo files
 Always: Cleanup the temp dir, even on error
 ```
 
-The trick: Vercel (where the web app runs) doesn't have `git` installed. So the clone function has a fallback — if `git` isn't available, it downloads the repo as a tarball via the GitHub API and extracts it with the `tar` npm package. Same result, works everywhere.
+The trick: Vercel (where the web app runs) doesn't have `git` installed. So the clone function has a fallback. if `git` isn't available, it downloads the repo as a tarball via the GitHub API and extracts it with the `tar` npm package. Same result, works everywhere.
 
-### scan-files.ts — Find the threats
+### scan-files.ts: Find the threats
 ```
 Input:  Directory path
 Output: Array of AuditFindings
@@ -114,12 +114,12 @@ For each security rule:
 ```
 
 No AST parsing. No dependency graph. Just regex. Why? Because:
-- Most npm supply chain attacks are lazy — `postinstall: "curl | bash"` is trivially detectable
+- Most npm supply chain attacks are lazy. `postinstall: "curl | bash"` is trivially detectable
 - Regex is fast (scans 1,000+ files in seconds)
 - Zero dependencies (Node.js built-ins only)
 - A 90% solution in 5 seconds beats a 99% solution that takes 5 minutes
 
-### auditor.ts — Orchestrate
+### auditor.ts: Orchestrate
 ```
 Input:  GitHub URL
 Output: RegistryEntry (typed JSON)
@@ -144,11 +144,11 @@ One function, four callers, zero integration bugs.
 
 ## Phase 2b: Prove It Works With Tests
 
-I created two fixture directories — fake repos with known contents:
+I created two fixture directories. fake repos with known contents:
 
-**safe-repo/** — Clean package.json, normal TypeScript, no threats.
+**safe-repo/** - Clean package.json, normal TypeScript, no threats.
 
-**malicious-repo/** — A horror show:
+**malicious-repo/** - A horror show:
 ```json
 {
   "scripts": {
@@ -178,24 +178,24 @@ npm test  # 20 tests, ~200ms
 
 ---
 
-## Phase 3: Automation — The Growth Engine
+## Phase 3: Automation - The Growth Engine
 
 Three GitHub Actions workflows:
 
-### reusable-auditor.yml — The core muscle
+### reusable-auditor.yml: The core muscle
 Called by other workflows. Accepts a URL, runs the scanner, outputs JSON. Never run directly.
 
-### on-demand-scan.yml — The Submit button trigger
+### on-demand-scan.yml: The Submit button trigger
 Listens for `repository_dispatch` events. When someone clicks "Scan Skill" on the dashboard, this fires. (Later replaced by direct API scanning for speed.)
 
-### scheduled-scrape.yml — The daily discovery
+### scheduled-scrape.yml: The daily discovery
 Runs at 06:00 UTC every day. Searches GitHub for repos tagged `mcp-server`, `mcp-tool`, `claude-skill`, `model-context-protocol`. Skips repos already scanned. Audits each new one. Commits results.
 
 **The "database":** A JSON file (`registry.json`) committed to git. No PostgreSQL, no Redis, no DynamoDB. Git IS the database. GitHub Actions commit scan results, Vercel reads the file at build time. Total cost: $0.
 
 ### The scraper script
 ```typescript
-// For each topic in ["mcp-server", "mcp-tool", "claude-skill", ...]
+// For each topic in ["mcp-server", "mcp-tool", "claude-skill", ..]
 //   Search GitHub API: /search/repositories?q=topic:{topic}
 //   Skip repos already in registry (dedup by owner/name)
 //   Output new repos as newline-delimited JSON
@@ -205,25 +205,25 @@ The registry went from 2 mock entries to 128 real scans automatically.
 
 ---
 
-## Phase 4: The Dashboard — Dark Industrial Aesthetic
+## Phase 4: The Dashboard - Dark Industrial Aesthetic
 
 The UI had to communicate one thing at a glance: **this is a security tool you can trust.**
 
 ### Design decisions:
-- **Dark theme** (#0a0a0f near-black) — security tools are dark. Period.
-- **JetBrains Mono** for headings — monospace = hacker/command center feel
-- **Outfit** for body text — geometric, modern, NOT Inter/Roboto
-- **Teal (#00e5a0)** for "safe" — calm, reassuring
-- **Red (#ff0040)** for "critical" — with a subtle pulse animation
-- **Atmospheric depth** — radial gradients, noise texture overlay, glow effects
+- **Dark theme** (#0a0a0f near-black): security tools are dark. Period.
+- **JetBrains Mono** for headings: monospace = hacker/command center feel
+- **Outfit** for body text: geometric, modern, NOT Inter/Roboto
+- **Teal (#00e5a0)** for "safe": calm, reassuring
+- **Red (#ff0040)** for "critical": with a subtle pulse animation
+- **Atmospheric depth**: radial gradients, noise texture overlay, glow effects
 
 ### Components built:
-- **RiskBadge** — Color-coded score badge, pulses red for critical
-- **ThreatBar** — Stacked bar showing finding distribution by severity
-- **StatsHeader** — 4 clickable stat tiles (filter the table when clicked)
-- **SearchFilter** — Debounced search + "Verified Safe Only" toggle
-- **SkillsTable** — Desktop table + mobile card layout, sortable
-- **News Ticker** — Scrolling marquee showing top finding + most popular safe repo
+- **RiskBadge**: Color-coded score badge, pulses red for critical
+- **ThreatBar**: Stacked bar showing finding distribution by severity
+- **StatsHeader**: 4 clickable stat tiles (filter the table when clicked)
+- **SearchFilter**: Debounced search + "Verified Safe Only" toggle
+- **SkillsTable**: Desktop table + mobile card layout, sortable
+- **News Ticker**: Scrolling marquee showing top finding + most popular safe repo
 
 ### The server/client split:
 Next.js App Router uses React Server Components. Functions that read files (`fs.readFileSync`) can only run on the server. Functions used in interactive components need to be client-safe.
@@ -232,7 +232,7 @@ Solution: `lib/registry.ts` (server-only, reads files) and `lib/registry-utils.t
 
 ---
 
-## Phase 5: The Submit Button — Instant Results
+## Phase 5: The Submit Button. Instant Results
 
 ### Version 1 (too slow):
 Submit → trigger GitHub Action → wait 1-3 minutes → poll for results.
@@ -273,11 +273,11 @@ A developer reads that and thinks "so what?"
 
 The new version:
 
-> "Caution. This package can open a terminal on your computer and run any command it wants — with YOUR permissions. It could delete files, install malware, or steal your data without you seeing anything happen."
+> "Caution. This package can open a terminal on your computer and run any command it wants. with YOUR permissions. It could delete files, install malware, or steal your data without you seeing anything happen."
 
 Now they understand. Every security rule has two descriptions:
-- `description` — technical, for security people
-- `plainEnglish` — human, for everyone else
+- `description`. technical, for security people
+- `plainEnglish`. human, for everyone else
 
 The plain English version shows first. Technical details are behind a collapsible "Technical details" toggle.
 
@@ -307,10 +307,10 @@ npx skill-sentry https://github.com/owner/repo
 ```
 
 The published package is only 22KB. It includes:
-- `bin/skill-sentry.ts` — CLI with colored output
-- `scripts/auditor.ts` + `clone-repo.ts` + `scan-files.ts` — the scanner
-- `lib/types.ts` + `constants.ts` + `registry-utils.ts` — types and rules
-- `lib/verified-publishers.ts` — publisher whitelist + typosquat detection
+- `bin/skill-sentry.ts`. CLI with colored output
+- `scripts/auditor.ts` + `clone-repo.ts` + `scan-files.ts`. the scanner
+- `lib/types.ts` + `constants.ts` + `registry-utils.ts`. types and rules
+- `lib/verified-publishers.ts`. publisher whitelist + typosquat detection
 
 Exit codes make it CI-friendly:
 - `0` = safe
@@ -324,7 +324,7 @@ npx skill-sentry https://github.com/owner/new-dep || exit 1
 
 ---
 
-## The Architecture — Zero Cost
+## The Architecture. Zero Cost
 
 | Layer | Technology | Cost |
 |-------|-----------|------|
@@ -346,7 +346,7 @@ npx skill-sentry https://github.com/owner/new-dep || exit 1
 The scanner used `git clone` which doesn't exist on Vercel's serverless runtime. Fix: download tarball via GitHub API + extract with the `tar` npm package.
 
 ### 2. The scanner flagged itself
-Our `constants.ts` contains regex patterns for SSH keys — the scanner's own rules matched the rule definitions. Fix: skip `constants.ts` and config files.
+Our `constants.ts` contains regex patterns for SSH keys. the scanner's own rules matched the rule definitions. Fix: skip `constants.ts` and config files.
 
 ### 3. "Scan triggered!" then nothing
 Users clicked submit and saw a success message that disappeared after 5 seconds. They had no idea where to find results. Fix: inline results panel with animated loader and verdict.
@@ -364,13 +364,13 @@ The table went off-screen on phones. Fix: card layout below 768px with sort pill
 
 ## What I'd Do Differently
 
-1. **AST parsing instead of regex** — would eliminate false positives from strings that happen to match patterns. But regex shipped in one session; AST would take a week.
+1. **AST parsing instead of regex**. would eliminate false positives from strings that happen to match patterns. But regex shipped in one session; AST would take a week.
 
-2. **Dependency tree scanning** — check if sub-dependencies are malicious, not just the top-level package. This is what Snyk does well.
+2. **Dependency tree scanning**. check if sub-dependencies are malicious, not just the top-level package. This is what Snyk does well.
 
-3. **A proper database** — `registry.json` works at 128 entries. At 10,000 it'll be slow. SQLite or Turso would be the next step.
+3. **A proper database**. `registry.json` works at 128 entries. At 10,000 it'll be slow. SQLite or Turso would be the next step.
 
-4. **User accounts** — let people save scans, get notifications when a repo they use gets flagged.
+4. **User accounts**. let people save scans, get notifications when a repo they use gets flagged.
 
 ---
 
@@ -388,14 +388,14 @@ The table went off-screen on phones. Fix: card layout below 768px with sort pill
 
 ## Tools Used
 
-- **Claude Code** (Opus) — pair programming partner for the entire build
-- **PAUL framework** — project management (phases, plans, apply, unify loops)
-- **Next.js 15** — App Router with React Server Components
-- **Tailwind CSS v4** + **Shadcn UI** — styling and components
-- **Vitest** — testing
-- **GitHub Actions** — automation
-- **Vercel** — hosting
-- **npm** — package publishing
+- **Claude Code** (Opus). pair programming partner for the entire build
+- **PAUL framework**. project management (phases, plans, apply, unify loops)
+- **Next.js 15**. App Router with React Server Components
+- **Tailwind CSS v4** + **Shadcn UI**. styling and components
+- **Vitest**. testing
+- **GitHub Actions**. automation
+- **Vercel**. hosting
+- **npm**. package publishing
 
 ---
 
@@ -405,7 +405,7 @@ If you have a pain point and want to build a tool:
 
 1. **Start with the data contract.** Define your types before writing logic. What goes in, what comes out, what shape is it?
 
-2. **Build the core function first.** Make it stateless — input in, output out, no side effects. This lets you test it, call it from anywhere, and reason about it easily.
+2. **Build the core function first.** Make it stateless. input in, output out, no side effects. This lets you test it, call it from anywhere, and reason about it easily.
 
 3. **Prove it works with tests.** Create fixtures with known inputs and expected outputs. If the tests pass, the core works.
 
@@ -415,7 +415,7 @@ If you have a pain point and want to build a tool:
 
 6. **Ship fast, iterate publicly.** Version 1 had bugs (no git on Vercel, flagged itself, slow submissions). Every bug was fixed in minutes because the architecture was simple.
 
-7. **Make it free.** Zero cost means zero barriers to adoption. Git-as-a-DB, Vercel free tier, GitHub Actions on public repos — there are enough free tools to build real products.
+7. **Make it free.** Zero cost means zero barriers to adoption. Git-as-a-DB, Vercel free tier, GitHub Actions on public repos. there are enough free tools to build real products.
 
 ---
 
@@ -428,4 +428,4 @@ If you have a pain point and want to build a tool:
 
 ---
 
-*Built by V — just a builder who wanted to feel safe clicking install.*
+*Built by V. just a builder who wanted to feel safe clicking install.*

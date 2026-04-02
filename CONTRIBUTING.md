@@ -1,6 +1,6 @@
 # Contributing to Skill Sentry
 
-First off — thank you. The fact that you're here means you care about keeping the Claude community safe. That means a lot.
+First off, thank you. The fact that you're here means you care about keeping the Claude community safe. That means a lot.
 
 ## Quick Start
 
@@ -62,6 +62,7 @@ This is the most impactful contribution you can make. Here's how:
      pattern: /crypto(?:night|miner)|stratum\+tcp/,
      score: 50,
      description: "Detects cryptocurrency mining code...",
+     plainEnglish: "This package contains crypto mining code that uses your computer's resources...",
      fileTargets: ["**/*.ts", "**/*.js", "**/*.mjs"],
    }
    ```
@@ -82,11 +83,11 @@ This is the most impactful contribution you can make. Here's how:
 
 We use simple prefixes:
 
-- `feat:` — New feature or security rule
-- `fix:` — Bug fix
-- `docs:` — Documentation changes
-- `test:` — Adding or updating tests
-- `refactor:` — Code changes that don't add features or fix bugs
+- `feat:` new feature or security rule
+- `fix:` bug fix
+- `docs:` documentation changes
+- `test:` adding or updating tests
+- `refactor:` code changes that don't add features or fix bugs
 
 ## The One Rule That Cannot Be Broken
 
@@ -98,4 +99,4 @@ If you're unsure whether your change crosses this line, ask in the PR. We'll fig
 
 ## Questions?
 
-Open an issue. There are no stupid questions — especially about security.
+Open an issue. There are no stupid questions, especially about security.

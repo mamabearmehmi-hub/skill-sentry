@@ -18,21 +18,21 @@
 
 ## Why I Built This
 
-Every day I discover new skills and MCP servers that make building with Claude feel like a superpower. The community is incredible — people are shipping tools that turn Claude into a design partner, a database manager, a deployment engine.
+Every day I discover new skills and MCP servers that make building with Claude feel like a superpower. The community is incredible. People are shipping tools that turn Claude into a design partner, a database manager, a deployment engine.
 
 But here's the thing that kept me up at night: **every one of those skills asks you to run `npx` or `npm install`.**
 
-And that means you're trusting someone else's code to run on your machine. With access to your files. Your environment variables. Your SSH keys. Your tokens.
+That means you're trusting someone else's code to run on your machine. With access to your files. Your environment variables. Your SSH keys. Your tokens.
 
 I'm not a security expert. I'm a builder, just like you. But I know enough to be scared of a `postinstall` script that runs `curl | bash` before you even see what's inside. I've read the stories about supply chain attacks. I've seen what a single malicious package can do.
 
 So I built myself a sentry.
 
-**Skill Sentry scans the code so you don't have to.** It reads every file, checks for dangerous patterns, and gives you a risk score — all without ever executing a single line of the scanned code.
+**Skill Sentry scans the code so you don't have to.** It reads every file, checks for dangerous patterns, and gives you a risk score. All without ever executing a single line of the scanned code.
 
-You're welcome to use it. I hope it helps keep us safe, and lets us keep enjoying building beautiful things with Claude.
+You're welcome to use it. I hope it helps keep us safe and lets us keep enjoying building beautiful things with Claude.
 
-— **V** | *Just a builder who wanted to feel safe clicking install*
+**V** | *Just a builder who wanted to feel safe clicking install*
 
 ---
 
@@ -40,7 +40,7 @@ You're welcome to use it. I hope it helps keep us safe, and lets us keep enjoyin
 
 **Skill Sentry is a zero-cost, open-source security scanner for the Claude MCP ecosystem.**
 
-It doesn't matter if it's called a "Skill" or an "MCP Server" — if it has a `package.json`, Skill Sentry will scan it.
+It doesn't matter if it's called a "Skill" or an "MCP Server." If it has a `package.json`, Skill Sentry will scan it.
 
 ### The Scanner Checks For:
 
@@ -66,24 +66,24 @@ Risk Score = min(100, sum of all finding scores)
 - **50-79** = High risk (proceed with caution)
 - **80-100** = Critical (do not install)
 
-### Verified Publishers & Typosquat Detection
+### Verified Publishers and Typosquat Detection
 
-Known legitimate organizations (Anthropic, Stripe, GitHub, Supabase, etc.) are recognized as **verified publishers**. Their findings are shown but explained as expected behavior — Stripe's toolkit *should* read `STRIPE_API_KEY`.
+Known legitimate organizations (Anthropic, Stripe, GitHub, Supabase, etc.) are recognized as **verified publishers**. Their findings are shown but explained as expected behavior. Stripe's toolkit *should* read `STRIPE_API_KEY`. That's normal.
 
-If a repo owner looks suspiciously similar to a verified publisher (e.g., `stripee` vs `stripe`), the scanner flags it as a **potential typosquat** — someone impersonating a trusted brand.
+If a repo owner looks suspiciously similar to a verified publisher (e.g., `stripee` vs `stripe`), the scanner flags it as a **potential typosquat**: someone impersonating a trusted brand to trick you into installing malicious code.
 
 ---
 
 ## Features
 
-- **npm CLI** — `npx skill-sentry <url>` scans from any terminal, no install needed
-- **Web Dashboard** — Searchable table of all audited skills with interactive filters
-- **Instant Scan** — Paste a URL, get results in 5-15 seconds (scans run server-side)
-- **Plain English** — Every finding explained in human language, not security jargon
-- **Verdict** — Clear recommendation: "No known risks" / "Review carefully" / "Do not install"
-- **CI Flags** — `--strict` and `--threshold` for automated pipeline gating
-- **Auto-Discover** — Daily scraper finds new MCP repos via GitHub API
-- **Zero Cost** — Runs entirely on Vercel free tier + GitHub Actions
+- **npm CLI**: `npx skill-sentry <url>` scans from any terminal, no install needed
+- **Web Dashboard**: searchable table of all audited skills with interactive filters
+- **Instant Scan**: paste a URL, get results in 5-15 seconds (scans run server-side)
+- **Plain English**: every finding explained in human language, not security jargon
+- **Verdict**: clear recommendation per scan ("No known risks" / "Review carefully" / "Do not install")
+- **CI Flags**: `--strict` and `--threshold` for automated pipeline gating
+- **Auto-Discover**: daily scraper finds new MCP repos via GitHub API
+- **Zero Cost**: runs entirely on Vercel free tier + GitHub Actions
 
 ---
 
@@ -119,10 +119,10 @@ You'll see a colored report with a plain English verdict:
 ```
 
 **Flags:**
-- `--json` — Output raw JSON (for piping to other tools or CI)
-- `--strict` — Exit 1 if any HIGH or CRITICAL finding
-- `--threshold <N>` — Exit 1 if risk score >= N (0-100)
-- `--help` — Show usage
+- `--json` outputs raw JSON (for piping to other tools or CI)
+- `--strict` exits 1 if any HIGH or CRITICAL finding
+- `--threshold <N>` exits 1 if risk score >= N (0-100)
+- `--help` shows usage
 
 **Exit codes** (useful for CI/CD):
 - `0` = no findings
@@ -134,13 +134,13 @@ You'll see a colored report with a plain English verdict:
 # Block PRs that add dangerous MCP dependencies
 npx skill-sentry https://github.com/owner/new-skill --strict || exit 1
 
-# Custom threshold — fail if risk score 50 or above
+# Custom threshold: fail if risk score 50 or above
 npx skill-sentry https://github.com/owner/new-skill --threshold 50
 ```
 
 ### Use the Dashboard
 
-Visit the live dashboard and paste any GitHub URL into the submit form. Results appear inline in 5-15 seconds — no page navigation, no waiting for background jobs.
+Visit the live dashboard and paste any GitHub URL into the submit form. Results appear inline in 5-15 seconds. No page navigation, no waiting for background jobs.
 
 ### Run Locally
 
@@ -171,25 +171,25 @@ Someone just shared a cool Claude skill in Slack. Before you run `npx` or `npm i
 
 1. Copy the GitHub URL
 2. Paste it into the **Submit a Skill for Audit** box
-3. Results appear in 5-15 seconds — right there on the page
+3. Results appear in 5-15 seconds, right there on the page
 4. Read the verdict
 
 ### Step 2: Read the Verdict
 
 | What You See | What It Means | What To Do |
 |:---:|---|---|
-| **"No known risk patterns detected"** | None of our 11 detection rules matched | Lower risk — but always review code from unfamiliar authors |
-| **"Verified publisher"** | Known org (Stripe, Anthropic, etc.) — findings are expected | Review findings, but these are typically normal for the tool type |
+| **"No known risk patterns detected"** | None of our 11 detection rules matched | Lower risk, but always review code from unfamiliar authors |
+| **"Verified publisher"** | Known org (Stripe, Anthropic, etc.) with expected findings | Review findings, but these are typically normal for the tool type |
 | **"Some concerns found"** | Suspicious patterns detected | Read the findings, use your judgment |
-| **"High risk — review carefully"** | Multiple dangerous patterns | Only install if you trust the author AND understand why it needs those permissions |
-| **"Do not install"** | Critical threats — auto-executing scripts, credential theft, or SSH key access | Walk away. Do not install this. Tell others. |
-| **"Looks like a fake account"** | Repo owner is suspiciously similar to a verified publisher (typosquat) | Very likely an impersonation attack. Do not install. |
+| **"High risk"** | Multiple dangerous patterns | Only install if you trust the author AND understand why it needs those permissions |
+| **"Do not install"** | Critical threats: auto-executing scripts, credential theft, or SSH key access | Walk away. Do not install this. Tell others. |
+| **"Looks like a fake account"** | Repo owner is suspiciously similar to a verified publisher | Very likely an impersonation attack. Do not install. |
 
 ### Step 3: Understand the Findings
 
-Each finding is explained in plain English — no security degree needed:
+Each finding is explained in plain English. No security degree needed:
 
-> **Caution.** This package can open a terminal on your computer and run any command it wants — with YOUR permissions. It could delete files, install malware, or steal your data without you seeing anything happen.
+> **Caution.** This package can open a terminal on your computer and run any command it wants, with YOUR permissions. It could delete files, install malware, or steal your data without you seeing anything happen.
 
 Click **"Technical details"** to expand the full breakdown with file paths and line numbers.
 
@@ -204,9 +204,9 @@ Skill Sentry has a **daily automated scraper** that:
 3. **Skips repos already scanned** (no duplicates)
 4. **Audits each new repo** against all 11 security rules
 5. **Commits results** to the registry automatically
-6. **Vercel auto-redeploys** — new skills appear on the dashboard within minutes
+6. **Vercel auto-redeploys**, so new skills appear on the dashboard within minutes
 
-The registry grows every single day without anyone lifting a finger. The community also feeds it through the Submit button — creating a growth cycle where the more people use it, the more comprehensive it becomes.
+The registry grows every single day without anyone lifting a finger. The community also feeds it through the Submit button, creating a growth cycle where the more people use it, the more comprehensive it becomes.
 
 **Current registry:** 128+ skills scanned and growing daily.
 
@@ -221,7 +221,7 @@ Good. Keep using them. Skill Sentry fills a different gap.
 | **SonarQube** | After code is in your repo | Code quality, bugs, security smells in YOUR code | Doesn't scan third-party packages before install |
 | **Snyk / Checkmarx** | After `npm install` | Known CVEs in your dependency tree | The malicious `postinstall` already ran by this point |
 | **Azure Defender** | At runtime | Threats in deployed infrastructure | Doesn't cover developer machines or local `npx` |
-| **Ivanti App Control** | At the endpoint | Whitelists/blocks executables and scripts on managed devices | Doesn't understand npm packages — blocks by binary, not by intent. A `node.exe` running a malicious skill looks the same as a safe one |
+| **Ivanti App Control** | At the endpoint | Whitelists/blocks executables and scripts on managed devices | Doesn't understand npm packages. Blocks by binary, not by intent. A `node.exe` running a malicious skill looks the same as a safe one |
 | **Skill Sentry** | **Before you install** | **Dangerous patterns in packages you're ABOUT to trust** | **This is the gap** |
 
 Here's the timeline of someone installing a Claude skill:
@@ -249,7 +249,7 @@ Terminal or Dashboard
         │
         ▼
   ┌──────────────┐
-  │ auditRepo()  │  Stateless function: URL in → JSON out
+  │ auditRepo()  │  Stateless function: URL in, JSON out
   └──────┬───────┘
          │
   ┌──────▼───────┐
@@ -258,7 +258,7 @@ Terminal or Dashboard
   └──────┬───────┘
          │
   ┌──────▼───────┐
-  │ Scan files   │  11 regex rules × matching file targets
+  │ Scan files   │  11 regex rules x matching file targets
   │ (static)     │  Records: file, line, match, severity
   └──────┬───────┘
          │
@@ -287,7 +287,7 @@ Terminal or Dashboard
 
 **Total cost to run: $0/month.**
 
-### npm Package — Lightweight by Design
+### npm Package: Lightweight by Design
 
 The CLI ships with only **2 production dependencies** (tar + tsx). The web dashboard dependencies (React, Next.js, Tailwind) are dev-only and never downloaded when you run `npx skill-sentry`. Total install size for CLI users: ~14MB.
 
@@ -315,13 +315,13 @@ skill-sentry/
 │   ├── SearchFilter.tsx          # Search + filter controls
 │   └── ReportHeader.tsx          # Report page header
 ├── scripts/                      # Scanner engine
-│   ├── auditor.ts                # Core: auditRepo(url) → RegistryEntry
+│   ├── auditor.ts                # Core: auditRepo(url) -> RegistryEntry
 │   ├── clone-repo.ts             # Git clone or tarball download + cleanup
 │   ├── scan-files.ts             # File walker + regex matcher
 │   ├── cli.ts                    # JSON CLI (used by GitHub Actions)
 │   ├── scraper.ts                # GitHub topic discovery
 │   └── update-registry.ts        # Registry upsert
-├── lib/                          # Shared types & logic
+├── lib/                          # Shared types and logic
 │   ├── types.ts                  # TypeScript data contract
 │   ├── constants.ts              # 11 security rules with plain English
 │   ├── registry.ts               # Server-side registry helpers
@@ -337,7 +337,7 @@ skill-sentry/
 
 ---
 
-## What This Is & What It Isn't
+## What This Is and What It Isn't
 
 **Let me be honest with you.**
 
@@ -360,11 +360,11 @@ Skill Sentry is a **first-pass security scanner**. It's a smoke detector, not a 
 - Zero-day exploits in legitimate dependencies
 
 **What this means for you:**
-- A score of **0** means none of our detection rules matched — not that the package is guaranteed safe
-- If Skill Sentry says **"do not install"** → take it seriously, something is genuinely wrong
-- For critical production systems → combine this with Snyk, SonarQube, Checkmarx, and manual code review
+- A score of **0** means none of our detection rules matched, not that the package is guaranteed safe
+- If Skill Sentry says **"do not install"**, take it seriously. Something is genuinely wrong
+- For critical production systems, combine this with Snyk, SonarQube, Checkmarx, and manual code review
 
-Most npm supply chain attacks are lazy — a `postinstall` script that `curl`s a payload is the #1 vector. Skill Sentry catches those in seconds. That's the most common attack addressed in 30 seconds. The long tail of sophisticated attacks is where enterprise tools and manual review come in.
+Most npm supply chain attacks are lazy. A `postinstall` script that `curl`s a payload is the #1 vector. Skill Sentry catches those in seconds. That's the most common attack addressed in 30 seconds. The long tail of sophisticated attacks is where enterprise tools and manual review come in.
 
 **Being honest about limitations builds more trust than pretending to be perfect.** I'd rather you know exactly what this tool does than find out the hard way what it doesn't.
 
@@ -372,9 +372,9 @@ Most npm supply chain attacks are lazy — a `postinstall` script that `curl`s a
 
 ## How I Built This
 
-I built Skill Sentry in one session using Claude Code (Opus). The full build process — from pain point to published npm package — is documented step by step:
+I built Skill Sentry in one session using Claude Code (Opus). The full build process, from pain point to published npm package, is documented step by step:
 
-**[Read the full build walkthrough →](docs/HOW-I-BUILT-THIS.md)**
+**[Read the full build walkthrough](docs/HOW-I-BUILT-THIS.md)**
 
 It covers the architecture decisions, what went wrong and how I fixed it, the community feedback that made it better, and principles for building your own tools.
 
@@ -388,21 +388,21 @@ I built Skill Sentry because I needed it. If you find it useful, I'd love your h
 
 ### How to Contribute
 
-1. **Fork the repo** — Click the Fork button on GitHub
-2. **Create a branch** — `git checkout -b feature/your-idea`
-3. **Make your changes** — Follow the patterns you see in the codebase
-4. **Run the tests** — `npm test` (all 20 must pass)
-5. **Build successfully** — `npm run build` (must complete without errors)
-6. **Open a Pull Request** — Target the `main` branch with a clear description
+1. **Fork the repo.** Click the Fork button on GitHub.
+2. **Create a branch.** `git checkout -b feature/your-idea`
+3. **Make your changes.** Follow the patterns you see in the codebase.
+4. **Run the tests.** `npm test` (all 20 must pass)
+5. **Build successfully.** `npm run build` (must complete without errors)
+6. **Open a Pull Request.** Target the `main` branch with a clear description.
 
 ### What I'd Love Help With
 
-- **More security rules** — See patterns I missed? Add them to `lib/constants.ts`
-- **AST parsing** — Moving beyond regex to reduce false positives
-- **Better regex** — Some rules might have false positives/negatives
-- **UI improvements** — The dashboard can always look better
-- **Testing** — More edge cases, more fixtures, more confidence
-- **Accessibility** — Make the dashboard usable for everyone
+- **More security rules.** See patterns I missed? Add them to `lib/constants.ts`
+- **AST parsing.** Moving beyond regex to reduce false positives
+- **Better regex.** Some rules might have false positives/negatives
+- **UI improvements.** The dashboard can always look better
+- **Testing.** More edge cases, more fixtures, more confidence
+- **Accessibility.** Make the dashboard usable for everyone
 
 ### Ground Rules
 
@@ -420,7 +420,7 @@ The `main` branch is protected. All changes go through pull requests with:
 - No force pushes
 - No branch deletion
 
-This isn't bureaucracy — it's a security project. We practice what we preach.
+This isn't bureaucracy. It's a security project. We practice what we preach.
 
 ---
 
@@ -437,10 +437,10 @@ This isn't bureaucracy — it's a security project. We practice what we preach.
 Create a `.env.local` file:
 
 ```env
-# Optional — only needed for the web dashboard's submit button
+# Optional: only needed for the web dashboard's submit button
 GH_TOKEN=your_github_personal_access_token
 
-# Optional — defaults to this repo
+# Optional: defaults to this repo
 GITHUB_OWNER=mamabearmehmi-hub
 GITHUB_REPO=skill-sentry
 ```
@@ -473,12 +473,12 @@ The CLI (`npx skill-sentry`) does not require any environment variables. It uses
 
 ## License
 
-MIT License — use it, fork it, improve it. Just keep building safely.
+MIT License. Use it, fork it, improve it. Just keep building safely.
 
 ---
 
 <p align="center">
-  <strong>Static analysis only — no code executed. Ever.</strong>
+  <strong>Static analysis only. No code executed. Ever.</strong>
   <br />
   <sub>Built with care by a Claude builder who just wanted to feel safe clicking install.</sub>
 </p>
