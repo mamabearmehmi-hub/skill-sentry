@@ -1,7 +1,8 @@
-import { Shield } from "lucide-react";
+import { Shield, Radar } from "lucide-react";
 import { getRegistry, getStats } from "@/lib/registry";
 import { StatsHeader } from "@/components/security/StatsHeader";
 import { SkillsTable } from "@/components/security/SkillsTable";
+import { SubmitSkillForm } from "@/components/security/SubmitSkillForm";
 
 export default function Dashboard() {
   const registry = getRegistry();
@@ -47,10 +48,30 @@ export default function Dashboard() {
           />
         </section>
 
+        {/* Submit Form */}
+        <section
+          className="mb-8 animate-fade-in-up"
+          style={{ animationDelay: "150ms" }}
+        >
+          <div className="rounded-lg border border-white/[0.06] bg-[#12121a] p-6">
+            <div className="flex items-center gap-2 mb-2">
+              <Radar className="h-5 w-5 text-[#00e5a0]" />
+              <h2 className="text-lg font-mono font-semibold text-foreground">
+                Submit a Skill for Audit
+              </h2>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Paste any GitHub URL — we&apos;ll scan it for security threats.
+              No code is executed.
+            </p>
+            <SubmitSkillForm />
+          </div>
+        </section>
+
         {/* Skills Table */}
         <section
           className="mb-12 animate-fade-in-up"
-          style={{ animationDelay: "200ms" }}
+          style={{ animationDelay: "250ms" }}
         >
           <SkillsTable entries={sortedEntries} />
         </section>
@@ -58,7 +79,7 @@ export default function Dashboard() {
         {/* Footer trust line */}
         <footer
           className="border-t border-white/[0.04] pt-6 pb-4 animate-fade-in-up"
-          style={{ animationDelay: "300ms" }}
+          style={{ animationDelay: "350ms" }}
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/50">
             <p className="font-mono">
