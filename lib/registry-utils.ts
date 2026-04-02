@@ -54,9 +54,9 @@ export function getImpact(entry: RegistryEntry): {
   }
 
   if (entry.verifiedSafe) {
-    if (entry.stars >= 10000) return { label: "Widely Trusted", score: 0, description: "Popular and verified safe" };
-    if (entry.stars >= 100) return { label: "Trusted", score: 0, description: "Used by many and verified safe" };
-    return { label: "Safe", score: 0, description: "Verified safe" };
+    if (entry.stars >= 10000) return { label: "Widely Used", score: 0, description: "Popular — no known risk patterns detected" };
+    if (entry.stars >= 100) return { label: "Clear", score: 0, description: "No known risk patterns detected" };
+    return { label: "Clear", score: 0, description: "No known risk patterns detected" };
   }
 
   // Flagged repos — impact scales with stars

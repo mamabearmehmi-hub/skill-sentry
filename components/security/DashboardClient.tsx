@@ -161,7 +161,7 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
                     className="inline-flex items-center gap-2 text-xs font-mono hover:opacity-80 transition-opacity"
                   >
                     <span className="text-[#00e5a0] font-bold">
-                      VERIFIED SAFE
+                      NO RISKS FOUND
                     </span>
                     <span className="text-white">
                       {headline.mostPopularSafe.owner}/
@@ -203,7 +203,7 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
                     className="inline-flex items-center gap-2 text-xs font-mono hover:opacity-80 transition-opacity"
                   >
                     <span className="text-[#00e5a0] font-bold">
-                      VERIFIED SAFE
+                      NO RISKS FOUND
                     </span>
                     <span className="text-white">
                       {headline.mostPopularSafe.owner}/
@@ -231,7 +231,7 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
           filter="all"
         />
         <StatCard
-          label="Verified Safe"
+          label="No Risks Found"
           value={stats.verifiedSafe}
           icon={<ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />}
           accent="#00e5a0"
@@ -265,7 +265,7 @@ export function DashboardClient({ entries, stats }: DashboardClientProps) {
           <span className="text-white/50">Showing:</span>
           <span className="rounded-full bg-white/[0.06] border border-white/[0.08] px-3 py-1 text-white/70">
             {activeFilter === "all" && "All skills"}
-            {activeFilter === "safe" && "Verified safe only"}
+            {activeFilter === "safe" && "No risks found only"}
             {activeFilter === "threats" && "Flagged skills only"}
             {activeFilter === "critical" && "Critical threats only"}
           </span>

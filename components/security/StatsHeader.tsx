@@ -73,7 +73,7 @@ export function StatsHeader({
         accent="#8888a0"
       />
       <StatCard
-        label="Verified Safe"
+        label="No Risks Found"
         value={verifiedSafe}
         icon={<ShieldCheck className="h-5 w-5" />}
         accent="#00e5a0"

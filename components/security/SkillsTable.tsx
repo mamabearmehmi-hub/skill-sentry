@@ -35,9 +35,8 @@ const impactBadgeStyles: Record<string, string> = {
   Notable: "bg-[#ff9a00]/10 text-[#ff9a00] border-[#ff9a00]/20",
   Watch: "bg-[#ff9a00]/8 text-[#ff9a00]/80 border-[#ff9a00]/15",
   "Low Profile": "bg-white/[0.03] text-white/40 border-white/[0.06]",
-  "Widely Trusted": "bg-[#00e5a0]/10 text-[#00e5a0] border-[#00e5a0]/20",
-  Trusted: "bg-[#00e5a0]/8 text-[#00e5a0]/80 border-[#00e5a0]/15",
-  Safe: "bg-[#00e5a0]/5 text-[#00e5a0]/60 border-[#00e5a0]/10",
+  "Widely Used": "bg-[#00e5a0]/10 text-[#00e5a0] border-[#00e5a0]/20",
+  Clear: "bg-[#00e5a0]/8 text-[#00e5a0]/80 border-[#00e5a0]/15",
   Demo: "bg-white/[0.03] text-white/30 border-white/[0.04]",
 };
 

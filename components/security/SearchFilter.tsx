@@ -44,7 +44,7 @@ export function SearchFilter({ onSearch, onFilterSafe }: SearchFilterProps) {
         />
       </div>
 
-      {/* Verified Safe toggle */}
+      {/* No risks filter toggle */}
       <button
         onClick={toggleSafe}
         className={cn(
@@ -56,7 +56,7 @@ export function SearchFilter({ onSearch, onFilterSafe }: SearchFilterProps) {
         )}
       >
         <ShieldCheck className="h-4 w-4" />
-        Verified Safe Only
+        No Risks Only
       </button>
     </div>
   );
