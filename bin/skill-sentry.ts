@@ -39,7 +39,7 @@ function printBanner() {
     `${c.cyan}${c.bold}  ┌─────────────────────────────────────┐${c.reset}`
   );
   console.log(
-    `${c.cyan}${c.bold}  │       SKILL SENTRY  v0.1            │${c.reset}`
+    `${c.cyan}${c.bold}  │       SKILL SENTRY  v0.2            │${c.reset}`
   );
   console.log(
     `${c.cyan}${c.bold}  │  Security scanner for Claude skills  │${c.reset}`
