@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-04-08T07:43:39.500Z",
-  "totalEntries": 421,
+  "lastUpdated": "2026-04-09T07:46:19.609Z",
+  "totalEntries": 467,
   "entries": [
     {
       "owner": "anthropics",
@@ -44833,6 +44833,3851 @@
       "verifiedSafe": true,
       "scannedFiles": 16,
       "packageName": null
+    },
+    {
+      "owner": "prakash-77599",
+      "name": "dotnet-skillz",
+      "url": "https://github.com/prakash-77599/dotnet-skillz",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:46.953Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 7,
+      "packageName": null
+    },
+    {
+      "owner": "NimbleBrainInc",
+      "name": "synapse-collateral",
+      "url": "https://github.com/NimbleBrainInc/synapse-collateral",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:49.006Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 50,
+      "packageName": null
+    },
+    {
+      "owner": "shrav89",
+      "name": "skill-scanner",
+      "url": "https://github.com/shrav89/skill-scanner",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:51.079Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 202,
+      "packageName": null
+    },
+    {
+      "owner": "marmotdata",
+      "name": "marmot",
+      "url": "https://github.com/marmotdata/marmot",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:53.524Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 1152,
+      "packageName": null
+    },
+    {
+      "owner": "Lokesh-Bathala",
+      "name": "mcp-app-with-hono",
+      "url": "https://github.com/Lokesh-Bathala/mcp-app-with-hono",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:55.513Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "worker-configuration.d.ts",
+          "line": 2937,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "worker-configuration.d.ts",
+          "line": 9452,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "worker-configuration.d.ts",
+          "line": 9334,
+          "match": "\"acf77cf37b4156a2708e34c4eb755f9b5dbbe5ebb55adfec8f11493438d19e6ad3f157f81fa3b98278453d5652b0c1fd1d71e5695ae4d709803a4d3f39de9dea\"",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 1,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 14,
+      "packageName": "mcp-app-with-hono"
+    },
+    {
+      "owner": "Louishin",
+      "name": "claude-api-cost-optimization",
+      "url": "https://github.com/Louishin/claude-api-cost-optimization",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:57.380Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 20,
+      "packageName": null
+    },
+    {
+      "owner": "jessevanwyk1",
+      "name": "claude-scholar",
+      "url": "https://github.com/jessevanwyk1/claude-scholar",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:44:59.431Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 10,
+          "match": "require('child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "scripts/lib/utils.js",
+          "line": 11,
+          "match": "require('child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 20,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 28,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 40,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 127,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 133,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hooks/hook-common.js",
+          "line": 139,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/lib/utils.js",
+          "line": 52,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/lib/utils.js",
+          "line": 56,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/lib/utils.js",
+          "line": 72,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hooks/security-guard.js",
+          "line": 124,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 12,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 261,
+      "packageName": null
+    },
+    {
+      "owner": "spring-ai-community",
+      "name": "spring-ai-playground",
+      "url": "https://github.com/spring-ai-community/spring-ai-playground",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:01.691Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 6,
+          "match": "require('child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 488,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 656,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 663,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 673,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 685,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/main.js",
+          "line": 1291,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "electron/scripts/prepare-resources.mjs",
+          "line": 77,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 3,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 7,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 8,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 15,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-estree.js",
+          "line": 26,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 3,
+          "match": "import()",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 3,
+          "match": "import(.",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 3,
+          "match": "import()",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/META-INF/resources/frontend/prettier-plugin-babel.js",
+          "line": 3,
+          "match": "import()",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 13,
+        "medium": 4,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 116,
+      "packageName": null
+    },
+    {
+      "owner": "aniktatripathy",
+      "name": "claude-sandbox",
+      "url": "https://github.com/aniktatripathy/claude-sandbox",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:03.605Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 8,
+      "packageName": null
+    },
+    {
+      "owner": "monuro",
+      "name": "github-ai-assistant",
+      "url": "https://github.com/monuro/github-ai-assistant",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:05.629Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 32,
+      "packageName": null
+    },
+    {
+      "owner": "Hardik455abc",
+      "name": "vsync",
+      "url": "https://github.com/Hardik455abc/vsync",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:07.485Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 3,
+      "packageName": null
+    },
+    {
+      "owner": "nsikaknkan001",
+      "name": "Task_Management_With_AI",
+      "url": "https://github.com/nsikaknkan001/Task_Management_With_AI",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:09.428Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 121,
+      "packageName": "angular-starter"
+    },
+    {
+      "owner": "agentidx",
+      "name": "agentindex",
+      "url": "https://github.com/agentidx/agentindex",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:11.910Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 1064,
+      "packageName": null
+    },
+    {
+      "owner": "GabrielCostaLopes16",
+      "name": "claude-code-hooks",
+      "url": "https://github.com/GabrielCostaLopes16/claude-code-hooks",
+      "description": "Production-ready hooks for Claude Code — safety, automation, notifications, and more",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:14.010Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "hook-scripts/post-tool-use/auto-stage.js",
+          "line": 27,
+          "match": "require('child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hook-scripts/post-tool-use/auto-stage.js",
+          "line": 42,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "hook-scripts/post-tool-use/auto-stage.js",
+          "line": 52,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/block-dangerous-commands.js",
+          "line": 46,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/block-dangerous-commands.js",
+          "line": 46,
+          "match": "id_ed25519",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/block-dangerous-commands.js",
+          "line": 50,
+          "match": "known_hosts",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 40,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 40,
+          "match": "id_ed25519",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 68,
+          "match": "known_hosts",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 68,
+          "match": "known_hosts",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 77,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 77,
+          "match": "id_ed25519",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 90,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 93,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 94,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 95,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 99,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 99,
+          "match": "id_ed25519",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 101,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 101,
+          "match": "id_ed25519",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "hook-scripts/pre-tool-use/protect-secrets.js",
+          "line": 113,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 21,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 12,
+      "packageName": "claude-code-hooks"
+    },
+    {
+      "owner": "sproutn-iq123",
+      "name": "noun-mcp",
+      "url": "https://github.com/sproutn-iq123/noun-mcp",
+      "description": "MCP server for The Noun Project - search and download icons directly in Cursor AI and Claude",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:15.951Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/api/auth.ts",
+          "line": 87,
+          "match": "process.env.NOUN_CONSUMER_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/api/auth.ts",
+          "line": 88,
+          "match": "process.env.NOUN_CONSUMER_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 80,
+      "packageName": "@alisaitteke/noun-mcp"
+    },
+    {
+      "owner": "sbroenne",
+      "name": "mcp-server-excel",
+      "url": "https://github.com/sbroenne/mcp-server-excel",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:18.323Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".squad/templates/ralph-triage.js",
+          "line": 411,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".squad/templates/ralph-triage.js",
+          "line": 492,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 627,
+      "packageName": null
+    },
+    {
+      "owner": "dbiego87",
+      "name": "cs2radar",
+      "url": "https://github.com/dbiego87/cs2radar",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:20.258Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "NitishReddy26",
+      "name": "n8n-oracle-cloud-selfhost",
+      "url": "https://github.com/NitishReddy26/n8n-oracle-cloud-selfhost",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:21.966Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 5,
+      "packageName": null
+    },
+    {
+      "owner": "alexobiwan-creator",
+      "name": "zotero-mcp-lite",
+      "url": "https://github.com/alexobiwan-creator/zotero-mcp-lite",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:23.897Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 22,
+      "packageName": null
+    },
+    {
+      "owner": "strewerwer",
+      "name": "agentic-rag-framework",
+      "url": "https://github.com/strewerwer/agentic-rag-framework",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:25.844Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "Alejandrowe-bot",
+      "name": "claude-mcps-and-prompts",
+      "url": "https://github.com/Alejandrowe-bot/claude-mcps-and-prompts",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:27.780Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 10,
+      "packageName": null
+    },
+    {
+      "owner": "Yandatini",
+      "name": "mcp-agent-framework",
+      "url": "https://github.com/Yandatini/mcp-agent-framework",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:29.534Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 11,
+      "packageName": null
+    },
+    {
+      "owner": "ANGEL37391",
+      "name": "arvo-mcp",
+      "url": "https://github.com/ANGEL37391/arvo-mcp",
+      "description": "Official MCP server for Arvo - AI workout coach. Access your training data through Claude Desktop, Cursor, and other MCP clients.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:31.504Z",
+      "riskScore": 50,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/api/client.ts",
+          "line": 121,
+          "match": "process.env.ARVO_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 18,
+      "packageName": "arvo-mcp"
+    },
+    {
+      "owner": "Md0bR",
+      "name": "claude-config",
+      "url": "https://github.com/Md0bR/claude-config",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:33.413Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 28,
+      "packageName": null
+    },
+    {
+      "owner": "Rares683",
+      "name": "mcp-gateway",
+      "url": "https://github.com/Rares683/mcp-gateway",
+      "description": "MCP Gateway - Aggregate multiple MCP servers into a single gateway",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:35.441Z",
+      "riskScore": 20,
+      "findings": [
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 21,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 1,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 22,
+      "packageName": "@eznix/mcp-gateway"
+    },
+    {
+      "owner": "Frank-oll",
+      "name": "skill-publisher",
+      "url": "https://github.com/Frank-oll/skill-publisher",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:37.116Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 6,
+      "packageName": null
+    },
+    {
+      "owner": "lockfeel",
+      "name": "amemo-skill",
+      "url": "https://github.com/lockfeel/amemo-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:38.821Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 16,
+      "packageName": null
+    },
+    {
+      "owner": "xltang",
+      "name": "hotspots",
+      "url": "https://github.com/xltang/hotspots",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:40.504Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 3,
+      "packageName": null
+    },
+    {
+      "owner": "davidmaronio",
+      "name": "StellarPay402",
+      "url": "https://github.com/davidmaronio/StellarPay402",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:42.313Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "mcp-server/index.mjs",
+          "line": 37,
+          "match": "process.env.STELLAR_SECRET_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/reanchor-all.mjs",
+          "line": 28,
+          "match": "process.env.REGISTRY_SUBMITTER_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/reanchor-all.mjs",
+          "line": 28,
+          "match": "process.env.FACILITATOR_SECRET_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/app/api/demo/ai-answer/route.ts",
+          "line": 37,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/app/api/facilitator/[[...path]]/route.ts",
+          "line": 22,
+          "match": "process.env.FACILITATOR_SECRET_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/lib/auth.ts",
+          "line": 23,
+          "match": "process.env.GITHUB_CLIENT_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/lib/registry.ts",
+          "line": 16,
+          "match": "process.env.REGISTRY_SUBMITTER_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/lib/registry.ts",
+          "line": 16,
+          "match": "process.env.FACILITATOR_SECRET_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 8,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 67,
+      "packageName": "stellarpay402"
+    },
+    {
+      "owner": "razashariff",
+      "name": "mcpvs",
+      "url": "https://github.com/razashariff/mcpvs",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:44.030Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 7,
+      "packageName": null
+    },
+    {
+      "owner": "rahul9640440529",
+      "name": "the-autonomous-enterprise",
+      "url": "https://github.com/rahul9640440529/the-autonomous-enterprise",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:45.864Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 24,
+      "packageName": null
+    },
+    {
+      "owner": "vinzyy1",
+      "name": "docker-mcp",
+      "url": "https://github.com/vinzyy1/docker-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:47.750Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 4,
+      "packageName": null
+    },
+    {
+      "owner": "nnico56",
+      "name": "universal-db-mcp",
+      "url": "https://github.com/nnico56/universal-db-mcp",
+      "description": "MCP 数据库万能连接器 - 让 Claude Desktop 直接连接你的数据库",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:49.906Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/utils/config-loader.ts",
+          "line": 50,
+          "match": "process.env.API_KEYS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/utils/config-loader.ts",
+          "line": 55,
+          "match": "process.env.API_KEYS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/utils/config-loader.ts",
+          "line": 55,
+          "match": "process.env.API_KEYS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/utils/config-loader.ts",
+          "line": 58,
+          "match": "process.env.CORS_CREDENTIALS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/utils/config-loader.ts",
+          "line": 82,
+          "match": "process.env.DB_PASSWORD",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 5,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 231,
+      "packageName": "universal-db-mcp"
+    },
+    {
+      "owner": "Clauzi123",
+      "name": "citus-mcp",
+      "url": "https://github.com/Clauzi123/citus-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:51.915Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 105,
+      "packageName": null
+    },
+    {
+      "owner": "ytajay326",
+      "name": "mcp-server",
+      "url": "https://github.com/ytajay326/mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:53.885Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 3,
+      "packageName": null
+    },
+    {
+      "owner": "dpadron10",
+      "name": "tool-search-mcp",
+      "url": "https://github.com/dpadron10/tool-search-mcp",
+      "description": "High-performance semantic tool search for Claude Code. Save 97% tokens with intelligent MCP tool discovery.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:55.830Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/benchmark/main.ts",
+          "line": 550,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/benchmark/main.ts",
+          "line": 593,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/benchmark/tokenizer.ts",
+          "line": 102,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/benchmark/runner.ts",
+          "line": 168,
+          "match": "import(\n      ",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/benchmark/runner.ts",
+          "line": 230,
+          "match": "import(\n      ",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/benchmark/runner.ts",
+          "line": 578,
+          "match": "import(\n      ",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 3,
+        "medium": 3,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 42,
+      "packageName": "tool-search-mcp"
+    },
+    {
+      "owner": "gwapoako2023",
+      "name": "cerata-mcp-server",
+      "url": "https://github.com/gwapoako2023/cerata-mcp-server",
+      "description": "The definitive, production-grade template for building powerful and scalable Model Context Protocol (MCP) servers with TypeScript, featuring built-in observability (OpenTelemetry), declarative tooling, robust error handling, and a modular, DI-driven architecture.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:57.949Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "scripts/validate-mcp-publish-schema.ts",
+          "line": 23,
+          "match": "import { execSync } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/utils/python-executor.ts",
+          "line": 6,
+          "match": "import { spawn } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 128,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 131,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 148,
+          "match": "spawn (",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 164,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 606,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 648,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/devcheck.ts",
+          "line": 679,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/validate-mcp-publish-schema.ts",
+          "line": 40,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/validate-mcp-publish-schema.ts",
+          "line": 128,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/validate-mcp-publish-schema.ts",
+          "line": 137,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/validate-mcp-publish-schema.ts",
+          "line": 141,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/python-executor.ts",
+          "line": 73,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/telemetry/trace.ts",
+          "line": 88,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/mcp-server/tools/definitions/cerata-hunt-repo.tool.ts",
+          "line": 248,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/storage/providers/surrealdb/auth/authManager.ts",
+          "line": 116,
+          "match": "process.env.JWT_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/storage/providers/surrealdb/auth/scopeDefinitions.ts",
+          "line": 27,
+          "match": "process.env.JWT_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 18,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 270,
+      "packageName": "mcp-ts-template"
+    },
+    {
+      "owner": "cvgbxdcfghfhgfdhg",
+      "name": "inkeep-mcp",
+      "url": "https://github.com/cvgbxdcfghfhgfdhg/inkeep-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:45:59.938Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 14,
+      "packageName": null
+    },
+    {
+      "owner": "DomingosNgongo",
+      "name": "walmart-mcp",
+      "url": "https://github.com/DomingosNgongo/walmart-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:02.037Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 4,
+      "packageName": null
+    },
+    {
+      "owner": "MOHITGITAI",
+      "name": "postgrest-mcp",
+      "url": "https://github.com/MOHITGITAI/postgrest-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:03.951Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 21,
+      "packageName": "postgrest-mcp"
+    },
+    {
+      "owner": "ZaikoXeas",
+      "name": "mcpbr",
+      "url": "https://github.com/ZaikoXeas/mcpbr",
+      "description": "Model Context Protocol Benchmark Runner - CLI tool for evaluating MCP servers",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:06.153Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "bin/mcpbr.js",
+          "line": 13,
+          "match": "require('child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "bin/mcpbr.js",
+          "line": 21,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "bin/mcpbr.js",
+          "line": 38,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "bin/mcpbr.js",
+          "line": 61,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "bin/mcpbr.js",
+          "line": 160,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 5,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 110,
+      "packageName": "@greynewell/mcpbr"
+    },
+    {
+      "owner": "demianguzman",
+      "name": "saas-tf-mcp-server",
+      "url": "https://github.com/demianguzman/saas-tf-mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:08.261Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 13,
+      "packageName": null
+    },
+    {
+      "owner": "Quantum3-Labs",
+      "name": "ARBuilder",
+      "url": "https://github.com/Quantum3-Labs/ARBuilder",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:11.105Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/scripts/generateNodeConfigType.ts",
+          "line": 1,
+          "match": "import { execSync } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-sdk/packages/sdk/scripts/genAbi.ts",
+          "line": 2,
+          "match": "import { execSync } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-sdk/packages/sdk/scripts/genNetwork.ts",
+          "line": 2,
+          "match": "import { execSync } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/scraper.ts",
+          "line": 228,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askBridging.ts",
+          "line": 172,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askOrbit.ts",
+          "line": 458,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 107,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 224,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 251,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 309,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 347,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 383,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/askStylus.ts",
+          "line": 483,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitConfig.ts",
+          "line": 83,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateStylusCode.ts",
+          "line": 143,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateStylusCode.ts",
+          "line": 558,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateStylusCode.ts",
+          "line": 631,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateStylusCode.ts",
+          "line": 711,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateStylusCode.ts",
+          "line": 802,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateTests.ts",
+          "line": 112,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/scripts/generateNodeConfigType.ts",
+          "line": 180,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/testHelpers.ts",
+          "line": 104,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/testHelpers.ts",
+          "line": 108,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/testHelpers.ts",
+          "line": 112,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/testHelpers.ts",
+          "line": 116,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-sdk/packages/sdk/scripts/genAbi.ts",
+          "line": 41,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-sdk/packages/sdk/scripts/genAbi.ts",
+          "line": 44,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-sdk/packages/sdk/scripts/genAbi.ts",
+          "line": 47,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-sdk/packages/sdk/scripts/genNetwork.ts",
+          "line": 20,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 48,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 94,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 143,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 200,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 249,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 326,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 426,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/templates/sdkTemplates.ts",
+          "line": 488,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 40,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 65,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 92,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 119,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 155,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 189,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 216,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 251,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateBridgeCode.ts",
+          "line": 281,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateMessagingCode.ts",
+          "line": 61,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateMessagingCode.ts",
+          "line": 161,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateMessagingCode.ts",
+          "line": 209,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateMessagingCode.ts",
+          "line": 286,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateMessagingCode.ts",
+          "line": 388,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateMessagingCode.ts",
+          "line": 437,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOracle.ts",
+          "line": 482,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOracle.ts",
+          "line": 482,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOracle.ts",
+          "line": 486,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOracle.ts",
+          "line": 486,
+          "match": "process.env.PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitConfig.ts",
+          "line": 169,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitConfig.ts",
+          "line": 330,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitConfig.ts",
+          "line": 333,
+          "match": "process.env.NATIVE_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitDeployment.ts",
+          "line": 117,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitDeployment.ts",
+          "line": 238,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitDeployment.ts",
+          "line": 386,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateOrbitDeployment.ts",
+          "line": 519,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateValidatorSetup.ts",
+          "line": 146,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateValidatorSetup.ts",
+          "line": 284,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/generateValidatorSetup.ts",
+          "line": 378,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/orchestrateOrbit.ts",
+          "line": 391,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/orchestrateOrbit.ts",
+          "line": 834,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/web/src/lib/tools/orchestrateOrbit.ts",
+          "line": 1108,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/index.ts",
+          "line": 21,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/index.ts",
+          "line": 25,
+          "match": "process.env.CUSTOM_FEE_TOKEN_ADDRESS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/index.ts",
+          "line": 36,
+          "match": "process.env.BATCH_POSTER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/index.ts",
+          "line": 40,
+          "match": "process.env.VALIDATOR_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/index.ts",
+          "line": 51,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/index.ts",
+          "line": 57,
+          "match": "process.env.CUSTOM_FEE_TOKEN_ADDRESS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/low_level.ts",
+          "line": 28,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/low_level.ts",
+          "line": 32,
+          "match": "process.env.CUSTOM_FEE_TOKEN_ADDRESS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/low_level.ts",
+          "line": 43,
+          "match": "process.env.BATCH_POSTER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/low_level.ts",
+          "line": 47,
+          "match": "process.env.VALIDATOR_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/low_level.ts",
+          "line": 58,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-custom-fee-token/low_level.ts",
+          "line": 64,
+          "match": "process.env.CUSTOM_FEE_TOKEN_ADDRESS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/index.ts",
+          "line": 21,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/index.ts",
+          "line": 32,
+          "match": "process.env.BATCH_POSTER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/index.ts",
+          "line": 36,
+          "match": "process.env.VALIDATOR_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/index.ts",
+          "line": 47,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/low_level.ts",
+          "line": 26,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/low_level.ts",
+          "line": 37,
+          "match": "process.env.BATCH_POSTER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/low_level.ts",
+          "line": 41,
+          "match": "process.env.VALIDATOR_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-rollup-eth/low_level.ts",
+          "line": 52,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-token-bridge-custom-fee-token/index.ts",
+          "line": 22,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-token-bridge-custom-fee-token/index.ts",
+          "line": 34,
+          "match": "process.env.CUSTOM_FEE_TOKEN_ADDRESS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-token-bridge-custom-fee-token/index.ts",
+          "line": 70,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-token-bridge-custom-fee-token/index.ts",
+          "line": 74,
+          "match": "process.env.CUSTOM_FEE_TOKEN_ADDRESS",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-token-bridge-eth/index.ts",
+          "line": 22,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/create-token-bridge-eth/index.ts",
+          "line": 66,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/prepare-node-config/index.ts",
+          "line": 23,
+          "match": "process.env.BATCH_POSTER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/prepare-node-config/index.ts",
+          "line": 27,
+          "match": "process.env.VALIDATOR_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/prepare-node-config/index.ts",
+          "line": 78,
+          "match": "process.env.BATCH_POSTER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/prepare-node-config/index.ts",
+          "line": 79,
+          "match": "process.env.VALIDATOR_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/set-new-validators/index.ts",
+          "line": 19,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/set-new-validators/index.ts",
+          "line": 49,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/set-valid-keyset/index.ts",
+          "line": 11,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/set-valid-keyset/index.ts",
+          "line": 32,
+          "match": "process.env.DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/setup-aep-fee-router/index.ts",
+          "line": 27,
+          "match": "process.env.CHAIN_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/setup-aep-fee-router/index.ts",
+          "line": 49,
+          "match": "process.env.CHAIN_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/setup-fast-withdrawal/index.ts",
+          "line": 38,
+          "match": "process.env.CHAIN_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/setup-fast-withdrawal/index.ts",
+          "line": 69,
+          "match": "process.env.CHAIN_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/setup-fee-distributor-contract/index.ts",
+          "line": 23,
+          "match": "process.env.CHAIN_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/setup-fee-distributor-contract/index.ts",
+          "line": 36,
+          "match": "process.env.CHAIN_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/upgrade-executor-add-account/index.ts",
+          "line": 19,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/upgrade-executor-add-account/index.ts",
+          "line": 71,
+          "match": "process.env.ROLLUP_OWNER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/testHelpers.ts",
+          "line": 32,
+          "match": "process.env.NITRO_TESTNODE_DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/testHelpers.ts",
+          "line": 45,
+          "match": "process.env.NITRO_TESTNODE_DEPLOYER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/diff-migrate.ts",
+          "line": 27,
+          "match": "process.env.AUTH_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/migrate-to-vectorize.ts",
+          "line": 24,
+          "match": "process.env.AUTH_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/retry-failed.ts",
+          "line": 9,
+          "match": "process.env.AUTH_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/sync_sources.ts",
+          "line": 18,
+          "match": "process.env.ARBBUILDER_ADMIN_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/validate-rag-quality.ts",
+          "line": 17,
+          "match": "process.env.AUTH_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/examples/set-valid-keyset/index.ts",
+          "line": 22,
+          "match": "'0x00000000000000010000000000000001012160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/actions/buildScheduleArbOSUpgrade.unit.test.ts",
+          "line": 26,
+          "match": "'0xe388b381000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000639cc030'",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/actions/buildScheduleArbOSUpgrade.unit.test.ts",
+          "line": 44,
+          "match": "'0xbca8c7b5000000000000000000000000000000000000000000000000000000000000007000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/actions/buildScheduleArbOSUpgrade.unit.test.ts",
+          "line": 62,
+          "match": "'0xbca8c7b5000000000000000000000000000000000000000000000000000000000000007000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/actions/sequencerInbox.integration.test.ts",
+          "line": 153,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002560000000000000002000000000000000201216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/createRollupPrepareTransaction.unit.test.ts",
+          "line": 10,
+          "match": "'0xcb73d6e2000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000003c3a5b44fab0e2025160a765348c21c08e41d…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/createRollupPrepareTransaction.unit.test.ts",
+          "line": 20,
+          "match": "'0x331f9b0b000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/createRollupPrepareTransaction.unit.test.ts",
+          "line": 30,
+          "match": "'0x9ba742fd000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/decorators/sequencerInboxActions.integration.test.ts",
+          "line": 135,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002560000000000000002000000000000000201216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getBatchPosters.unit.test.ts",
+          "line": 115,
+          "match": "'0xcb73d6e2000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000725d217057e509dd284ee0e13ac846cfea0b7…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getBatchPosters.unit.test.ts",
+          "line": 151,
+          "match": "'0x000000000000000000000000AD46AD093FD26B4464B756AC1B56985AF87399E7000000000000000000000000000000000000000000000000000000000000000001ABFD0989138206FEC57AE925D0B8CC27ECBB4484DC4CE1133D90E2BA4A644E6179F…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getKeysets.integration.test.ts",
+          "line": 90,
+          "match": "'0x00000000000000010000000000000001012160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getKeysets.integration.test.ts",
+          "line": 93,
+          "match": "'0x0000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getKeysets.unit.test.ts",
+          "line": 18,
+          "match": "'0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000013300000000000000010000000000000001012160184f37a4eaea75e8252d38d5b3f0298…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getKeysets.unit.test.ts",
+          "line": 82,
+          "match": "'0x00000000000000010000000000000001012160184f37a4eaea75e8252d38d5b3f0298703794d58f38b3551104ce0c2472aea78f53ccd07fdb7b1c5b08444d2be9025d519ccc21d12fd9f8b67c50615694b626aaec898b9c1e613b0c17aac28539ee66…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getKeysets.unit.test.ts",
+          "line": 88,
+          "match": "'0x00000000000000010000000000000001012160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getKeysets.unit.test.ts",
+          "line": 91,
+          "match": "'0x0000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getValidators.unit.test.ts",
+          "line": 114,
+          "match": "'0xcb73d6e2000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000725d217057e509dd284ee0e13ac846cfea0b7…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/getValidators.unit.test.ts",
+          "line": 149,
+          "match": "'0x000000000000000000000000AD46AD093FD26B4464B756AC1B56985AF87399E7000000000000000000000000000000000000000000000000000000000000000001ABFD0989138206FEC57AE925D0B8CC27ECBB4484DC4CE1133D90E2BA4A644E6179F…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 6,
+          "match": "'0x00000000000000010000000000000001012160000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 8,
+          "match": "'0x0000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 12,
+          "match": "'YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 22,
+          "match": "'YAbcteVnZLty5qRebeswHKhdjEMVwdou+imSfyrI+yVXHOMdLWA3Nf4DGW9tVry/mhmZqJp01TaYIsREXWdsFe1S5QCNqnddyag5yZ/5Y6GZRqx0BXmHTaxPY5kHrhvGnwxmlJVbUk1xjKRFgxxTdTk3c0AfM3JaeWYTed3avV//KGGdwHC+/Z7XPWmeXCNsGhY75Yu…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 23,
+          "match": "'YAg1+ZXyR48kiS0FDaoon4trnBsYW80oUy+I1hDCZCotxvNQl0AjbTPD4tkTaqsX+BnIxnEpO7ondxd2Lo0cH3usnhfdKNKTmpWbs45QD5wRw4zrvEJuLeqXxAF1plXRdACubHX/SeiEx5RpJJ5wlTJYhUtk+oRFxYWtRdxtxpdVAcavfP9wdCAsaH+Ke/GjrBkmiXV…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 24,
+          "match": "'YAXbmOUQgLs5Kntevb/PM+D08BkxAsxA95qe8KlVfFpi3R74AAVpRugyn5eboMyCUQ0Nx4w8zv+mbuXeXimJh6mFi/UmIXFhTlVvQGh85pEsvqaltERyyz/xB+zmnL0P2g2zkqZKgr5xQHc1HWOE1s6iVK08IeRah4UtrDkZCGXESaZHpOOZKNrXYRsNIHRDfRfkTHZ…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 25,
+          "match": "'YAbOg53k1qOuAvJbQIlTHmo9LeVWvQBr0wzy00CLl30Y8XVt1KG8PADbkALw2O8a9Q+6ppWd7L7By+I0zG72JwoDM5CQ4COPisn4oY9EuHNMjzthI90SiuSKCGO5p/bYgwIENoF3LCt581DBS8nXsY5XjHlcp2klznvSiR0Jqjf+LOHqL/5MA4/vIvZuKJlcYQkCIeh…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 26,
+          "match": "'YA+HK4mKT9G4rnNRX30zzXvh6XHOGJaqvvL4km5YbEJI3A23/XhRQCwUFJ3D3ITzgww0YWfDnlMjlxrDQEFfCi6wVKmo4KXVA6Ks/s690d9xrurDs4JgSAxpm8CZNPCRPg7lquq9VzEyhSB+uJNmtBEobPPxxeMOt+NV9VOFMIuR1YByhDI+6JqXQ8cGdvSUlQTO0+1…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 27,
+          "match": "'YALC7DeOtroXqegbj9RCY9aZw0cZSSpOzx7napQrwiR4+3qflOLxWCJjDy1hbDKjNAOHEY5LluJtbkHbqrn+J61gi9gjoUL5iPfamZzeygirSv7baz2i1NsgjMC6kb/UThU71zc2t98BNBeAqqfxhfyg06R437U7YS7ZHwVEFt571ixZ05tO5gTqlstC89aqIBEhl7S…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 28,
+          "match": "'YBN+CWUmeRP56vhb/yLjzl9Euxv67XZ5sWgKzRVDaoQyXrp/KWLKRpN8y/Rtme3JRANM3Ze8T7HY3DrducNIQxqZl1lZ5qyCODdq8x8D51T6PDFZJ81oYCZeyObpfaQKlQkyd3PnqlvPrvdpDXaQYzNvbVIQp95V4OvyUf/VP23KAiJn+8P/wI5HCeNBSpa4BAVt1+f…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeyset.unit.test.ts",
+          "line": 29,
+          "match": "'YAR40SbOOU71LW/8aEVnLfztsU1Mq+dqzZ7/8liSsx3DLYvSFCZXXwijCxuEu4wfZQeBDiXUeFLx8qBrZrU0HQLXSBoczgElfnaKoaWbaDoo9veUZnRUHw9OI2Q9Md/X6QlYo2HH24a2KP4HXZTIXixD+FjT82g9U2mof3azkCwHZd3IyQTjdbD1dA210uJfGxWalm4…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 15,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000002560000000000000002000000000000000201216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 23,
+          "match": "'0x0000000000000002000000000000000201216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 35,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000008050000000000000002000000000000000701216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 43,
+          "match": "'0x0000000000000002000000000000000701216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 55,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000008050000000000000002000000000000000701216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 63,
+          "match": "'0x0000000000000002000000000000000701216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 75,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000009280000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 83,
+          "match": "'0x0000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 95,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000008050000000000000003000000000000000701216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 103,
+          "match": "'0x0000000000000003000000000000000701216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 115,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000008050000000000000004000000000000000701216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 123,
+          "match": "'0x0000000000000004000000000000000701216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 135,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000009280000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 143,
+          "match": "'0x0000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 155,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000008050000000000000002000000000000000701216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 163,
+          "match": "'0x0000000000000002000000000000000701216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 175,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000009280000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 183,
+          "match": "'0x0000000000000002000000000000000801216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 195,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000006e20000000000000002000000000000000601216006dcb5e56764bb72e6a45e6deb301ca…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-arbitrumNova.ts",
+          "line": 203,
+          "match": "'0x0000000000000002000000000000000601216006dcb5e56764bb72e6a45e6deb301ca85d8c4315c1da2efa29927f2ac8fb25571ce31d2d603735fe03196f6d56bcbf9a1999a89a74d5369822c4445d676c15ed52e5008daa775dc9a839c99ff963a19…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 13,
+          "match": "'0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000379000000000000000200000000000000030121600ac33f15c45bbdb7f320da597cd1c3f…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 23,
+          "match": "'0x000000000000000200000000000000030121600ac33f15c45bbdb7f320da597cd1c3fa70e71a516106456a3573b397213738ea9455a4ac491128d8f7355c03d01c09f60ba545954419ccfab1e3f5437d2e33f83ab4fe8298b1ba5da8bc7faed93c611…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 33,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000003790000000000000002000000000000000301216006849d49f2ec8d52b60aea764767e68…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 43,
+          "match": "'0x0000000000000002000000000000000301216006849d49f2ec8d52b60aea764767e686fca2607d21de5d876c6d3fcee27cd391a8ada0762f0d2d4f4bc383c05e583fa703dc9ae62b029f0e64e3c0c34d99e4d394853292fae75c73b8921124ffb49e8…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 53,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000005bf0000000000000002000000000000000501216006849d49f2ec8d52b60aea764767e68…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 63,
+          "match": "'0x0000000000000002000000000000000501216006849d49f2ec8d52b60aea764767e686fca2607d21de5d876c6d3fcee27cd391a8ada0762f0d2d4f4bc383c05e583fa703dc9ae62b029f0e64e3c0c34d99e4d394853292fae75c73b8921124ffb49e8…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 73,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000006e20000000000000002000000000000000601216006849d49f2ec8d52b60aea764767e68…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 83,
+          "match": "'0x0000000000000002000000000000000601216006849d49f2ec8d52b60aea764767e686fca2607d21de5d876c6d3fcee27cd391a8ada0762f0d2d4f4bc383c05e583fa703dc9ae62b029f0e64e3c0c34d99e4d394853292fae75c73b8921124ffb49e8…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 93,
+          "match": "'0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000a4b0000000000000002000000000000000901216006849d49f2ec8d52b60aea764767e68…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 103,
+          "match": "'0x0000000000000002000000000000000901216006849d49f2ec8d52b60aea764767e686fca2607d21de5d876c6d3fcee27cd391a8ada0762f0d2d4f4bc383c05e583fa703dc9ae62b029f0e64e3c0c34d99e4d394853292fae75c73b8921124ffb49e8…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 113,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000008050000000000000003000000000000000701216006849d49f2ec8d52b60aea764767e68…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 123,
+          "match": "'0x0000000000000003000000000000000701216006849d49f2ec8d52b60aea764767e686fca2607d21de5d876c6d3fcee27cd391a8ada0762f0d2d4f4bc383c05e583fa703dc9ae62b029f0e64e3c0c34d99e4d394853292fae75c73b8921124ffb49e8…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 133,
+          "match": "'0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000006e20000000000000003000000000000000601216006849d49f2ec8d52b60aea764767e68…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareKeysetHash.unit.testInputs-xai.ts",
+          "line": 143,
+          "match": "'0x0000000000000003000000000000000601216006849d49f2ec8d52b60aea764767e686fca2607d21de5d876c6d3fcee27cd391a8ada0762f0d2d4f4bc383c05e583fa703dc9ae62b029f0e64e3c0c34d99e4d394853292fae75c73b8921124ffb49e8…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/prepareNodeConfig.ts",
+          "line": 176,
+          "match": "'YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/upgradeExecutor.unit.test.ts",
+          "line": 22,
+          "match": "'0x536d8944000000000000000000000000add68bcb0f66878ab9d37a447c7b9067c5dfa94100000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-001",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/upgradeExecutor.unit.test.ts",
+          "line": 27,
+          "match": "'0x1cff79cd0000000000000000000000009bf7b8884fa381a45f8cb2525905fb36c996297a00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000…",
+          "message": "Long Base64-encoded strings (>128 chars) may contain obfuscated payloads. Legitimate code rarely embeds large encoded blobs inline.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "data/raw/repos/OffchainLabs_arbitrum-orbit-sdk/src/package.json",
+          "line": 32,
+          "match": "\"*\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "apps/web/src/lib/tools/generateOracle.ts",
+          "line": 178,
+          "match": "require(s",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "apps/web/src/lib/tools/generateOracle.ts",
+          "line": 179,
+          "match": "require(i",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 118,
+        "medium": 70,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 644,
+      "packageName": null
+    },
+    {
+      "owner": "NMukesh25",
+      "name": "docmole",
+      "url": "https://github.com/NMukesh25/docmole",
+      "description": "Dig through any documentation with AI - MCP server for Claude, Cursor, and other AI assistants",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:15.020Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/cli/start.ts",
+          "line": 69,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/cli/start.ts",
+          "line": 124,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/cli/start.ts",
+          "line": 130,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/backends/embedded/providers.ts",
+          "line": 80,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/backends/embedded/providers.ts",
+          "line": 205,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/cli/prompt.ts",
+          "line": 37,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/cli/prompt.ts",
+          "line": 66,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 58,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/backends/registry.ts",
+          "line": 75,
+          "match": "import(m",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 7,
+        "medium": 2,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 51,
+      "packageName": "docmole"
+    },
+    {
+      "owner": "YousifAshwal",
+      "name": "claude-ide-tools",
+      "url": "https://github.com/YousifAshwal/claude-ide-tools",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:17.093Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 2794,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 6554,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 6574,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 6605,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 6606,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 2794,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 6554,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 6574,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 6605,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 6606,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 3088,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 4439,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 3088,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 4439,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/mcp-server/common-server.js",
+          "line": 9,
+          "match": "require()",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/main/resources/mcp-server/ide-server.js",
+          "line": 9,
+          "match": "require()",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 10,
+        "medium": 6,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 86,
+      "packageName": null
+    },
+    {
+      "owner": "cinoindo",
+      "name": "smart-xdebug-mcp",
+      "url": "https://github.com/cinoindo/smart-xdebug-mcp",
+      "description": "Let AI debug your PHP code - MCP server connecting Claude to XDebug for runtime variable inspection, breakpoints, and step-through debugging",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-09T07:46:19.019Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/debug/dbgp-connection.ts",
+          "line": 16,
+          "match": "import type { ChildProcess } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/debug/dbgp-connection.ts",
+          "line": 17,
+          "match": "import { spawn } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/debug/dbgp-connection.ts",
+          "line": 288,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/debug/session-recorder.ts",
+          "line": 83,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 4,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 68,
+      "packageName": "smart-xdebug-mcp"
     }
   ]
 }
