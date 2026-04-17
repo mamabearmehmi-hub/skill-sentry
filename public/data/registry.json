@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-04-16T07:56:40.621Z",
-  "totalEntries": 675,
+  "lastUpdated": "2026-04-17T07:57:36.486Z",
+  "totalEntries": 699,
   "entries": [
     {
       "owner": "anthropics",
@@ -63707,6 +63707,1755 @@
       "verifiedSafe": false,
       "scannedFiles": 108,
       "packageName": "mcp-core"
+    },
+    {
+      "owner": "qxbao",
+      "name": "qldt-hanu-mcp",
+      "url": "https://github.com/qxbao/qldt-hanu-mcp",
+      "description": "",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:56:45.618Z",
+      "riskScore": 50,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/tools/auth/auth.service.ts",
+          "line": 47,
+          "match": "process.env.QLDT_PASSWORD",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 21,
+      "packageName": "qldt-hanu-mcp"
+    },
+    {
+      "owner": "BMSoft1024",
+      "name": "Common_MCP_Gateway",
+      "url": "https://github.com/BMSoft1024/Common_MCP_Gateway",
+      "description": "Common MCP Gateway - Aggregates multiple MCP servers with robust timeout and error handling",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:56:47.505Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/gateway/connection-pool.ts",
+          "line": 3,
+          "match": "import { spawn, ChildProcess } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "test-client.js",
+          "line": 2,
+          "match": "require('child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "test-client.js",
+          "line": 4,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "gateway-manager/backend/src/server.ts",
+          "line": 23,
+          "match": "process.env.GATEWAY_MANAGER_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 4,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 45,
+      "packageName": "@bmsoft1024/common-mcp-gateway"
+    },
+    {
+      "owner": "mcp-tool-shop-org",
+      "name": "ollama-intern-mcp",
+      "url": "https://github.com/mcp-tool-shop-org/ollama-intern-mcp",
+      "description": "MCP control plane for local cognitive labor — job-shaped tools with tiered Ollama models (instant/workhorse/deep/embed), server-enforced guardrails, and measured economics so Claude can delegate bulk work without losing control.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:56:49.329Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/corpus/chunker.ts",
+          "line": 95,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/corpus/chunker.ts",
+          "line": 125,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/guardrails/compileCheck.ts",
+          "line": 99,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 3,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 112,
+      "packageName": "ollama-intern-mcp"
+    },
+    {
+      "owner": "NimbleBrainInc",
+      "name": "nimblebrain",
+      "url": "https://github.com/NimbleBrainInc/nimblebrain",
+      "description": "Self-hosted platform for MCP Apps and agent automations — tools, interactive UIs, scheduled runs, multi-agent delegation",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:56:51.646Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/bundles/lifecycle.ts",
+          "line": 766,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/bundles/startup.ts",
+          "line": 162,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/cli/dev.ts",
+          "line": 78,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/cli/dev.ts",
+          "line": 99,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/cli/dev.ts",
+          "line": 129,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/api/turnstile.ts",
+          "line": 28,
+          "match": "process.env.TURNSTILE_SECRET_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/api/turnstile.ts",
+          "line": 96,
+          "match": "process.env.TURNSTILE_SECRET_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/bundles/automations/src/executor.ts",
+          "line": 162,
+          "match": "process.env.NB_INTERNAL_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/identity/providers/workos.ts",
+          "line": 133,
+          "match": "process.env.WORKOS_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/telemetry/manager.ts",
+          "line": 9,
+          "match": "process.env.POSTHOG_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 70,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/config/index.ts",
+          "line": 16,
+          "match": "require(S",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 10,
+        "medium": 2,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 398,
+      "packageName": "nimblebrain"
+    },
+    {
+      "owner": "schlpbch",
+      "name": "aareguru-mcp",
+      "url": "https://github.com/schlpbch/aareguru-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:56:53.632Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 54,
+      "packageName": null
+    },
+    {
+      "owner": "fabb",
+      "name": "WigAI",
+      "url": "https://github.com/fabb/WigAI",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:56:55.869Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 359,
+      "packageName": null
+    },
+    {
+      "owner": "IvanMurzak",
+      "name": "Unity-MCP",
+      "url": "https://github.com/IvanMurzak/Unity-MCP",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:02.414Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "cli/src/commands/update.ts",
+          "line": 2,
+          "match": "import { spawn } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "cli/src/utils/browser.ts",
+          "line": 4,
+          "match": "import { execFile } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-editor.ts",
+          "line": 3,
+          "match": "import { spawn } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-hub.ts",
+          "line": 4,
+          "match": "import { execFileSync, execSync, spawn } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-process.ts",
+          "line": 1,
+          "match": "import { execSync } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/commands/update.ts",
+          "line": 20,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-editor.ts",
+          "line": 221,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-hub.ts",
+          "line": 134,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-hub.ts",
+          "line": 139,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-hub.ts",
+          "line": 141,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-hub.ts",
+          "line": 435,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-process.ts",
+          "line": 46,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "cli/src/utils/unity-process.ts",
+          "line": 74,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 13,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 2529,
+      "packageName": null
+    },
+    {
+      "owner": "AxmeAI",
+      "name": "axme-code",
+      "url": "https://github.com/AxmeAI/axme-code",
+      "description": "Persistent memory, decisions, and safety guardrails for Claude Code",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:04.615Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/storage/sessions.ts",
+          "line": 858,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/audit-spawner.ts",
+          "line": 65,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/storage/plans.ts",
+          "line": 320,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/storage/safety.ts",
+          "line": 377,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/storage/sessions.ts",
+          "line": 858,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/agent-options.ts",
+          "line": 22,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/bash-file-extract.ts",
+          "line": 73,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/workspace-detector.ts",
+          "line": 112,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/workspace-detector.ts",
+          "line": 134,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/workspace-detector.ts",
+          "line": 249,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/workspace-detector.ts",
+          "line": 271,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/workspace-detector.ts",
+          "line": 290,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "benchmarks/toolemu/scenarios.ts",
+          "line": 52,
+          "match": ".ssh/",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "benchmarks/toolemu/scenarios.ts",
+          "line": 52,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "src/presets.ts",
+          "line": 51,
+          "match": "~/.ssh",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "src/storage/safety.ts",
+          "line": 60,
+          "match": "~/.ssh",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "benchmarks/longmemeval/run.ts",
+          "line": 311,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/cli.ts",
+          "line": 144,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/utils/auth-detect.ts",
+          "line": 48,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "benchmarks/toolemu/scenarios.ts",
+          "line": 156,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/storage/workspace-merge.ts",
+          "line": 33,
+          "match": "require (e",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 19,
+        "medium": 2,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 106,
+      "packageName": "@axme/code"
+    },
+    {
+      "owner": "kbzowski",
+      "name": "mcp-inbox",
+      "url": "https://github.com/kbzowski/mcp-inbox",
+      "description": "MCP server exposing IMAP/SMTP email over a fast local cache. Read, search, compose, and manage email from any IMAP provider with near-instant response times via background sync and IDLE push.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:06.352Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 27,
+      "packageName": "mcp-inbox"
+    },
+    {
+      "owner": "a-church-ai",
+      "name": "church",
+      "url": "https://github.com/a-church-ai/church",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:08.576Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/scripts/upload-thumbnails.js",
+          "line": 18,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/scripts/upload-thumbnails.js",
+          "line": 19,
+          "match": "process.env.AWS_SECRET_ACCESS_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/scripts/upload-thumbnails.js",
+          "line": 25,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/lib/auth.js",
+          "line": 88,
+          "match": "process.env.ADMIN_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/lib/auth.js",
+          "line": 120,
+          "match": "process.env.ADMIN_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/lib/auth.js",
+          "line": 162,
+          "match": "process.env.ADMIN_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/lib/content-generation/claude.js",
+          "line": 14,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/lib/content-generation/create-pr.js",
+          "line": 46,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/lib/rag/gemini.js",
+          "line": 10,
+          "match": "process.env.GEMINI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/api.js",
+          "line": 1016,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/api.js",
+          "line": 1260,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 17,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 18,
+          "match": "process.env.AWS_SECRET_ACCESS_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 71,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 96,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 117,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 142,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 176,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "app/server/routes/content.js",
+          "line": 192,
+          "match": "process.env.AWS_ACCESS_KEY_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 19,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 349,
+      "packageName": null
+    },
+    {
+      "owner": "mothivenkatesh",
+      "name": "strategy-skill",
+      "url": "https://github.com/mothivenkatesh/strategy-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:10.294Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 10,
+      "packageName": null
+    },
+    {
+      "owner": "grippado",
+      "name": "roaster-kit",
+      "url": "https://github.com/grippado/roaster-kit",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:12.023Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "cli/src/collectors/github.js",
+          "line": 11,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "cli/src/collectors/github.js",
+          "line": 12,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "cli/src/index.js",
+          "line": 27,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 3,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 37,
+      "packageName": null
+    },
+    {
+      "owner": "AgriciDaniel",
+      "name": "lipnardo",
+      "url": "https://github.com/AgriciDaniel/lipnardo",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:13.768Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 30,
+      "packageName": null
+    },
+    {
+      "owner": "randomittin",
+      "name": "superx",
+      "url": "https://github.com/randomittin/superx",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:15.848Z",
+      "riskScore": 50,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "ui/static/app.js",
+          "line": 690,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 85,
+      "packageName": null
+    },
+    {
+      "owner": "Pectic-godspeed506",
+      "name": "ultimate-seo-geo",
+      "url": "https://github.com/Pectic-godspeed506/ultimate-seo-geo",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:17.647Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 197,
+      "packageName": null
+    },
+    {
+      "owner": "kivimedia",
+      "name": "browser-history-skill",
+      "url": "https://github.com/kivimedia/browser-history-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:19.347Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 7,
+      "packageName": null
+    },
+    {
+      "owner": "FradSer",
+      "name": "mcp-server-apple-events",
+      "url": "https://github.com/FradSer/mcp-server-apple-events",
+      "description": "MCP server that provides native integration with Apple Reminders and Calendar on macOS.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:21.158Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/postinstall.mjs",
+          "line": 29,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils/cliExecutor.ts",
+          "line": 179,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 98,
+      "packageName": "mcp-server-apple-events"
+    },
+    {
+      "owner": "IvanMurzak",
+      "name": "Unity-AI-ParticleSystem",
+      "url": "https://github.com/IvanMurzak/Unity-AI-ParticleSystem",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:23.587Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 316,
+      "packageName": null
+    },
+    {
+      "owner": "IvanMurzak",
+      "name": "Unity-AI-Animation",
+      "url": "https://github.com/IvanMurzak/Unity-AI-Animation",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:26.056Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 373,
+      "packageName": null
+    },
+    {
+      "owner": "IvanMurzak",
+      "name": "Unity-AI-ProBuilder",
+      "url": "https://github.com/IvanMurzak/Unity-AI-ProBuilder",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:28.403Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 329,
+      "packageName": null
+    },
+    {
+      "owner": "0nork",
+      "name": "0nMCP",
+      "url": "https://github.com/0nork/0nMCP",
+      "description": "Universal AI API Orchestrator — 1554 tools, 96 services, portable AI Brain bundles + machine-bound vault encryption + Application Engine. The most comprehensive MCP server available. Free and open source from 0nORK.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:30.311Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "auth.js",
+          "line": 164,
+          "match": "import(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "cli.js",
+          "line": 29,
+          "match": "import { spawn } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 114,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 152,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 215,
+          "match": "import(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 348,
+          "match": "import(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "auth.js",
+          "line": 169,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "engine/training-feed.js",
+          "line": 152,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 115,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 153,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 220,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "install.js",
+          "line": 350,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "crm/sdk.js",
+          "line": 15,
+          "match": "process.env.CRM_MARKETPLACE_CLIENT_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "crm/supabase-session-storage.js",
+          "line": 11,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "crm/user-context.js",
+          "line": 13,
+          "match": "process.env.CRM_MARKETPLACE_SHARED_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/brain.js",
+          "line": 49,
+          "match": "process.env.SUPABASE_SERVICE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/brain.js",
+          "line": 49,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/brain.js",
+          "line": 312,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/local-ai.js",
+          "line": 371,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/local-ai.js",
+          "line": 386,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/local-ai.js",
+          "line": 392,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/local-ai.js",
+          "line": 402,
+          "match": "process.env.GEMINI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/local-ai.js",
+          "line": 403,
+          "match": "process.env.GEMINI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/multi-ai.js",
+          "line": 454,
+          "match": "process.env.SUPABASE_SERVICE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/multi-ai.js",
+          "line": 454,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/sxo-writer.js",
+          "line": 245,
+          "match": "process.env.SUPABASE_SERVICE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/sxo-writer.js",
+          "line": 245,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/sxo-writer.js",
+          "line": 265,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/sxo-writer.js",
+          "line": 357,
+          "match": "process.env.DEVTO_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/sxo-writer.js",
+          "line": 536,
+          "match": "process.env.SUPABASE_SERVICE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/sxo-writer.js",
+          "line": 536,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/training-feed.js",
+          "line": 254,
+          "match": "process.env.SUPABASE_SERVICE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/training-feed.js",
+          "line": 254,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/training.js",
+          "line": 63,
+          "match": "process.env.SUPABASE_SERVICE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "engine/training.js",
+          "line": 63,
+          "match": "process.env.SUPABASE_SERVICE_ROLE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "orchestrator.js",
+          "line": 49,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "orchestrator.js",
+          "line": 51,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/marketing/post-devto.js",
+          "line": 78,
+          "match": "process.env.DEVTO_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "engine/brain.js",
+          "line": 498,
+          "match": "import({",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "engine/brain.js",
+          "line": 499,
+          "match": "import({",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "engine/index.js",
+          "line": 115,
+          "match": "import({",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "marketplace/lib/installer.js",
+          "line": 71,
+          "match": "import(j",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "marketplace/lib/installer.js",
+          "line": 146,
+          "match": "import(j",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "vault/tools-deed.js",
+          "line": 230,
+          "match": "import({",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "workflow.js",
+          "line": 53,
+          "match": "require(j",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 38,
+        "medium": 7,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 139,
+      "packageName": "0nmcp"
+    },
+    {
+      "owner": "lidn12",
+      "name": "clawshake",
+      "url": "https://github.com/lidn12/clawshake",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:32.190Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 125,
+      "packageName": null
+    },
+    {
+      "owner": "Wicked-Evolutions",
+      "name": "mcp-obsidian",
+      "url": "https://github.com/Wicked-Evolutions/mcp-obsidian",
+      "description": "Multi-vault Obsidian MCP server — full AI operations toolset for file management, wikilinks, semantic search, frontmatter queries, daily notes, tasks, properties, templates, and more.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:33.940Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/cli/bridge.ts",
+          "line": 7,
+          "match": "import { execFile } from 'child_process'",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/embeddings/storage.ts",
+          "line": 74,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/embeddings/storage.ts",
+          "line": 88,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/embeddings/storage.ts",
+          "line": 115,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/embeddings/storage.ts",
+          "line": 134,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/embeddings/storage.ts",
+          "line": 274,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/embeddings/storage.ts",
+          "line": 275,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/parsers/markdown.ts",
+          "line": 198,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/parsers/markdown.ts",
+          "line": 215,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/parsers/wikilink.ts",
+          "line": 24,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/tools/crossvault.ts",
+          "line": 486,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/tools/files.ts",
+          "line": 676,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/http-server.ts",
+          "line": 30,
+          "match": "process.env.OBSIDIAN_HTTP_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 13,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 33,
+      "packageName": "@wickedevolutions/mcp-obsidian"
+    },
+    {
+      "owner": "ToxMCP",
+      "name": "oqt-mcp",
+      "url": "https://github.com/ToxMCP/oqt-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-17T07:57:35.910Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 65,
+      "packageName": null
     }
   ]
 }
