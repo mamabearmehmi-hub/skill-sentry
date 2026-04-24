@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-04-23T08:04:51.631Z",
-  "totalEntries": 912,
+  "lastUpdated": "2026-04-24T08:12:38.704Z",
+  "totalEntries": 934,
   "entries": [
     {
       "owner": "anthropics",
@@ -88647,6 +88647,669 @@
       "verifiedSafe": false,
       "scannedFiles": 146,
       "packageName": "dialectos"
+    },
+    {
+      "owner": "codingwithgokul",
+      "name": "ai-context-vault",
+      "url": "https://github.com/codingwithgokul/ai-context-vault",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:11:55.251Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 25,
+      "packageName": null
+    },
+    {
+      "owner": "danieljustus",
+      "name": "OpenPass",
+      "url": "https://github.com/danieljustus/OpenPass",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:11:57.693Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 183,
+      "packageName": null
+    },
+    {
+      "owner": "jmrplens",
+      "name": "gitlab-mcp-server",
+      "url": "https://github.com/jmrplens/gitlab-mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:00.849Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 1247,
+      "packageName": null
+    },
+    {
+      "owner": "AdeyemiJoel",
+      "name": "google-mcp",
+      "url": "https://github.com/AdeyemiJoel/google-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:02.827Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 37,
+      "packageName": null
+    },
+    {
+      "owner": "jorelcb",
+      "name": "codify",
+      "url": "https://github.com/jorelcb/codify",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:04.694Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 140,
+      "packageName": null
+    },
+    {
+      "owner": "ALCops",
+      "name": "mcp-server",
+      "url": "https://github.com/ALCops/mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:06.433Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 37,
+      "packageName": null
+    },
+    {
+      "owner": "Lohomi15",
+      "name": "claude-search-conversations",
+      "url": "https://github.com/Lohomi15/claude-search-conversations",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:08.104Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 9,
+      "packageName": null
+    },
+    {
+      "owner": "tt-a1i",
+      "name": "archify",
+      "url": "https://github.com/tt-a1i/archify",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:10.389Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 83,
+      "packageName": null
+    },
+    {
+      "owner": "pccly",
+      "name": "project-indexer",
+      "url": "https://github.com/pccly/project-indexer",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:12.057Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 8,
+      "packageName": null
+    },
+    {
+      "owner": "zilliztech",
+      "name": "zilliz-launchpad",
+      "url": "https://github.com/zilliztech/zilliz-launchpad",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:14.190Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 80,
+      "packageName": null
+    },
+    {
+      "owner": "Mackerelscadpica752",
+      "name": "claude-skill-gpt-pro",
+      "url": "https://github.com/Mackerelscadpica752/claude-skill-gpt-pro",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:15.866Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 4,
+      "packageName": null
+    },
+    {
+      "owner": "carolafortified787",
+      "name": "codex-plugin-cc",
+      "url": "https://github.com/carolafortified787/codex-plugin-cc",
+      "description": "Use Codex from Claude Code to review code or delegate tasks.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:17.618Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "plugins/codex/scripts/codex-companion.mjs",
+          "line": 643,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "plugins/codex/scripts/lib/app-server.mjs",
+          "line": 189,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "plugins/codex/scripts/lib/broker-lifecycle.mjs",
+          "line": 61,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "plugins/codex/scripts/lib/process.mjs",
+          "line": 5,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "plugins/codex/scripts/stop-review-gate-hook.mjs",
+          "line": 105,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 5,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 49,
+      "packageName": "@openai/codex-plugin-cc"
+    },
+    {
+      "owner": "Julianalost754",
+      "name": "infostyle-skill",
+      "url": "https://github.com/Julianalost754/infostyle-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:19.341Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 15,
+      "packageName": null
+    },
+    {
+      "owner": "tode77",
+      "name": "node-red-contrib-mcp",
+      "url": "https://github.com/tode77/node-red-contrib-mcp",
+      "description": "MCP (Model Context Protocol) nodes for Node-RED — connect AI agents to any MCP server",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:21.495Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 23,
+      "packageName": "node-red-contrib-mcp"
+    },
+    {
+      "owner": "anubhavkhare22",
+      "name": "sanna-ts",
+      "url": "https://github.com/anubhavkhare22/sanna-ts",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:23.540Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "packages/core/src/store.ts",
+          "line": 165,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "packages/core/src/evaluators/llm.ts",
+          "line": 233,
+          "match": "process.env.ANTHROPIC_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "packages/mcp-server/src/index.ts",
+          "line": 123,
+          "match": "process.env.SANNA_SIGNING_KEY_PATH",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "packages/mcp-server/src/index.ts",
+          "line": 124,
+          "match": "process.env.SANNA_SIGNING_KEY_PATH",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "packages/mcp-server/src/index.ts",
+          "line": 126,
+          "match": "process.env.SANNA_PUBLIC_KEY_PATH",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "packages/mcp-server/src/index.ts",
+          "line": 127,
+          "match": "process.env.SANNA_PUBLIC_KEY_PATH",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "packages/cli/package.json",
+          "line": 29,
+          "match": "\"*\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "packages/cli/package.json",
+          "line": 30,
+          "match": "\"*\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "packages/gateway/package.json",
+          "line": 30,
+          "match": "\"*\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "packages/mcp-server/package.json",
+          "line": 30,
+          "match": "\"*\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "packages/cli/src/commands/gateway.ts",
+          "line": 14,
+          "match": "import(\n    ",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "packages/cli/src/commands/migrate.ts",
+          "line": 7,
+          "match": "import(\n    ",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 6,
+        "medium": 6,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 93,
+      "packageName": "sanna-ts"
+    },
+    {
+      "owner": "shripadk1999",
+      "name": "EVOKORE-MCP",
+      "url": "https://github.com/shripadk1999/EVOKORE-MCP",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:25.948Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 6,
+      "packageName": null
+    },
+    {
+      "owner": "hairglasses-studio",
+      "name": "dotfiles",
+      "url": "https://github.com/hairglasses-studio/dotfiles",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:28.639Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2577,
+      "packageName": null
+    },
+    {
+      "owner": "walkindude",
+      "name": "gosymdb",
+      "url": "https://github.com/walkindude/gosymdb",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:30.577Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 138,
+      "packageName": null
+    },
+    {
+      "owner": "enmito",
+      "name": "sift-mcp",
+      "url": "https://github.com/enmito/sift-mcp",
+      "description": "MCP server that wraps Brave Search and augments each result with a transparent quality vector (tier, editorial standards, commercial intent, authoritative weight) for downstream agent reasoning",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:32.427Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/smoke-test.js",
+          "line": 58,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/backends/brave.ts",
+          "line": 42,
+          "match": "process.env.BRAVE_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/llm-judge.ts",
+          "line": 81,
+          "match": "process.env.LLM_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/safety.ts",
+          "line": 28,
+          "match": "process.env.GOOGLE_SAFE_BROWSING_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 47,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 4,
+        "medium": 1,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 46,
+      "packageName": "sift-mcp"
+    },
+    {
+      "owner": "kosiorkosa47",
+      "name": "honeymcp",
+      "url": "https://github.com/kosiorkosa47/honeymcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:34.325Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 56,
+      "packageName": null
+    },
+    {
+      "owner": "mnlt",
+      "name": "teleport",
+      "url": "https://github.com/mnlt/teleport",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:36.070Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 39,
+      "packageName": null
+    },
+    {
+      "owner": "f2calv",
+      "name": "SmartHaus",
+      "url": "https://github.com/f2calv/SmartHaus",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-04-24T08:12:38.088Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 690,
+      "packageName": null
     }
   ]
 }
