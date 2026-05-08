@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-07T08:42:01.772Z",
-  "totalEntries": 1353,
+  "lastUpdated": "2026-05-08T07:49:14.428Z",
+  "totalEntries": 1386,
   "entries": [
     {
       "owner": "anthropics",
@@ -165163,6 +165163,1107 @@
       "verifiedSafe": false,
       "scannedFiles": 174,
       "packageName": "kahuna"
+    },
+    {
+      "owner": "sator-imaging",
+      "name": "suggest-skills",
+      "url": "https://github.com/sator-imaging/suggest-skills",
+      "description": "MCP server that suggests repository-specific AI agent skills.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:05.325Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/utils.ts",
+          "line": 86,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/cmd_download.ts",
+          "line": 126,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/download.ts",
+          "line": 341,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/suggest.ts",
+          "line": 129,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/utils.ts",
+          "line": 16,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 4,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 62,
+      "packageName": "suggest-skills"
+    },
+    {
+      "owner": "myraffy",
+      "name": "homelab-mcp",
+      "url": "https://github.com/myraffy/homelab-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:07.729Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 41,
+      "packageName": null
+    },
+    {
+      "owner": "amsajaj",
+      "name": "ai-testcase-generator",
+      "url": "https://github.com/amsajaj/ai-testcase-generator",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:09.729Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 91,
+      "packageName": null
+    },
+    {
+      "owner": "oaslananka-lab",
+      "name": "kicad-mcp-pro",
+      "url": "https://github.com/oaslananka-lab/kicad-mcp-pro",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:11.782Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "npm-wrapper/bin/kicad-mcp-pro.js",
+          "line": 38,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/check-review-threads.mjs",
+          "line": 101,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/check-review-threads.mjs",
+          "line": 101,
+          "match": "process.env.GH_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 3,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 241,
+      "packageName": "kicad-mcp-pro-hooks"
+    },
+    {
+      "owner": "Cranot",
+      "name": "roam-code",
+      "url": "https://github.com/Cranot/roam-code",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:14.644Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 3023,
+      "packageName": null
+    },
+    {
+      "owner": "fajar661",
+      "name": "Researcher",
+      "url": "https://github.com/fajar661/Researcher",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:16.800Z",
+      "riskScore": 80,
+      "findings": [
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 12,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 41,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 48,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 49,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 4,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 117,
+      "packageName": "my-v0-project"
+    },
+    {
+      "owner": "ncmonx",
+      "name": "icm-graph",
+      "url": "https://github.com/ncmonx/icm-graph",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:19.100Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 226,
+      "packageName": null
+    },
+    {
+      "owner": "Chris31372",
+      "name": "better-chat",
+      "url": "https://github.com/Chris31372/better-chat",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:21.222Z",
+      "riskScore": 50,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "apps/server/drizzle.db.config.ts",
+          "line": 21,
+          "match": "process.env.CLOUDFLARE_API_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 200,
+      "packageName": "better-chat"
+    },
+    {
+      "owner": "Thianvelaz",
+      "name": "Cognio",
+      "url": "https://github.com/Thianvelaz/Cognio",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:23.419Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 31,
+      "packageName": null
+    },
+    {
+      "owner": "Ahmedvision",
+      "name": "zen-mcp-server",
+      "url": "https://github.com/Ahmedvision/zen-mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:25.634Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 230,
+      "packageName": null
+    },
+    {
+      "owner": "Commvault",
+      "name": "commvault-mcp-server",
+      "url": "https://github.com/Commvault/commvault-mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:27.537Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 33,
+      "packageName": null
+    },
+    {
+      "owner": "joelbarmettlerUZH",
+      "name": "vue-mcp",
+      "url": "https://github.com/joelbarmettlerUZH/vue-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:29.564Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 175,
+      "packageName": null
+    },
+    {
+      "owner": "Atharva-Kanherkar",
+      "name": "voice-standup",
+      "url": "https://github.com/Atharva-Kanherkar/voice-standup",
+      "description": "Local Realtime API voice standup companion plugin scaffold.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:31.399Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/voice-standup.mjs",
+          "line": 30,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/voice-standup.mjs",
+          "line": 40,
+          "match": "process.env.OPENAI_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 20,
+      "packageName": "@agentclash/voice-standup-plugin"
+    },
+    {
+      "owner": "Vaiz",
+      "name": "rust-mcp-server",
+      "url": "https://github.com/Vaiz/rust-mcp-server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:33.246Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 56,
+      "packageName": null
+    },
+    {
+      "owner": "Mikol838",
+      "name": "bubbleq-agents",
+      "url": "https://github.com/Mikol838/bubbleq-agents",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:35.099Z",
+      "riskScore": 50,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "bubbleq-mcp-server/src/index.ts",
+          "line": 91,
+          "match": "process.env.BUBBLEQ_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 23,
+      "packageName": null
+    },
+    {
+      "owner": "Nikil11",
+      "name": "stacks-clarity-mcp",
+      "url": "https://github.com/Nikil11/stacks-clarity-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:37.127Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 1,
+      "packageName": null
+    },
+    {
+      "owner": "maqsam22",
+      "name": "claude-code",
+      "url": "https://github.com/maqsam22/claude-code",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:39.425Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/auto-close-duplicates.ts",
+          "line": 102,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/backfill-duplicate-comments.ts",
+          "line": 75,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 45,
+      "packageName": null
+    },
+    {
+      "owner": "fub05",
+      "name": "MCP---Agent-Starter-Kit",
+      "url": "https://github.com/fub05/MCP---Agent-Starter-Kit",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:41.437Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 20,
+      "packageName": null
+    },
+    {
+      "owner": "josephfawzy",
+      "name": "api20",
+      "url": "https://github.com/josephfawzy/api20",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:43.482Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 1,
+      "packageName": null
+    },
+    {
+      "owner": "Dannycalvin",
+      "name": "exchange-rate-mcp",
+      "url": "https://github.com/Dannycalvin/exchange-rate-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:45.473Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 9,
+      "packageName": null
+    },
+    {
+      "owner": "TrendTweekers",
+      "name": "article-autopilot",
+      "url": "https://github.com/TrendTweekers/article-autopilot",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:47.313Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 12,
+      "packageName": null
+    },
+    {
+      "owner": "dbhan08",
+      "name": "sd-coach",
+      "url": "https://github.com/dbhan08/sd-coach",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:49.157Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 42,
+      "packageName": null
+    },
+    {
+      "owner": "wangkezun",
+      "name": "qweather-skill",
+      "url": "https://github.com/wangkezun/qweather-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:50.948Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/lib/qweather.js",
+          "line": 31,
+          "match": "process.env.QWEATHER_CREDENTIAL_ID",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "scripts/lib/qweather.js",
+          "line": 32,
+          "match": "process.env.QWEATHER_PRIVATE_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 8,
+      "packageName": null
+    },
+    {
+      "owner": "lanfuli",
+      "name": "wayamzpost",
+      "url": "https://github.com/lanfuli/wayamzpost",
+      "description": "wayamzpost — Claude Code skill. Daily Amazon-seller content engine: 6-fetcher gated-source pipeline (X / LinkedIn / wearesellers / BDS / Walmart / YouTube) + monthly source-decay audit + multi-platform card rendering (Xiaohongshu / LinkedIn / X / Instagram), bilingual zh/en.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:52.841Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-001",
+          "severity": "HIGH",
+          "file": "scripts/fetch-gated.mjs",
+          "line": 360,
+          "match": "eval(",
+          "message": "eval() executes arbitrary strings as code. In an MCP context, this could allow prompt injection to escalate into code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-001",
+          "severity": "HIGH",
+          "file": "scripts/fetch-gated.mjs",
+          "line": 440,
+          "match": "eval(",
+          "message": "eval() executes arbitrary strings as code. In an MCP context, this could allow prompt injection to escalate into code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-001",
+          "severity": "HIGH",
+          "file": "scripts/fetch-gated.mjs",
+          "line": 711,
+          "match": "eval(",
+          "message": "eval() executes arbitrary strings as code. In an MCP context, this could allow prompt injection to escalate into code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-001",
+          "severity": "HIGH",
+          "file": "scripts/fetch-gated.mjs",
+          "line": 953,
+          "match": "eval(",
+          "message": "eval() executes arbitrary strings as code. In an MCP context, this could allow prompt injection to escalate into code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/fetch-gated.mjs",
+          "line": 854,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/render.mjs",
+          "line": 67,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/render.mjs",
+          "line": 535,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 7,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 37,
+      "packageName": "wayamzpost"
+    },
+    {
+      "owner": "MukundaKatta",
+      "name": "agent-stack-reliability-primitives-paper",
+      "url": "https://github.com/MukundaKatta/agent-stack-reliability-primitives-paper",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:54.953Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 31,
+      "packageName": null
+    },
+    {
+      "owner": "runnel",
+      "name": "voog-mcp",
+      "url": "https://github.com/runnel/voog-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:48:56.925Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 57,
+      "packageName": null
+    },
+    {
+      "owner": "StealthyLabsHQ",
+      "name": "powerbi-mcp-local",
+      "url": "https://github.com/StealthyLabsHQ/powerbi-mcp-local",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:01.466Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 37,
+      "packageName": null
+    },
+    {
+      "owner": "Xquik-dev",
+      "name": "xquik-docs",
+      "url": "https://github.com/Xquik-dev/xquik-docs",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:03.745Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "api-params.test.ts",
+          "line": 97,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "api-response-status.test.ts",
+          "line": 183,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "endpoint-strings.test.ts",
+          "line": 93,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "endpoint-strings.test.ts",
+          "line": 100,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "event-types.test.ts",
+          "line": 102,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "plugin-docs.test.ts",
+          "line": 46,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "seo-metadata.test.ts",
+          "line": 47,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "seo-metadata.test.ts",
+          "line": 54,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 8,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 232,
+      "packageName": "xquik-docs"
+    },
+    {
+      "owner": "Palald",
+      "name": "mcp-sdk-typescript",
+      "url": "https://github.com/Palald/mcp-sdk-typescript",
+      "description": "Production-ready MCP SDK for TypeScript with automatic Bun optimization, streamable HTTP transport, and real-time session management",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:05.720Z",
+      "riskScore": 40,
+      "findings": [
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 61,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-002",
+          "severity": "MEDIUM",
+          "file": "package.json",
+          "line": 66,
+          "match": "\"latest\"",
+          "message": "Using '*' or 'latest' as a dependency version means any future version will be installed automatically — including compromised ones.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 2,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 16,
+      "packageName": "@the-ihor/mcp-sdk-typescript"
+    },
+    {
+      "owner": "Didiye",
+      "name": "mcp-dadosbr",
+      "url": "https://github.com/Didiye/mcp-dadosbr",
+      "description": "Model Context Protocol server for Brazilian public data lookup (CNPJ companies and CEP postal codes) with intelligent web search and sequential thinking",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:07.844Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "docs/pt-br/_validators/terminologia-validator.ts",
+          "line": 405,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "docs/pt-br/_validators/terminologia-validator.ts",
+          "line": 411,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "lib/config/index.ts",
+          "line": 63,
+          "match": "process.env.API_KEY_HEADER",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "lib/config/index.ts",
+          "line": 63,
+          "match": "process.env.API_KEY_VALUE",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "lib/config/index.ts",
+          "line": 66,
+          "match": "process.env.API_KEY_HEADER",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "lib/config/index.ts",
+          "line": 66,
+          "match": "process.env.API_KEY_VALUE",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "lib/core/search-providers.ts",
+          "line": 33,
+          "match": "process.env.TAVILY_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 7,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 95,
+      "packageName": "@aredes.me/mcp-dadosbr"
+    },
+    {
+      "owner": "kinpatchii",
+      "name": "batchi",
+      "url": "https://github.com/kinpatchii/batchi",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:09.897Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 13,
+      "packageName": null
+    },
+    {
+      "owner": "goncalorosa96",
+      "name": "codemode-mcp",
+      "url": "https://github.com/goncalorosa96/codemode-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:11.919Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 4,
+      "packageName": null
+    },
+    {
+      "owner": "bluerock-io",
+      "name": "bluerock",
+      "url": "https://github.com/bluerock-io/bluerock",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-08T07:49:13.786Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 94,
+      "packageName": null
     }
   ]
 }
