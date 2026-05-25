@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-05-24T08:36:12.683Z",
-  "totalEntries": 1806,
+  "lastUpdated": "2026-05-25T10:19:22.406Z",
+  "totalEntries": 1842,
   "entries": [
     {
       "owner": "anthropics",
@@ -219073,6 +219073,2254 @@
       "verifiedSafe": true,
       "scannedFiles": 126,
       "packageName": null
+    },
+    {
+      "owner": "PDgit12",
+      "name": "knit",
+      "url": "https://github.com/PDgit12/knit",
+      "description": "Knit — second brain for Claude Code. MCP server giving any AI agent project-scoped memory, tiered workflow protocol, and parallel team worktrees.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:12.286Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 120,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 129,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 472,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 598,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 626,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 654,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 683,
+          "match": "require(\"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/calibration.ts",
+          "line": 76,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/domain-inference.ts",
+          "line": 110,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/domain-inference.ts",
+          "line": 184,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/domain-inference.ts",
+          "line": 186,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/domain-inference.ts",
+          "line": 188,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/knowledge.ts",
+          "line": 177,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/knowledge.ts",
+          "line": 296,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/scanner.ts",
+          "line": 314,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/scanner.ts",
+          "line": 321,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/scanner.ts",
+          "line": 325,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/scanner.ts",
+          "line": 334,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/sessions.ts",
+          "line": 176,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 80,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 146,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 149,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 158,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 163,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 179,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/engine/worktrees.ts",
+          "line": 182,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 120,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 129,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 325,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 550,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 598,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 626,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 654,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/generators/settings.ts",
+          "line": 683,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/mcp/cache.ts",
+          "line": 463,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "scripts/vendor-agents.mjs",
+          "line": 21,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/engine/agent-fetcher.ts",
+          "line": 56,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/engine/agent-registry.ts",
+          "line": 24,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/generators/settings.ts",
+          "line": 337,
+          "match": "import(s",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/generators/settings.ts",
+          "line": 561,
+          "match": "import(s",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/mcp/handlers.ts",
+          "line": 1652,
+          "match": "import (l",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 35,
+        "medium": 6,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 61,
+      "packageName": "knit-mcp"
+    },
+    {
+      "owner": "kayalopez",
+      "name": "ai-agent-launch-tools",
+      "url": "https://github.com/kayalopez/ai-agent-launch-tools",
+      "description": "Dependency-free launch hygiene tools for AI agent and MCP builders.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:14.177Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "scripts/supabase-grants-cutover.mjs",
+          "line": 135,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-004",
+          "severity": "HIGH",
+          "file": "scripts/mcp-permission-matrix.mjs",
+          "line": 188,
+          "match": "id_rsa",
+          "message": "Accessing SSH keys or known_hosts is a strong indicator of credential theft. No legitimate MCP server needs access to SSH configuration.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 38,
+      "packageName": "ai-agent-launch-tools"
+    },
+    {
+      "owner": "DaniiN2",
+      "name": "idea-anvil",
+      "url": "https://github.com/DaniiN2/idea-anvil",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:15.975Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "dimitrilaouanis-tech",
+      "name": "onyx-mcp",
+      "url": "https://github.com/dimitrilaouanis-tech/onyx-mcp",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:17.843Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 99,
+      "packageName": null
+    },
+    {
+      "owner": "o3co",
+      "name": "agent-dpd",
+      "url": "https://github.com/o3co/agent-dpd",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:19.679Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 38,
+      "packageName": null
+    },
+    {
+      "owner": "linny006",
+      "name": "mcp-servers-live",
+      "url": "https://github.com/linny006/mcp-servers-live",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:21.460Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 9,
+      "packageName": null
+    },
+    {
+      "owner": "linny006",
+      "name": "trending-claude-skills",
+      "url": "https://github.com/linny006/trending-claude-skills",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:23.438Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 9,
+      "packageName": null
+    },
+    {
+      "owner": "PyPtt",
+      "name": "ptt_mcp_server",
+      "url": "https://github.com/PyPtt/ptt_mcp_server",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:25.242Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 19,
+      "packageName": null
+    },
+    {
+      "owner": "runcycles",
+      "name": "cycles-mcp-server",
+      "url": "https://github.com/runcycles/cycles-mcp-server",
+      "description": "MCP server for Cycles — runtime budget authority for autonomous agents",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:27.101Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 45,
+      "packageName": "@runcycles/mcp-server"
+    },
+    {
+      "owner": "PranavGS2006",
+      "name": "agent-thinktank-stack",
+      "url": "https://github.com/PranavGS2006/agent-thinktank-stack",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:29.106Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "wacht-platform",
+      "name": "frontend-api",
+      "url": "https://github.com/wacht-platform/frontend-api",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:32.015Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 181,
+      "packageName": null
+    },
+    {
+      "owner": "DecentralizedJM",
+      "name": "mudrex-mcp-prod-landing-page",
+      "url": "https://github.com/DecentralizedJM/mudrex-mcp-prod-landing-page",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:33.948Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 84,
+      "packageName": "tanstack_start_ts"
+    },
+    {
+      "owner": "HugoVeltorai",
+      "name": "publicskills",
+      "url": "https://github.com/HugoVeltorai/publicskills",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:35.819Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 39,
+      "packageName": null
+    },
+    {
+      "owner": "Tico1000",
+      "name": "audience-shockproof-curriculum",
+      "url": "https://github.com/Tico1000/audience-shockproof-curriculum",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:37.604Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "giovannisacca",
+      "name": "pixel-mcp-workflow",
+      "url": "https://github.com/giovannisacca/pixel-mcp-workflow",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:39.376Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "JINSEDAWONIU",
+      "name": "mobile-app-store-deployment-automation",
+      "url": "https://github.com/JINSEDAWONIU/mobile-app-store-deployment-automation",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:41.123Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "AllyJuma1",
+      "name": "easel-js-cpu-render-kit",
+      "url": "https://github.com/AllyJuma1/easel-js-cpu-render-kit",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:42.887Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "zy-zmc",
+      "name": "tianming-skill",
+      "url": "https://github.com/zy-zmc/tianming-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:44.708Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 35,
+      "packageName": null
+    },
+    {
+      "owner": "hikataya01-netizen",
+      "name": "pubmed-reference-resolver",
+      "url": "https://github.com/hikataya01-netizen/pubmed-reference-resolver",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:46.807Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 131,
+      "packageName": null
+    },
+    {
+      "owner": "abubaker-qx",
+      "name": "dirxml-designer-analyzer",
+      "url": "https://github.com/abubaker-qx/dirxml-designer-analyzer",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:48.581Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "Marcos-Auguusto",
+      "name": "superx-agentic-orchestrator",
+      "url": "https://github.com/Marcos-Auguusto/superx-agentic-orchestrator",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:50.382Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "Rajib1000",
+      "name": "strategic-reasoning-engine",
+      "url": "https://github.com/Rajib1000/strategic-reasoning-engine",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:52.161Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "brunoalfabl07-dot",
+      "name": "skill-publisher-metaforge",
+      "url": "https://github.com/brunoalfabl07-dot/skill-publisher-metaforge",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:53.924Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "atlasaidev",
+      "name": "claude-wordpress-skill",
+      "url": "https://github.com/atlasaidev/claude-wordpress-skill",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:55.692Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 16,
+      "packageName": null
+    },
+    {
+      "owner": "Syarwanfjr",
+      "name": "supplement-evidence-stack",
+      "url": "https://github.com/Syarwanfjr/supplement-evidence-stack",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:57.528Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "situker",
+      "name": "situk-yangtao-perspective",
+      "url": "https://github.com/situker/situk-yangtao-perspective",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:18:59.535Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 45,
+      "packageName": null
+    },
+    {
+      "owner": "aadiieee",
+      "name": "multi-agent-revenue-orchestrator",
+      "url": "https://github.com/aadiieee/multi-agent-revenue-orchestrator",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:01.295Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "opencue",
+      "name": "cue",
+      "url": "https://github.com/opencue/cue",
+      "description": "cue — Agent Profile Manager for Claude Code & Codex. Pick a profile, launch with the right skills, MCPs, and plugins.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:03.984Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/lib/utils.mjs",
+          "line": 24,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/dast_runner.mjs",
+          "line": 182,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/dast_runner.mjs",
+          "line": 188,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/dast_runner.mjs",
+          "line": 393,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/setup_scanner_hook.mjs",
+          "line": 17,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/hermes-attestation-guardian/lib/cron.mjs",
+          "line": 116,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": ".claude/skills/hermes-attestation-guardian/lib/cron.mjs",
+          "line": 141,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/ai-score.e2e.test.ts",
+          "line": 12,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/cli.ts",
+          "line": 39,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/cli.ts",
+          "line": 274,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/cloud.ts",
+          "line": 58,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/cloud.ts",
+          "line": 66,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/cloud.ts",
+          "line": 75,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 473,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 487,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1287,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1299,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1332,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1341,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1428,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1518,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1753,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1819,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1826,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1833,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1840,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1848,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1853,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1913,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1922,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 1977,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 2037,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 2274,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/doctor.ts",
+          "line": 494,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/evolve.ts",
+          "line": 127,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/failures.ts",
+          "line": 111,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/failures.ts",
+          "line": 354,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/feedback.ts",
+          "line": 137,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/feedback.ts",
+          "line": 158,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/init.ts",
+          "line": 29,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/launch.e2e.test.ts",
+          "line": 23,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/launch.ts",
+          "line": 93,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/launch.ts",
+          "line": 411,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/launch.ts",
+          "line": 634,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 49,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 78,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 84,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 89,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 250,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 390,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/marketplace.ts",
+          "line": 924,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/mcps.ts",
+          "line": 187,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/optimizer.ts",
+          "line": 34,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/optimizer.ts",
+          "line": 559,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/profile-draft-skill.ts",
+          "line": 107,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/quick.ts",
+          "line": 30,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/share.ts",
+          "line": 51,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/share.ts",
+          "line": 58,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/share.ts",
+          "line": 90,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/share.ts",
+          "line": 135,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/share.ts",
+          "line": 144,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/share.ts",
+          "line": 193,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/skills-pin.ts",
+          "line": 37,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/skills.ts",
+          "line": 414,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/skills.ts",
+          "line": 456,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/skills.ts",
+          "line": 681,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/skills.ts",
+          "line": 751,
+          "match": "execSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/skills.ts",
+          "line": 827,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/sources.ts",
+          "line": 155,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/sources.ts",
+          "line": 163,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/submit-profile.ts",
+          "line": 50,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/update.ts",
+          "line": 26,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/update.ts",
+          "line": 31,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/update.ts",
+          "line": 38,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/update.ts",
+          "line": 64,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/update.ts",
+          "line": 65,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/update.ts",
+          "line": 94,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/upgrade.ts",
+          "line": 31,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/commands/upgrade.ts",
+          "line": 139,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/index.ts",
+          "line": 186,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/agent-adapters.ts",
+          "line": 37,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/cluster-skills.ts",
+          "line": 49,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/conflict-detector.ts",
+          "line": 80,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/pr-poster.ts",
+          "line": 54,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/profile-generator.ts",
+          "line": 871,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/profile-generator.ts",
+          "line": 887,
+          "match": "exec(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/resolver-npx.ts",
+          "line": 128,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/runtime-materializer.ts",
+          "line": 679,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/runtime-materializer.ts",
+          "line": 733,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/skill-subset.ts",
+          "line": 83,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/star-prompt.ts",
+          "line": 31,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/star-prompt.ts",
+          "line": 35,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/star-prompt.ts",
+          "line": 73,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/uvx-installer.ts",
+          "line": 83,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/uvx-installer.ts",
+          "line": 100,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/uvx-installer.ts",
+          "line": 129,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "src/lib/uvx-installer.ts",
+          "line": 136,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/query_cve_databases.mjs",
+          "line": 65,
+          "match": "process.env.CLAWSEC_NVD_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/query_cve_databases.mjs",
+          "line": 120,
+          "match": "process.env.GITHUB_TOKEN",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-scanner/scripts/query_cve_databases.mjs",
+          "line": 263,
+          "match": "process.env.CLAWSEC_NVD_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".claude/skills/clawsec-suite/hooks/clawsec-advisory-guardian/handler.ts",
+          "line": 134,
+          "match": "process.env.CLAWSEC_FEED_PUBLIC_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".claude/skills/hermes-attestation-guardian/scripts/setup_attestation_cron.mjs",
+          "line": 44,
+          "match": "process.env.HERMES_ATTESTATION_BASELINE_PUBLIC_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": ".claude/skills/hermes-attestation-guardian/scripts/verify_attestation.mjs",
+          "line": 26,
+          "match": "process.env.HERMES_ATTESTATION_BASELINE_PUBLIC_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/commands/discover.ts",
+          "line": 2089,
+          "match": "process.env.VOYAGE_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/lib/cluster-skills.ts",
+          "line": 154,
+          "match": "process.env.VOYAGE_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": ".claude/skills/clawsec-nanoclaw/lib/signatures.ts",
+          "line": 18,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": ".claude/skills/clawsec-suite/hooks/clawsec-advisory-guardian/lib/feed.mjs",
+          "line": 14,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/commands/doctor.ts",
+          "line": 405,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/commands/import-profile.ts",
+          "line": 49,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-003",
+          "severity": "MEDIUM",
+          "file": "src/commands/share.ts",
+          "line": 19,
+          "match": "raw.githubusercontent",
+          "message": "Network requests to paste sites or raw GitHub content may indicate payload downloading. Legitimate dependencies use npm, not pastebins.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": ".claude/skills/clawsec-scanner/scripts/dast_hook_executor.mjs",
+          "line": 131,
+          "match": "import(`",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": ".claude/skills/clawsec-scanner/scripts/dast_hook_executor.mjs",
+          "line": 154,
+          "match": "import(`",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "src/lib/profile-generator.ts",
+          "line": 605,
+          "match": "import(u",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 105,
+        "medium": 8,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 1546,
+      "packageName": "cue-ai"
+    },
+    {
+      "owner": "fusedio",
+      "name": "skills",
+      "url": "https://github.com/fusedio/skills",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:05.878Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 12,
+      "packageName": null
+    },
+    {
+      "owner": "Albert634png",
+      "name": "note-taker-for-spotify",
+      "url": "https://github.com/Albert634png/note-taker-for-spotify",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:07.701Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "Nobita766633",
+      "name": "report-craft-azure",
+      "url": "https://github.com/Nobita766633/report-craft-azure",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:09.472Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 2,
+      "packageName": null
+    },
+    {
+      "owner": "piyushptiwari1",
+      "name": "mcpkernel",
+      "url": "https://github.com/piyushptiwari1/mcpkernel",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:11.476Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-002",
+          "severity": "HIGH",
+          "file": "vscode-extension/src/extension.ts",
+          "line": 2,
+          "match": "import * as cp from \"child_process\"",
+          "message": "Importing child_process gives the package ability to spawn shell commands. MCP servers should not need to execute arbitrary system commands.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "vscode-extension/src/extension.ts",
+          "line": 115,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "vscode-extension/src/extension.ts",
+          "line": 168,
+          "match": "spawn(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 3,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 193,
+      "packageName": null
+    },
+    {
+      "owner": "beydemirfurkan",
+      "name": "tweetly",
+      "url": "https://github.com/beydemirfurkan/tweetly",
+      "description": "Multi-tenant X (Twitter) automation platform with MCP and REST API. Bring your own AI; Tweetly handles browser-driven actions.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:13.509Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "backend/scripts/generate-migration.mjs",
+          "line": 44,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-003",
+          "severity": "HIGH",
+          "file": "backend/scripts/generate-migration.mjs",
+          "line": 60,
+          "match": "spawnSync(",
+          "message": "Direct process execution functions (exec, spawn) can run arbitrary commands. Combined with user input, this enables remote code execution.",
+          "score": 50
+        },
+        {
+          "ruleId": "MED-004",
+          "severity": "MEDIUM",
+          "file": "frontend/src/i18n/request.ts",
+          "line": 11,
+          "match": "import(`",
+          "message": "Dynamic require/import with variable arguments loads code determined at runtime. This can be used to load payloads that static analysis can't detect.",
+          "score": 20
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 1,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 396,
+      "packageName": "tweetly"
+    },
+    {
+      "owner": "lszoszk",
+      "name": "mcp-unhrdb",
+      "url": "https://github.com/lszoszk/mcp-unhrdb",
+      "description": "MCP server for the UN Human Rights Database — paragraph-level search over Treaty Body General Comments, jurisprudence and Special Procedures reports.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:15.357Z",
+      "riskScore": 50,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/index.js",
+          "line": 28,
+          "match": "process.env.UNHRDB_API_KEY",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 11,
+      "packageName": "mcp-unhrdb"
+    },
+    {
+      "owner": "nauta-ai",
+      "name": "holster",
+      "url": "https://github.com/nauta-ai/holster",
+      "description": null,
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:19.853Z",
+      "riskScore": 0,
+      "findings": [],
+      "totalFindings": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": true,
+      "scannedFiles": 113,
+      "packageName": null
+    },
+    {
+      "owner": "elchin92",
+      "name": "avito-mcp",
+      "url": "https://github.com/elchin92/avito-mcp",
+      "description": "MCP server for Avito API — 139 tools across 18 domains. Give your AI agents hands and feet on Russia's largest classifieds marketplace.",
+      "stars": 0,
+      "topics": [],
+      "lastAuditDate": "2026-05-25T10:19:21.761Z",
+      "riskScore": 100,
+      "findings": [
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/config.ts",
+          "line": 24,
+          "match": "process.env.CLIENT_SECRET",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        },
+        {
+          "ruleId": "HIGH-005",
+          "severity": "HIGH",
+          "file": "src/config.ts",
+          "line": 27,
+          "match": "process.env.AVITO_TOKEN_FILE",
+          "message": "Reading sensitive environment variables (tokens, secrets, keys, passwords) suggests data exfiltration. MCP servers should declare required env vars, not silently read secrets.",
+          "score": 50
+        }
+      ],
+      "totalFindings": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+      },
+      "verifiedSafe": false,
+      "scannedFiles": 64,
+      "packageName": "avito-mcp"
     }
   ]
 }
